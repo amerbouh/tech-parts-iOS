@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team-logo" translatesAutoresizingMaskIntoConstraints="NO" id="l8k-HZ-Y3G" userLabel="Équipe Team 3990 : Tech For Kids Logo Image View">
+                                <rect key="frame" x="46" y="90" width="322" height="760"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="primary"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="l8k-HZ-Y3G" secondAttribute="trailing" constant="46" id="2AB-Zh-T4j"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="l8k-HZ-Y3G" secondAttribute="bottom" constant="12" id="KRw-C6-wWT"/>
+                            <constraint firstItem="l8k-HZ-Y3G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="b2p-gL-XdT"/>
+                            <constraint firstItem="l8k-HZ-Y3G" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="46" id="cVd-IC-Bgj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="team-logo" width="1000" height="1000"/>
+        <namedColor name="primary">
+            <color red="0.13333333333333333" green="0.11764705882352941" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

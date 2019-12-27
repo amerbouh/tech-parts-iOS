@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>assembliesCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@assemblies_count@</string>
+		<key>assemblies_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>No assembly</string>
+			<key>one</key>
+			<string>One assembly</string>
+			<key>other</key>
+			<string>%d assemblies</string>
+		</dict>
+	</dict>
+    <key>subassembliesCount</key>
+    <dict>
+        <key>NSStringLocalizedFormatKey</key>
+        <string>%#@subassemblies_count@</string>
+        <key>subassemblies_count</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>d</string>
+            <key>zero</key>
+            <string>No subassembly</string>
+            <key>one</key>
+            <string>One subassembly</string>
+            <key>other</key>
+            <string>%d subassemblies</string>
+        </dict>
+    </dict>
+</dict>
+</plist>

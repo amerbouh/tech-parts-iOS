@@ -1,0 +1,82 @@
+/* 
+  Localizable.strings
+  parts-management-iOS
+
+  Created by Anas Merbouh on 2019-10-14.
+  Copyright © 2019 Anas Merbouh. All rights reserved.
+*/
+
+// MARK: - Shared
+"oops" = "Oops";
+"cancel" = "Cancel";
+"delete" = "Delete";
+"createdAt" = "Created at";
+"lastEditedAt" = "Last edited at";
+"downloadCadFile" = "Download CAD File";
+"fileExceedsDownloadLimit" = "It looks like the file you are trying to download exceeds the size limit for over-the-air download operations.";
+
+// MARK: - Part state
+"toDo" = "To do";
+"completed" = "Completed";
+"inProgress" = "In progress";
+
+// MARK: - Sign In View Controller
+"signIn" = "Sign in";
+"password" = "Password";
+"emailAddress" = "Email address";
+"forgotPassword" = "Forgot password";
+"loginPrompt" = "Please sign in to your account in order to access the Tech Parts.";
+
+
+// MARK: - Project List View Controller
+"projects" = "Projects";
+"deleteProject" = "Delete project";
+"noProjectTitle" = "No project";
+"noProjectDescription" = "It looks like your team does not have any project yet.";
+"deleteProjectDisclaimer" = "Are you sure you want to delete this project ? This action is irreversible.";
+
+// MARK: - Create Project View Controller
+"editProject" = "Edit project";
+"createProject" = "Create a project";
+"projectDescription" = "The official project for the %@ FRC challenge.";
+"allFieldsShouldBeFilled" = "* Note that all the fields should be filled before the form is submitted.";
+"namingConventionsDisclaimer" = "* Note that the names should respect the naming conventions established by the team.";
+
+// MARK: - Project Detail View Controller
+"information" = "Information";
+"assemblies" = "Assemblies";
+
+// MARK: - Project Information View Controller
+"author" = "Author";
+"season" = "Season";
+"robotName" = "Robot";
+"general" = "General";
+"viewRobot" = "View robot";
+"production" = "Production";
+"timestamps" = "Timestamps";
+"totalCost" = "Total cost";
+"challengeName" = "Challenge";
+"assembliesCount" = "Assemblies count";
+
+// MARK: - Assembly List View Controller
+"searchAssembly" = "Search";
+"noAssemblyTitle" = "No assembly";
+"deleteAssembly" = "Delete assembly";
+"noAssemblyDescription" = "It looks like this project does not have any assembly yet.";
+"deleteAssemblyDisclaimer" = "Are you sure you want to delete this assembly ? This action is irreversible.";
+
+// MARK: - Create Assemnbly Table View Controller
+"assemblyCode" = "Code";
+"assemblyName" = "Name";
+"assemblyDueDate" = "Due date";
+"assemblyProgress" = "Progress";
+"createAssembly" = "Create an assembly";
+
+// MARK: - Assembly Detail View Controller
+"name" = "Name";
+"code" = "Code";
+"state" = "State";
+"dueDate" = "Due date";
+"viewAssembly" = "View assembly";
+"subassemblies" = "Subassemblies";
+"subassemblyCount" = "Subassemblies count";

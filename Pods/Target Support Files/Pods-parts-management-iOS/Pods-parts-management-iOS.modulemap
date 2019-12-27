@@ -1,0 +1,6 @@
+framework module Pods_parts_management_iOS {
+  umbrella header "Pods-parts-management-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
