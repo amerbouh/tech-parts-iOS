@@ -82,25 +82,40 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8y-aC-Mcn" userLabel="Sign In Button" customClass="TKRoundedButton">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EV4-fV-uMU" userLabel="Sign In Button Container View">
                                                         <rect key="frame" x="0.0" y="116" width="352" height="50"/>
-                                                        <color key="backgroundColor" name="tertiary"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8y-aC-Mcn" userLabel="Sign In Button" customClass="TKRoundedButton">
+                                                                <rect key="frame" x="0.0" y="0.0" width="352" height="50"/>
+                                                                <color key="backgroundColor" name="tertiary"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                <state key="normal" title="Sign In">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="signInButtonTaped:" destination="qay-09-va5" eventType="touchUpInside" id="w1g-aZ-6bI"/>
+                                                                </connections>
+                                                            </button>
+                                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="la2-No-9bn">
+                                                                <rect key="frame" x="166" y="15" width="20" height="20"/>
+                                                            </activityIndicatorView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="PQO-aA-S5f"/>
+                                                            <constraint firstAttribute="height" constant="50" id="9DX-a4-Wdt"/>
+                                                            <constraint firstItem="la2-No-9bn" firstAttribute="centerX" secondItem="EV4-fV-uMU" secondAttribute="centerX" id="DbB-3K-rNo"/>
+                                                            <constraint firstItem="d8y-aC-Mcn" firstAttribute="top" secondItem="EV4-fV-uMU" secondAttribute="top" id="XHX-I8-8mO"/>
+                                                            <constraint firstItem="la2-No-9bn" firstAttribute="centerY" secondItem="EV4-fV-uMU" secondAttribute="centerY" id="aB3-lW-cEn"/>
+                                                            <constraint firstAttribute="trailing" secondItem="d8y-aC-Mcn" secondAttribute="trailing" id="eqN-KS-isf"/>
+                                                            <constraint firstItem="d8y-aC-Mcn" firstAttribute="leading" secondItem="EV4-fV-uMU" secondAttribute="leading" id="fc3-gk-ocO"/>
+                                                            <constraint firstAttribute="bottom" secondItem="d8y-aC-Mcn" secondAttribute="bottom" id="vVi-eR-isB"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                        <state key="normal" title="Sign In">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="5"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="signInButtonTaped:" destination="qay-09-va5" eventType="touchUpInside" id="w1g-aZ-6bI"/>
-                                                        </connections>
-                                                    </button>
+                                                    </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT7-ck-86C" userLabel="Forgot Password Button">
                                                         <rect key="frame" x="0.0" y="182" width="352" height="30"/>
                                                         <state key="normal" title="Forgot password ?">
@@ -137,6 +152,7 @@
                         <viewLayoutGuide key="safeArea" id="dcg-9v-7B3"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="la2-No-9bn" id="Kcv-4I-CJL"/>
                         <outlet property="emailAddressTextField" destination="ifM-tC-duY" id="NpQ-1H-3YQ"/>
                         <outlet property="forgotPasswordButton" destination="VT7-ck-86C" id="3lU-Wn-Coo"/>
                         <outlet property="loginPromptLabel" destination="QKb-BF-rW5" id="R8j-Rh-F0c"/>

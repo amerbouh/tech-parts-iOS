@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIButton * signInButton;
 @property (weak, nonatomic) IBOutlet UIButton * forgotPasswordButton;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView * activityIndicatorView;
+
 /** A UserAuthenticating conforming object responsible for authenticating users. */
 @property (strong, nonatomic, nonnull) id <UserAuthenticating> userAuthenticator;
 
@@ -42,6 +44,12 @@
 
 /** @brief Configures the translations of the text displayed by the View Controller. */
 - (void)configureLocalizations;
+
+/** @brief Hides the activity indicator view informing the user of an on-going operation.  */
+- (void)hideActivityIndicatorView;
+
+/** @brief Display the activity indicator view informing the user of an on-going operation.  */
+- (void)displayActivityIndicatorView;
 
 /** @brief Navigates the user to the Bottom Navigation View Controller. */
 - (void)navigateToBottomNavigationViewController;
@@ -70,6 +78,7 @@
     // Do any additional setup after loading the view.
     [self disableSignInButton];
     [self configureLocalizations];
+    [self hideActivityIndicatorView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -133,9 +142,32 @@
     [self.forgotPasswordButton setTitle:NSLocalizedString(@"forgotPassword", NULL) forState:UIControlStateNormal];
 }
 
+- (void)hideActivityIndicatorView
+{
+    [self.activityIndicatorView setHidden:YES];
+    [self.activityIndicatorView stopAnimating];
+    [self.signInButton setTitle:NSLocalizedString(@"signIn", NULL) forState:UIControlStateNormal];
+}
+
+- (void)displayActivityIndicatorView
+{
+    [self.activityIndicatorView startAnimating];
+    [self.activityIndicatorView setHidden:NO];
+    [self.signInButton setTitle:NULL forState:UIControlStateNormal];
+}
+
 - (void)navigateToBottomNavigationViewController
 {
+    UIViewController * bottomNavigationViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"BottomNavigationViewController"];
     
+    // Get the application's window.
+    UIWindow * window = UIApplication.sharedApplication.keyWindow;
+    
+    // Set the Sign In View Controller instance as the window's root view controller.
+    [window setRootViewController:bottomNavigationViewController];
+    
+    // Animate the transition.
+    [UIView transitionWithView:window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -151,12 +183,14 @@
 - (IBAction)signInButtonTaped:(UIButton *)sender
 {
     [self disableSignInButton];
+    [self displayActivityIndicatorView];
     
     // Create a weak reference to the View Controller to avoid strong reference cycles.
     __weak SignInViewController * weakSelf = self;
     
     // Attempt to authenticate the user.
     [self.userAuthenticator signInUserWithEmailAddress:self.emailAddressTextField.text password:self.passwordTextField.text completionHandler:^(NSError * _Nullable error) {
+        [weakSelf hideActivityIndicatorView];
         [weakSelf enableSignInButton];
         
         if (error != NULL) {

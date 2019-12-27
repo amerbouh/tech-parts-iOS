@@ -411,8 +411,8 @@
 				BC164FE92352781800C02514 /* Main.storyboard */,
 				BC766E42235D025A002FEDA0 /* Project.storyboard */,
 				BC766E38235CB9DD002FEDA0 /* ProjectDetail.storyboard */,
-				BC1D4D2623B67B7500849E9F /* Authentication.storyboard */,
 				BC5E8EA923B407810043A0E7 /* AssemblyDetail.storyboard */,
+				BC1D4D2623B67B7500849E9F /* Authentication.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";

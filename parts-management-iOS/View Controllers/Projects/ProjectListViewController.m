@@ -73,9 +73,6 @@ static NSString * _showProjectDetailSegueIdentifier = @"ShowProjectDetailVCSegue
     [self setTitle:NSLocalizedString(@"projects", NULL)];
     [self.navigationItem setSearchController:self.searchController];
     [self.navigationController.tabBarItem setImage:[UIImage imageNamed:@"documents"]];
-    
-    UIViewController * signInViewController = [[UIStoryboard storyboardWithName:@"Authentication" bundle:NULL] instantiateInitialViewController];
-    [self presentViewController:signInViewController animated:YES completion:NULL];
 }
 
 #pragma mark - Methods
