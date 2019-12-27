@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="u4B-9Z-kRn">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="KrB-ej-ebg" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="BottomNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KrB-ej-ebg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u3e-ot-SoN">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

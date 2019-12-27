@@ -24,7 +24,7 @@
 "signIn" = "Sign in";
 "password" = "Password";
 "emailAddress" = "Email address";
-"forgotPassword" = "Forgot password";
+"forgotPassword" = "Forgot password ?";
 "loginPrompt" = "Please sign in to your account in order to access the Tech Parts.";
 
 
