@@ -55,7 +55,7 @@
                 return;
             } /* if NSError instance is not NULL */
             
-            // Save the User record on the device's local storag and call the completion handler.
+            // Save the User record on the device's local storage and call the completion handler.
             [weakSelf.userSaver saveUser:user completionHandler:^{ completionHandler(NULL); }];
         }];        
     }];

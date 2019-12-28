@@ -6,6 +6,11 @@
 //  Copyright © 2019 Anas Merbouh. All rights reserved.
 //
 
+#ifndef Progress_h
+#define Progress_h
+
+#include <stdio.h>
+
 typedef enum Progress {
     TO_DO = 0,
     COMPLETED,
@@ -27,6 +32,8 @@ Generates a Progress enum case representing the provided string.
 
 @param progress_string A string  representing the progress the function will generate.
 
-@return A Progress enum case representing the  string passed as an argument to the function.
+@return A Progress enum case representing the string passed as an argument to the function.
 */
 const Progress progress_from_string(const char * progress_string);
+
+#endif /* Progress_h */

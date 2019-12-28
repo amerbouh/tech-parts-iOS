@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "Realm.h"
+#import "UserRole.h"
 #import "JSONObjectPayload.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface User : RLMObject <JSONObjectPayload>
 
+/** A User role enum case representing the role of the user. */
+@property (assign, nonatomic) UserRole role;
+
 /** A string representing the identifier of the user. */
-@property (strong, nonatomic, nonnull) NSString * id;
+@property (strong, nonatomic, nonnull) NSString * identifier;
 
 /** A string representing the first name of the user. */
 @property (strong, nonatomic, nonnull) NSString * firstName;
@@ -26,10 +30,13 @@ NS_ASSUME_NONNULL_BEGIN
 /** A string representing the email address of the user. */
 @property (strong, nonatomic, nonnull) NSString * emailAddress;
 
+/** A string representing the download URL of the user's profile image. */
+@property (strong, nonatomic, nonnull) NSString * profileImageDownloadURL;
+
 /** A date object representing creation date of the user.  */
 @property (strong, nonatomic, nonnull) NSDate * timestamp;
 
-- (instancetype)initWithIdentifier:(NSString *)identifier firstName:(NSString *)firstName lastName:(NSString *)lastName emailAddress:(NSString *)emailAddress timestamp:(NSDate *)timestamp;
+- (instancetype)initWithIdentifier:(NSString * _Nonnull)identifier role:(UserRole)role firstName:(NSString * _Nonnull)firstName lastName:(NSString * _Nonnull)lastName emailAddress:(NSString * _Nonnull)emailAddress profileImageDownloadURL:(NSString * _Nonnull)profileImageDownloadURL timestamp:(NSDate * _Nonnull)timestamp;
 
 @end
 

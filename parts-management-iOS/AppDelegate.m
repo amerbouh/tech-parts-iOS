@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Realm/Realm.h>
 #import <Firebase/Firebase.h>
 #import <FirebaseMessaging/FirebaseMessaging.h>
 #import <UserNotifications/UserNotifications.h>
@@ -39,7 +40,7 @@
     
     // Attempt to register for remote notifications.
     [self attemptRemoteNotificationsRegistration];
-    
+
     return YES;
 }
 

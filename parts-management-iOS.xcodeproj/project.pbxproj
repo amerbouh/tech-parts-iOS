@@ -15,6 +15,7 @@
 		BC10F46023B6973700E0AF09 /* AuthenticationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC10F45F23B6973700E0AF09 /* AuthenticationController.m */; };
 		BC10F46423B69CA300E0AF09 /* UserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = BC10F46323B69CA300E0AF09 /* UserRepository.m */; };
 		BC10F46F23B6ADF800E0AF09 /* SessionPreparationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC10F46E23B6ADF800E0AF09 /* SessionPreparationViewController.m */; };
+		BC10F47323B6C79200E0AF09 /* UserRole.c in Sources */ = {isa = PBXBuildFile; fileRef = BC10F47223B6C79200E0AF09 /* UserRole.c */; };
 		BC164FE22352781800C02514 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC164FE12352781800C02514 /* AppDelegate.m */; };
 		BC164FE52352781800C02514 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC164FE42352781800C02514 /* SceneDelegate.m */; };
 		BC164FE82352781800C02514 /* ProjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC164FE72352781800C02514 /* ProjectListViewController.m */; };
@@ -80,6 +81,8 @@
 		BC10F46623B6A0AD00E0AF09 /* FIRUserSaving.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRUserSaving.h; sourceTree = "<group>"; };
 		BC10F46D23B6ADF800E0AF09 /* SessionPreparationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionPreparationViewController.h; sourceTree = "<group>"; };
 		BC10F46E23B6ADF800E0AF09 /* SessionPreparationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionPreparationViewController.m; sourceTree = "<group>"; };
+		BC10F47123B6C79200E0AF09 /* UserRole.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserRole.h; sourceTree = "<group>"; };
+		BC10F47223B6C79200E0AF09 /* UserRole.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = UserRole.c; sourceTree = "<group>"; };
 		BC164FDD2352781800C02514 /* Tech Parts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tech Parts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC164FE02352781800C02514 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC164FE12352781800C02514 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -334,6 +337,8 @@
 			children = (
 				BC051E1A23B321A300BD05C5 /* Progress.h */,
 				BC051E1F23B3297100BD05C5 /* Progress.c */,
+				BC10F47123B6C79200E0AF09 /* UserRole.h */,
+				BC10F47223B6C79200E0AF09 /* UserRole.c */,
 				BC4E674923AF1A33007E284A /* Reachability.h */,
 				BC4E674A23AF1A33007E284A /* Reachability.m */,
 			);
@@ -631,6 +636,7 @@
 				BCC0EC162354C93A00F5C0B9 /* ProjectTableViewCell.m in Sources */,
 				BCE0CE6E23B07B6900B79DDB /* Assembly.m in Sources */,
 				BC287EE6235CA35C00B57477 /* ProjectRepository.m in Sources */,
+				BC10F47323B6C79200E0AF09 /* UserRole.c in Sources */,
 				BCE0CE6523B075C600B79DDB /* AssemblyListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

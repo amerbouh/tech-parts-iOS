@@ -13,29 +13,33 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithIdentifier:(NSString *)identifier firstName:(NSString *)firstName lastName:(NSString *)lastName emailAddress:(NSString *)emailAddress timestamp:(NSDate *)timestamp
+- (instancetype)initWithIdentifier:(NSString *)identifier role:(UserRole)role firstName:(NSString *)firstName lastName:(NSString *)lastName emailAddress:(NSString *)emailAddress profileImageDownloadURL:(NSString *)profileImageDownloadURL timestamp:(NSDate *)timestamp
 {
     self = [super init];
     if (self) {
-        _id = identifier;
+        _role = role;
         _lastName = lastName;
-        _timestamp = timestamp;
         _firstName = firstName;
+        _timestamp = timestamp;
+        _identifier = identifier;
         _emailAddress = emailAddress;
+        _profileImageDownloadURL = profileImageDownloadURL;
     }
     return self;
 }
 
 + (instancetype)initWithJSON:(NSDictionary<NSString *,id> *)json
 {
+    NSString * role = (NSString *) json[@"role"];
     NSString * identifier = (NSString *) json[@"id"];
     NSString * firstName = (NSString *) json[@"firstName"];
     NSString * lastName = (NSString *) json[@"lastName"];
     NSString * emailAddress = (NSString *) json[@"emailAddress"];
+    NSString * profileImageDownloadURL = (NSString *) json[@"profileImageDownloadURL"];
     FIRTimestamp * creationDate = (FIRTimestamp *) json[@"createdAt"];
     
     // Call the class's initializer.
-    return [[User alloc] initWithIdentifier:identifier firstName:firstName lastName:lastName emailAddress:emailAddress timestamp:creationDate.dateValue];
+    return [[User alloc] initWithIdentifier:identifier role:user_role_from_string([role UTF8String]) firstName:firstName lastName:lastName emailAddress:emailAddress profileImageDownloadURL:profileImageDownloadURL timestamp:creationDate.dateValue];
 }
 
 @end
