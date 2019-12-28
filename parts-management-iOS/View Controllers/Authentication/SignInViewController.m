@@ -14,6 +14,7 @@
 
 @interface SignInViewController ()
 
+@property (weak, nonatomic) IBOutlet UIScrollView * scrollView;
 @property (weak, nonatomic) IBOutlet UILabel * loginPromptLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField * emailAddressTextField;
@@ -26,12 +27,6 @@
 
 /** A UserAuthenticating conforming object responsible for authenticating users. */
 @property (strong, nonatomic, nonnull) id <UserAuthenticating> userAuthenticator;
-
-/** @brief Updates the layout of the view managed by the View Controller in order to accomodate the lack of a keyboard.  */
-- (void)keyboardWillHide;
-
-/** @brief Updates the layout of the view managed by the View Controller in order to accomodate a keyboard.  */
-- (void)keyboardWillShow;
 
 /** @brief Updates the state of the sign in button according to the inputs of the form. */
 - (void)formInputsDidChangeValue;
@@ -50,6 +45,9 @@
 
 /** @brief Display the activity indicator view informing the user of an on-going operation.  */
 - (void)displayActivityIndicatorView;
+
+/** @brief Updates the layout of the view managed by the View Controller according to the keyboard's visibility.  */
+- (void)didReceiveKeyboardNotification:(NSNotification *)notification;
 
 @end
 
@@ -83,8 +81,8 @@
     [super viewWillAppear:animated];
     
     // Do any additional setup before the view appears.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow) name:UIKeyboardWillShowNotification object:NULL];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:NULL];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveKeyboardNotification:) name:UIKeyboardWillShowNotification object:NULL];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveKeyboardNotification:) name:UIKeyboardWillHideNotification object:NULL];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(formInputsDidChangeValue) name:UITextFieldTextDidChangeNotification object:NULL];
 }
 
@@ -98,14 +96,9 @@
 
 #pragma mark - Methods
 
-- (void)keyboardWillHide
+- (BOOL)prefersStatusBarHidden
 {
-    NSLog(@"The keyboard is about to be hidden ...");
-}
-
-- (void)keyboardWillShow
-{
-    NSLog(@"The keyboard is about to be shown ...");
+    return YES;
 }
 
 - (void)formInputsDidChangeValue
@@ -153,14 +146,22 @@
     [self.signInButton setTitle:NULL forState:UIControlStateNormal];
 }
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
-
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskPortrait;
+}
+
+- (void)didReceiveKeyboardNotification:(NSNotification *)notification
+{
+    if ([notification.name isEqualToString:UIKeyboardWillHideNotification]) {
+        self.scrollView.contentInset = UIEdgeInsetsZero;
+        NSLog(@"Handling keyboard will hide notification ...");
+    } /* if the notification's name is UIKeyboardWillHideNotification */
+    else {
+        CGRect keyboardFrame = [[notification.userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+        self.scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardFrame.size.height, 0.0);
+        NSLog(@"Handling keyboard will show notification ...");
+    } /* if the notification's name is not UIKeyboardWillHideNotification */
 }
 
 - (IBAction)signInButtonTaped:(UIButton *)sender

@@ -157,6 +157,7 @@
                         <outlet property="forgotPasswordButton" destination="VT7-ck-86C" id="3lU-Wn-Coo"/>
                         <outlet property="loginPromptLabel" destination="QKb-BF-rW5" id="R8j-Rh-F0c"/>
                         <outlet property="passwordTextField" destination="8cx-si-axg" id="LM0-jM-M5q"/>
+                        <outlet property="scrollView" destination="3rB-s5-cgX" id="wSv-p6-lgH"/>
                         <outlet property="signInButton" destination="d8y-aC-Mcn" id="4lj-z2-ihr"/>
                     </connections>
                 </viewController>
