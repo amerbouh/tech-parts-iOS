@@ -16,12 +16,6 @@
 /** @brief Attaches the View Controller's FIRAuthStateDidChangeListenerHandle instance. */
 - (void)attachAuthStateListener;
 
-/** @brief Navigates the user to the Sign In View Controller. */
-- (void)navigateToSignInViewController;
-
-/** @brief Navigates the user to the Bottom Navigation View Controller. */
-- (void)navigateToBottomNavigationViewController;
-
 @end
 
 @implementation SessionPreparationViewController
@@ -46,6 +40,11 @@
 
 #pragma mark - Methods
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (void)attachAuthStateListener
 {
     __weak SessionPreparationViewController * weakSelf = self;
@@ -53,40 +52,12 @@
     // Attach the auth state listener.
     self.authStateListener = [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth * _Nonnull auth, FIRUser * _Nullable user) {
         if (user != NULL) {
-            [weakSelf navigateToBottomNavigationViewController];
+            [weakSelf.rootNavigator navigateToBottomNavigationViewController];
         } /* if a user is currently logged-in */
         else {
-            [weakSelf navigateToSignInViewController];
+            [weakSelf.rootNavigator navigateToSignInViewControllerUsingRootNavigator:weakSelf.rootNavigator];
         } /* if no user is currently logged-in */
     }];
-}
-
-- (void)navigateToSignInViewController
-{
-    UIViewController * signInViewController = [[UIStoryboard storyboardWithName:@"Authentication" bundle:NULL] instantiateInitialViewController];
-    
-    // Get the application's window.
-    UIWindow * window = UIApplication.sharedApplication.keyWindow;
-    
-    // Set the Sign In View Controller instance as the window's root view controller.
-    [window setRootViewController:signInViewController];
-    
-    // Animate the transition.
-    [UIView transitionWithView:window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
-}
-
-- (void)navigateToBottomNavigationViewController
-{
-    UIViewController * bottomNavigationViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"BottomNavigationViewController"];
-    
-    // Get the application's window.
-    UIWindow * window = UIApplication.sharedApplication.keyWindow;
-    
-    // Set the Sign In View Controller instance as the window's root view controller.
-    [window setRootViewController:bottomNavigationViewController];
-    
-    // Animate the transition.
-    [UIView transitionWithView:window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
 }
 
 @end

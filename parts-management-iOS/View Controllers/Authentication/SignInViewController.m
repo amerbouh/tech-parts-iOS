@@ -51,9 +51,6 @@
 /** @brief Display the activity indicator view informing the user of an on-going operation.  */
 - (void)displayActivityIndicatorView;
 
-/** @brief Navigates the user to the Bottom Navigation View Controller. */
-- (void)navigateToBottomNavigationViewController;
-
 @end
 
 @implementation SignInViewController
@@ -156,20 +153,6 @@
     [self.signInButton setTitle:NULL forState:UIControlStateNormal];
 }
 
-- (void)navigateToBottomNavigationViewController
-{
-    UIViewController * bottomNavigationViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"BottomNavigationViewController"];
-    
-    // Get the application's window.
-    UIWindow * window = UIApplication.sharedApplication.keyWindow;
-    
-    // Set the Sign In View Controller instance as the window's root view controller.
-    [window setRootViewController:bottomNavigationViewController];
-    
-    // Animate the transition.
-    [UIView transitionWithView:window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
-}
-
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
@@ -198,7 +181,7 @@
             return;
         } /* if NSError instance is not NULL */
         
-        [weakSelf navigateToBottomNavigationViewController];
+        [weakSelf.rootNavigator navigateToBottomNavigationViewController];
     }];
 }
 

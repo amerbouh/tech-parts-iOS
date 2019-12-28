@@ -16,6 +16,7 @@
 		BC10F46423B69CA300E0AF09 /* UserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = BC10F46323B69CA300E0AF09 /* UserRepository.m */; };
 		BC10F46F23B6ADF800E0AF09 /* SessionPreparationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC10F46E23B6ADF800E0AF09 /* SessionPreparationViewController.m */; };
 		BC10F47323B6C79200E0AF09 /* UserRole.c in Sources */ = {isa = PBXBuildFile; fileRef = BC10F47223B6C79200E0AF09 /* UserRole.c */; };
+		BC10F47623B6D9B700E0AF09 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC10F47523B6D9B700E0AF09 /* RootNavigationController.m */; };
 		BC164FE22352781800C02514 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC164FE12352781800C02514 /* AppDelegate.m */; };
 		BC164FE52352781800C02514 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC164FE42352781800C02514 /* SceneDelegate.m */; };
 		BC164FE82352781800C02514 /* ProjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC164FE72352781800C02514 /* ProjectListViewController.m */; };
@@ -83,6 +84,9 @@
 		BC10F46E23B6ADF800E0AF09 /* SessionPreparationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionPreparationViewController.m; sourceTree = "<group>"; };
 		BC10F47123B6C79200E0AF09 /* UserRole.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserRole.h; sourceTree = "<group>"; };
 		BC10F47223B6C79200E0AF09 /* UserRole.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = UserRole.c; sourceTree = "<group>"; };
+		BC10F47423B6D9B700E0AF09 /* RootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
+		BC10F47523B6D9B700E0AF09 /* RootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
+		BC10F47723B6DB7500E0AF09 /* RootNavigating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNavigating.h; sourceTree = "<group>"; };
 		BC164FDD2352781800C02514 /* Tech Parts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tech Parts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC164FE02352781800C02514 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC164FE12352781800C02514 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -266,6 +270,8 @@
 			children = (
 				BC10F45E23B6973700E0AF09 /* AuthenticationController.h */,
 				BC10F45F23B6973700E0AF09 /* AuthenticationController.m */,
+				BC10F47423B6D9B700E0AF09 /* RootNavigationController.h */,
+				BC10F47523B6D9B700E0AF09 /* RootNavigationController.m */,
 			);
 			path = "Other Controllers";
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				BCF1EEEC23B11D160031186F /* FIRAssemblyFetching.h */,
 				BC25F75323AE95F600770E16 /* FIRFileDownloading.h */,
 				BC676475235D2F1700500BF6 /* FIRDocumentSerializable.h */,
+				BC10F47723B6DB7500E0AF09 /* RootNavigating.h */,
 				BC10F46123B69C5D00E0AF09 /* UserAuthenticating.h */,
 				BC766E36235CAF33002FEDA0 /* JSONObjectPayload.h */,
 				BC766E37235CB6DF002FEDA0 /* ProjectDataSourceDelegate.h */,
@@ -610,6 +617,7 @@
 				BC4E674723AF155B007E284A /* FileSize.m in Sources */,
 				BC25F75D23AEFAB300770E16 /* DesignViewerViewController.m in Sources */,
 				BC1D4D2523B67AAB00849E9F /* TKRoundedButton.m in Sources */,
+				BC10F47623B6D9B700E0AF09 /* RootNavigationController.m in Sources */,
 				BC164FE22352781800C02514 /* AppDelegate.m in Sources */,
 				BC164FF32352781900C02514 /* main.m in Sources */,
 				BCE0CE6823B076AB00B79DDB /* AssemblyDataSource.m in Sources */,

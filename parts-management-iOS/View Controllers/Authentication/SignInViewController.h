@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RootNavigating.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SignInViewController : UIViewController
+
+@property (strong, nonatomic, nonnull) id <RootNavigating> rootNavigator;
 
 @end
 
