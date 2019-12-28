@@ -169,6 +169,9 @@
     [self disableSignInButton];
     [self displayActivityIndicatorView];
     
+    // Dismiss the keyboard.
+    [self.view endEditing:YES];
+    
     // Create a weak reference to the View Controller to avoid strong reference cycles.
     __weak SignInViewController * weakSelf = self;
     

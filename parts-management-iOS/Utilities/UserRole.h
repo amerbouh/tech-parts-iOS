@@ -19,8 +19,8 @@ typedef enum UserRole {
 /**
  Generates a string representing the provided User Role enum case.
  
- @param user_role A User Role enum case representing the progress the function will generate a string
-                from.
+ @param user_role A User Role enum case representing the role the function will generate a string
+                 from.
  
  @return A string representing the enum case passed as an argument to the function.
  */
