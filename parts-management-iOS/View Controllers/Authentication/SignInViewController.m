@@ -155,12 +155,10 @@
 {
     if ([notification.name isEqualToString:UIKeyboardWillHideNotification]) {
         self.scrollView.contentInset = UIEdgeInsetsZero;
-        NSLog(@"Handling keyboard will hide notification ...");
     } /* if the notification's name is UIKeyboardWillHideNotification */
     else {
         CGRect keyboardFrame = [[notification.userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
         self.scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardFrame.size.height, 0.0);
-        NSLog(@"Handling keyboard will show notification ...");
     } /* if the notification's name is not UIKeyboardWillHideNotification */
 }
 
