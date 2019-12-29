@@ -43,6 +43,7 @@
 		BC676474235D056B00500BF6 /* CreateProjectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC676473235D056B00500BF6 /* CreateProjectTableViewController.m */; };
 		BC67647A235D349B00500BF6 /* UITableView+UITableView_BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC676479235D349B00500BF6 /* UITableView+UITableView_BackgroundView.m */; };
 		BC6905B223AC82950010CFCC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6905B123AC82950010CFCC /* Colors.xcassets */; };
+		BC72370723B85BBD0055A6CE /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72370623B85BBD0055A6CE /* ForgotPasswordViewController.m */; };
 		BC766E39235CB9DD002FEDA0 /* ProjectDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC766E38235CB9DD002FEDA0 /* ProjectDetail.storyboard */; };
 		BC766E3C235CBC86002FEDA0 /* ProjectInformationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC766E3B235CBC86002FEDA0 /* ProjectInformationTableViewController.m */; };
 		BC766E41235CED3A002FEDA0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BC766E40235CED3A002FEDA0 /* User.m */; };
@@ -138,6 +139,8 @@
 		BC676478235D349B00500BF6 /* UITableView+UITableView_BackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+UITableView_BackgroundView.h"; sourceTree = "<group>"; };
 		BC676479235D349B00500BF6 /* UITableView+UITableView_BackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+UITableView_BackgroundView.m"; sourceTree = "<group>"; };
 		BC6905B123AC82950010CFCC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		BC72370523B85BBD0055A6CE /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		BC72370623B85BBD0055A6CE /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		BC766E36235CAF33002FEDA0 /* JSONObjectPayload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONObjectPayload.h; sourceTree = "<group>"; };
 		BC766E37235CB6DF002FEDA0 /* ProjectDataSourceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectDataSourceDelegate.h; sourceTree = "<group>"; };
 		BC766E38235CB9DD002FEDA0 /* ProjectDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectDetail.storyboard; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 			children = (
 				BC10F45A23B68B0F00E0AF09 /* SignInViewController.h */,
 				BC10F45B23B68B0F00E0AF09 /* SignInViewController.m */,
+				BC72370523B85BBD0055A6CE /* ForgotPasswordViewController.h */,
+				BC72370623B85BBD0055A6CE /* ForgotPasswordViewController.m */,
 				BC10F46D23B6ADF800E0AF09 /* SessionPreparationViewController.h */,
 				BC10F46E23B6ADF800E0AF09 /* SessionPreparationViewController.m */,
 			);
@@ -635,6 +640,7 @@
 				BC1D4D2223B6794600849E9F /* TKRoundedView.m in Sources */,
 				BCC0EC112354C8B600F5C0B9 /* Project.m in Sources */,
 				BC10F46423B69CA300E0AF09 /* UserRepository.m in Sources */,
+				BC72370723B85BBD0055A6CE /* ForgotPasswordViewController.m in Sources */,
 				BC4E674B23AF1A33007E284A /* Reachability.m in Sources */,
 				BC766E41235CED3A002FEDA0 /* User.m in Sources */,
 				BC25F75A23AEBA3F00770E16 /* UIViewController+PresentErrorAlertController.m in Sources */,
