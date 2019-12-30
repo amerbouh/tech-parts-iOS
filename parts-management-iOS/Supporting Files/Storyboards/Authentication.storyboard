@@ -218,29 +218,44 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbN-16-NZv" userLabel="Send instructions Button" customClass="TKRoundedButton">
-                                                <rect key="frame" x="30.5" y="169.5" width="353" height="50"/>
-                                                <color key="backgroundColor" name="tertiary"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSB-fJ-N5Y" userLabel="Send Instructions Button Container View">
+                                                <rect key="frame" x="31" y="169.5" width="352" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbN-16-NZv" userLabel="Send instructions Button" customClass="TKRoundedButton">
+                                                        <rect key="frame" x="0.0" y="0.0" width="352" height="50"/>
+                                                        <color key="backgroundColor" name="tertiary"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                        <state key="normal" title="Send instructions">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="sendInstructionsButtonTaped:" destination="bGY-Co-v2k" eventType="touchUpInside" id="8b0-ME-gTF"/>
+                                                        </connections>
+                                                    </button>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="917-XU-iyN">
+                                                        <rect key="frame" x="166" y="15" width="20" height="20"/>
+                                                    </activityIndicatorView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="nWH-c8-59n"/>
+                                                    <constraint firstItem="QbN-16-NZv" firstAttribute="top" secondItem="VSB-fJ-N5Y" secondAttribute="top" id="0oB-JB-voN"/>
+                                                    <constraint firstItem="917-XU-iyN" firstAttribute="centerX" secondItem="VSB-fJ-N5Y" secondAttribute="centerX" id="AGj-rh-bSx"/>
+                                                    <constraint firstAttribute="bottom" secondItem="QbN-16-NZv" secondAttribute="bottom" id="Mf1-hr-Dkv"/>
+                                                    <constraint firstItem="917-XU-iyN" firstAttribute="centerY" secondItem="VSB-fJ-N5Y" secondAttribute="centerY" id="hg2-1I-Li9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="QbN-16-NZv" secondAttribute="trailing" id="m2U-7Q-K3Q"/>
+                                                    <constraint firstAttribute="height" constant="50" id="pqf-wJ-Cge"/>
+                                                    <constraint firstItem="QbN-16-NZv" firstAttribute="leading" secondItem="VSB-fJ-N5Y" secondAttribute="leading" id="sQ0-I9-c5u"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <state key="normal" title="Send instructions">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="sendInstructionsButtonTaped:" destination="bGY-Co-v2k" eventType="touchUpInside" id="8b0-ME-gTF"/>
-                                                </connections>
-                                            </button>
+                                            </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="VSB-fJ-N5Y" firstAttribute="width" secondItem="8KR-3d-Tg5" secondAttribute="width" multiplier="0.997167" id="afM-KC-S7v"/>
                                             <constraint firstItem="4qp-ir-mHG" firstAttribute="width" secondItem="8KR-3d-Tg5" secondAttribute="width" id="c5Y-hZ-dU2"/>
-                                            <constraint firstItem="QbN-16-NZv" firstAttribute="width" secondItem="8KR-3d-Tg5" secondAttribute="width" id="cNa-MT-CkE"/>
                                             <constraint firstItem="8KR-3d-Tg5" firstAttribute="width" secondItem="hbG-Es-VpG" secondAttribute="width" multiplier="0.85" constant="1" id="iXU-ho-Jgn"/>
                                         </constraints>
                                     </stackView>
@@ -273,6 +288,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="917-XU-iyN" id="sOD-vR-p5I"/>
                         <outlet property="descriptionLabel" destination="veU-AY-NI1" id="z28-79-QlO"/>
                         <outlet property="emailAddressTextField" destination="1AZ-79-Dz0" id="uew-8h-b1d"/>
                         <outlet property="sendInstructionsButton" destination="QbN-16-NZv" id="X1E-Xt-DOH"/>
