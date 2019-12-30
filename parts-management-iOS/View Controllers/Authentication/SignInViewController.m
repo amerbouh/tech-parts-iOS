@@ -7,20 +7,21 @@
 //
 
 #import "SignInViewController.h"
+#import "NSString+Empty.h"
+#import "TKRoundedButton.h"
 #import "UserAuthenticating.h"
 #import "AuthenticationController.h"
-#import "NSString+Empty.h"
+#import "ForgotPasswordViewController.h"
 #import "UIViewController+PresentErrorAlertController.h"
 
 @interface SignInViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView * scrollView;
-@property (weak, nonatomic) IBOutlet UILabel * loginPromptLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField * emailAddressTextField;
 @property (weak, nonatomic) IBOutlet UITextField * passwordTextField;
 
-@property (weak, nonatomic) IBOutlet UIButton * signInButton;
+@property (weak, nonatomic) IBOutlet TKRoundedButton * signInButton;
 @property (weak, nonatomic) IBOutlet UIButton * forgotPasswordButton;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView * activityIndicatorView;
@@ -28,14 +29,11 @@
 /** A UserAuthenticating conforming object responsible for authenticating users. */
 @property (strong, nonatomic, nonnull) id <UserAuthenticating> userAuthenticator;
 
+/** @brief Generates a haptic feedback to communicate to the user that the submit button was taped. */
+- (void)generateHapticFeedback;
+
 /** @brief Updates the state of the sign in button according to the inputs of the form. */
 - (void)formInputsDidChangeValue;
-
-/** @brief Enables user interaction on the sign in button.  */
-- (void)enableSignInButton;
-
-/** @brief Disables user interaction on the sign in button.  */
-- (void)disableSignInButton;
 
 /** @brief Configures the translations of the text displayed by the View Controller. */
 - (void)configureLocalizations;
@@ -71,7 +69,7 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
-    [self disableSignInButton];
+    [self.signInButton setEnabled:NO];
     [self configureLocalizations];
     [self hideActivityIndicatorView];
 }
@@ -101,31 +99,24 @@
     return YES;
 }
 
+- (void)generateHapticFeedback
+{
+    UISelectionFeedbackGenerator * feedbackGenerator = [[UISelectionFeedbackGenerator alloc] init];
+    [feedbackGenerator selectionChanged];
+}
+
 - (void)formInputsDidChangeValue
 {
     if ([self.emailAddressTextField.text isEmpty] || [self.passwordTextField.text isEmpty]) {
-        [self disableSignInButton];
+        [self.signInButton setEnabled:NO];
     } /* if form contains empty text field */
     else {
-        [self enableSignInButton];
+        [self.signInButton setEnabled:YES];
     } /* if form does not contain empty text field */
-}
-
-- (void)enableSignInButton
-{
-    [self.signInButton setAlpha:1];
-    [self.signInButton setEnabled:YES];
-}
-
-- (void)disableSignInButton
-{
-    [self.signInButton setAlpha:0.5];
-    [self.signInButton setEnabled:NO];
 }
 
 - (void)configureLocalizations
 {
-    [self.loginPromptLabel setText:NSLocalizedString(@"loginPrompt", NULL)];
     [self.passwordTextField setPlaceholder:NSLocalizedString(@"password", NULL)];
     [self.emailAddressTextField setPlaceholder:NSLocalizedString(@"emailAddress", NULL)];
     [self.signInButton setTitle:NSLocalizedString(@"signIn", NULL) forState:UIControlStateNormal];
@@ -162,9 +153,10 @@
     } /* if the notification's name is not UIKeyboardWillHideNotification */
 }
 
-- (IBAction)signInButtonTaped:(UIButton *)sender
+- (IBAction)signInButtonTaped:(TKRoundedButton *)sender
 {
-    [self disableSignInButton];
+    [sender setEnabled:NO];
+    [self generateHapticFeedback];
     [self displayActivityIndicatorView];
     
     // Dismiss the keyboard.
@@ -176,7 +168,7 @@
     // Attempt to authenticate the user.
     [self.userAuthenticator signInUserWithEmailAddress:self.emailAddressTextField.text password:self.passwordTextField.text completionHandler:^(NSError * _Nullable error) {
         [weakSelf hideActivityIndicatorView];
-        [weakSelf enableSignInButton];
+        [sender setEnabled:YES];
         
         if (error != NULL) {
             [weakSelf presentErrorAlertControllerWithMessage:error.localizedDescription];
@@ -185,6 +177,17 @@
         
         [weakSelf.rootNavigator navigateToBottomNavigationViewController];
     }];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ShowForgotPasswordViewControllerSegue"]) {
+        UINavigationController * navigationController = (UINavigationController *) segue.destinationViewController;
+        ForgotPasswordViewController * forgotPasswordViewController = (ForgotPasswordViewController *) navigationController.visibleViewController;
+        forgotPasswordViewController.userAuthenticator = self.userAuthenticator;
+    }
 }
 
 @end

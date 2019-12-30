@@ -116,7 +116,7 @@
                                                             <color key="titleColor" red="0.9027072787" green="0.68874853849999995" blue="0.37245279549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="rBg-3q-LSJ" kind="presentation" id="oWy-eQ-YAa"/>
+                                                            <segue destination="rBg-3q-LSJ" kind="presentation" identifier="ShowForgotPasswordViewControllerSegue" id="oWy-eQ-YAa"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -177,13 +177,13 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8KR-3d-Tg5" userLabel="Form Header Container Stack View">
                                                 <rect key="frame" x="30.5" y="0.0" width="353" height="87.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJY-2J-9y8" customClass="UILocalizedLabel" customModule="models_management_app_iOS" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJY-2J-9y8">
                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="29"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the email address you used to create your account. We will send you instructions to reset your password." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veU-AY-NI1" customClass="UILocalizedLabel" customModule="models_management_app_iOS" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the email address you used to create your account. We will send you instructions to reset your password." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veU-AY-NI1">
                                                         <rect key="frame" x="0.0" y="37" width="353" height="50.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -194,11 +194,14 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qp-ir-mHG" userLabel="Input Container View" customClass="TKRoundedView">
                                                 <rect key="frame" x="30.5" y="103.5" width="353" height="50"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1AZ-79-Dz0" userLabel="Email address Text Field" customClass="DMMTextField" customModule="models_management_app_iOS" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1AZ-79-Dz0" userLabel="Email address Text Field">
                                                         <rect key="frame" x="12" y="0.0" width="341" height="50"/>
-                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" name="tertiary"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                        <connections>
+                                                            <action selector="emailAddressDidChange:" destination="bGY-Co-v2k" eventType="editingChanged" id="vQF-Ed-Q0f"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.73725490196078436" green="0.73725490196078436" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -231,7 +234,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="signInButtonTaped:" destination="qay-09-va5" eventType="touchUpInside" id="UxT-M2-pZb"/>
+                                                    <action selector="sendInstructionsButtonTaped:" destination="bGY-Co-v2k" eventType="touchUpInside" id="8b0-ME-gTF"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -263,8 +266,18 @@
                         <viewLayoutGuide key="safeArea" id="nbs-qT-aiU"/>
                     </view>
                     <navigationItem key="navigationItem" id="2HN-Kz-qJa">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jSc-KZ-kkw"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jSc-KZ-kkw">
+                            <connections>
+                                <action selector="cancelBarButtonItemTaped:" destination="bGY-Co-v2k" id="rVQ-7c-cAn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="veU-AY-NI1" id="z28-79-QlO"/>
+                        <outlet property="emailAddressTextField" destination="1AZ-79-Dz0" id="uew-8h-b1d"/>
+                        <outlet property="sendInstructionsButton" destination="QbN-16-NZv" id="X1E-Xt-DOH"/>
+                        <outlet property="titleLabel" destination="SJY-2J-9y8" id="B8e-fI-j81"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97Y-v6-Qaa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

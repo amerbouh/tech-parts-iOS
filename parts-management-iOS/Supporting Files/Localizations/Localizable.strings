@@ -27,6 +27,10 @@
 "forgotPassword" = "Forgot password ?";
 "loginPrompt" = "Please sign in to your account in order to access the Tech Parts.";
 
+// MARK: - Forgot Password View Controller
+"forgotPassword" = "Forgot password";
+"sendInstructions" = "Send instructions";
+"passwordResetInstructions" = "Enter the email address you used to create your account. We will send you instructions to reset your password.";
 
 // MARK: - Project List View Controller
 "projects" = "Projects";

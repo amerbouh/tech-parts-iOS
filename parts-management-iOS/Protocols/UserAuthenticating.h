@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol UserAuthenticating <NSObject>
 
+- (void)resetPasswordForUserWithEmailAddress:(NSString *)emailAddress completionHandler:(void (^_Nullable)(NSError * _Nullable error))completionHandler;
 - (void)signInUserWithEmailAddress:(NSString *)emailAddress password:(NSString *)password completionHandler:(void (^_Nullable)(NSError * _Nullable error))completionHandler;
 
 @end

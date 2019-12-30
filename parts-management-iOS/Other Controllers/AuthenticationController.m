@@ -37,6 +37,11 @@
 
 #pragma mark - Methods
 
+- (void)resetPasswordForUserWithEmailAddress:(NSString *)emailAddress completionHandler:(void (^)(NSError * _Nullable))completionHandler
+{
+    [[FIRAuth auth] sendPasswordResetWithEmail:emailAddress completion:completionHandler];
+}
+
 - (void)signInUserWithEmailAddress:(NSString *)emailAddress password:(NSString *)password completionHandler:(void (^)(NSError * _Nullable))completionHandler
 {
     __weak AuthenticationController * weakSelf = self;
