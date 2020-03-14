@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UITextField * passwordTextField;
 
 @property (weak, nonatomic) IBOutlet TKRoundedButton * signInButton;
+@property (weak, nonatomic) IBOutlet TKRoundedButton * signUpButton;
+
 @property (weak, nonatomic) IBOutlet UIButton * forgotPasswordButton;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView * activityIndicatorView;
@@ -120,6 +122,7 @@
     [self.passwordTextField setPlaceholder:NSLocalizedString(@"password", NULL)];
     [self.emailAddressTextField setPlaceholder:NSLocalizedString(@"emailAddress", NULL)];
     [self.signInButton setTitle:NSLocalizedString(@"signIn", NULL) forState:UIControlStateNormal];
+    [self.signUpButton setTitle:NSLocalizedString(@"signUp", NULL) forState:UIControlStateNormal];
     [self.forgotPasswordButton setTitle:NSLocalizedString(@"forgotPassword", NULL) forState:UIControlStateNormal];
 }
 

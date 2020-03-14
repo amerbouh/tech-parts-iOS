@@ -22,6 +22,7 @@
 
 // MARK: - Sign In View Controller
 "signIn" = "Sign in";
+"signUp" = "Sign Up";
 "password" = "Password";
 "emailAddress" = "Email address";
 "forgotPassword" = "Forgot password ?";

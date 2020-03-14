@@ -61,6 +61,8 @@
 		BCE0CE6E23B07B6900B79DDB /* Assembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE0CE6D23B07B6900B79DDB /* Assembly.m */; };
 		BCE2711C23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2711B23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m */; };
 		BCE2712323B30C030009BE53 /* ProgressPickerViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2712223B30C030009BE53 /* ProgressPickerViewDataSource.m */; };
+		BCECEFD523BA797C0005AB7E /* TKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCECEFD423BA797C0005AB7E /* TKButton.m */; };
+		BCECEFD823BAB0E80005AB7E /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCECEFD723BAB0E80005AB7E /* SignUpViewController.m */; };
 		BCF1EEEF23B11E1A0031186F /* AssemblyRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF1EEEE23B11E1A0031186F /* AssemblyRepository.m */; };
 /* End PBXBuildFile section */
 
@@ -174,6 +176,10 @@
 		BCE2712123B30C030009BE53 /* ProgressPickerViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressPickerViewDataSource.h; sourceTree = "<group>"; };
 		BCE2712223B30C030009BE53 /* ProgressPickerViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressPickerViewDataSource.m; sourceTree = "<group>"; };
 		BCE2712423B3122E0009BE53 /* FIRAssemblyCreating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRAssemblyCreating.h; sourceTree = "<group>"; };
+		BCECEFD323BA797C0005AB7E /* TKButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKButton.h; sourceTree = "<group>"; };
+		BCECEFD423BA797C0005AB7E /* TKButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKButton.m; sourceTree = "<group>"; };
+		BCECEFD623BAB0E80005AB7E /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		BCECEFD723BAB0E80005AB7E /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		BCF1EEEC23B11D160031186F /* FIRAssemblyFetching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRAssemblyFetching.h; sourceTree = "<group>"; };
 		BCF1EEED23B11E1A0031186F /* AssemblyRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssemblyRepository.h; sourceTree = "<group>"; };
 		BCF1EEEE23B11E1A0031186F /* AssemblyRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssemblyRepository.m; sourceTree = "<group>"; };
@@ -262,6 +268,8 @@
 			children = (
 				BC10F45A23B68B0F00E0AF09 /* SignInViewController.h */,
 				BC10F45B23B68B0F00E0AF09 /* SignInViewController.m */,
+				BCECEFD623BAB0E80005AB7E /* SignUpViewController.h */,
+				BCECEFD723BAB0E80005AB7E /* SignUpViewController.m */,
 				BC72370523B85BBD0055A6CE /* ForgotPasswordViewController.h */,
 				BC72370623B85BBD0055A6CE /* ForgotPasswordViewController.m */,
 				BC10F46D23B6ADF800E0AF09 /* SessionPreparationViewController.h */,
@@ -461,6 +469,8 @@
 		BCC0EC132354C8F900F5C0B9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BCECEFD323BA797C0005AB7E /* TKButton.h */,
+				BCECEFD423BA797C0005AB7E /* TKButton.m */,
 				BC1E948D235905A800E6C329 /* MessageView.h */,
 				BC1E948E235905A800E6C329 /* MessageView.m */,
 				BC1D4D2023B6794600849E9F /* TKRoundedView.h */,
@@ -638,6 +648,7 @@
 				BC10F46023B6973700E0AF09 /* AuthenticationController.m in Sources */,
 				BC766E3C235CBC86002FEDA0 /* ProjectInformationTableViewController.m in Sources */,
 				BC1D4D2223B6794600849E9F /* TKRoundedView.m in Sources */,
+				BCECEFD823BAB0E80005AB7E /* SignUpViewController.m in Sources */,
 				BCC0EC112354C8B600F5C0B9 /* Project.m in Sources */,
 				BC10F46423B69CA300E0AF09 /* UserRepository.m in Sources */,
 				BC72370723B85BBD0055A6CE /* ForgotPasswordViewController.m in Sources */,
@@ -645,6 +656,7 @@
 				BC766E41235CED3A002FEDA0 /* User.m in Sources */,
 				BC25F75A23AEBA3F00770E16 /* UIViewController+PresentErrorAlertController.m in Sources */,
 				BC10F46F23B6ADF800E0AF09 /* SessionPreparationViewController.m in Sources */,
+				BCECEFD523BA797C0005AB7E /* TKButton.m in Sources */,
 				BC5E8EB023B447640043A0E7 /* AssemblyInformationTableViewController.m in Sources */,
 				BC164FE52352781800C02514 /* SceneDelegate.m in Sources */,
 				BCC0EC162354C93A00F5C0B9 /* ProjectTableViewCell.m in Sources */,
