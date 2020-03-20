@@ -13,6 +13,7 @@
 
 @interface UserRepository ()
 
+@property (nonnull, nonatomic) RLMRealm * realm;
 @property (nonnull, nonatomic) FIRFirestore * database;
 
 @end
@@ -23,11 +24,12 @@ static NSString * USERS_COLLECTION_NAME = @"users";
 
 #pragma mark - Initialization
 
-- (instancetype)init
+- (instancetype)initWithRealm:(RLMRealm *)realm firestore:(FIRFirestore *)firestore
 {
     self = [super init];
     if (self) {
-        _database = [FIRFirestore firestore];
+        _realm    = realm;
+        _database = firestore;
     }
     return self;
 }
@@ -36,11 +38,27 @@ static NSString * USERS_COLLECTION_NAME = @"users";
 
 - (void)saveUser:(User *)user completionHandler:(void (^)(void))completionHandler
 {
-    RLMRealm * realm = [RLMRealm defaultRealm];
+    __weak UserRepository * weakSelf = self;
     
     // Save the User instance on the device's local storage.
-    [realm transactionWithBlock:^{
-        [realm addObject:user];
+    [self.realm transactionWithBlock:^{
+        [weakSelf.realm addObject:user];
+        
+        // Call the completion handler.
+        completionHandler();
+    }];
+}
+
+- (void)deleteUserWithIdentifier:(NSString *)identifier completionHandler:(void (^)(void))completionHandler
+{
+    User * user = [User objectForPrimaryKey:identifier];
+    
+    // Get a weak reference to the current instance.
+    __weak UserRepository * weakSelf = self;
+    
+    // Remove the appropriate User object from the device's local storage.
+    [self.realm transactionWithBlock:^{
+        [weakSelf.realm deleteObject:user];
         
         // Call the completion handler.
         completionHandler();

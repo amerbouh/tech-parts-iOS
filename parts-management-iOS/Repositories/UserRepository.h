@@ -8,13 +8,23 @@
 
 #import <Foundation/Foundation.h>
 #import "FIRUserSaving.h"
+#import "FIRUserDeleting.h"
 #import "FIRUserFetching.h"
+
+@class RLMRealm;
+@class FIRFirestore;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class User;
+@interface UserRepository : NSObject <FIRUserSaving, FIRUserDeleting, FIRUserFetching>
 
-@interface UserRepository : NSObject <FIRUserSaving, FIRUserFetching>
+/**
+ @brief Initializes and returns an instance of the User Repository with the provided parameters.
+ 
+ @param realm A RLMRealm instance representing the object used to read from the device's local storage.
+ @param firestore A FIRFirestore instance representing the object used to interact with the application's database.
+ */
+- (instancetype)initWithRealm:(RLMRealm * _Nonnull)realm firestore:(FIRFirestore * _Nonnull)firestore;
 
 @end
 

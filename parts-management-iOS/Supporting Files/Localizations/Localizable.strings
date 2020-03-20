@@ -85,3 +85,8 @@
 "viewAssembly" = "View assembly";
 "subassemblies" = "Subassemblies";
 "subassemblyCount" = "Subassemblies count";
+
+// MARK: - Settings View Controller
+"signOut" = "Sign Out";
+"settings" = "Settings";
+"signOutConfirmationMessage" = "Are you sure you want to sign out from your account ?";

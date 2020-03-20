@@ -34,6 +34,13 @@
 		BC25F75F23AEFB9800770E16 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = BC25F75E23AEFB9700770E16 /* art.scnassets */; };
 		BC25F76123AEFBD100770E16 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC25F76023AEFBD100770E16 /* SceneKit.framework */; };
 		BC287EE6235CA35C00B57477 /* ProjectRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = BC287EE5235CA35C00B57477 /* ProjectRepository.m */; };
+		BC28F6D5241D7AD200636F97 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6D4241D7AD200636F97 /* SettingsTableViewController.m */; };
+		BC28F6D7241D7AE300636F97 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC28F6D6241D7AE300636F97 /* Setting.storyboard */; };
+		BC28F6DB241D7D5700636F97 /* BottomNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6DA241D7D5700636F97 /* BottomNavigationViewController.m */; };
+		BC28F6DE241D84F600636F97 /* TKImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6DD241D84F600636F97 /* TKImageView.m */; };
+		BC28F6E2241DC96D00636F97 /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6E1241DC96D00636F97 /* SessionController.m */; };
+		BC28F6E9241DEF4100636F97 /* TKViewControllerFactoryImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6E8241DEF4100636F97 /* TKViewControllerFactoryImpl.m */; };
+		BC28F6EE241DF3A900636F97 /* AppDependencyContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6ED241DF3A900636F97 /* AppDependencyContainer.m */; };
 		BC4E674723AF155B007E284A /* FileSize.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E674623AF155B007E284A /* FileSize.m */; };
 		BC4E674B23AF1A33007E284A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E674A23AF1A33007E284A /* Reachability.m */; };
 		BC4E675423AF4408007E284A /* Pluralization.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = BC4E675323AF4408007E284A /* Pluralization.stringsdict */; };
@@ -123,6 +130,22 @@
 		BC25F76023AEFBD100770E16 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		BC287EE4235CA35C00B57477 /* ProjectRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectRepository.h; sourceTree = "<group>"; };
 		BC287EE5235CA35C00B57477 /* ProjectRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectRepository.m; sourceTree = "<group>"; };
+		BC28F6D3241D7AD200636F97 /* SettingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		BC28F6D4241D7AD200636F97 /* SettingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		BC28F6D6241D7AE300636F97 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		BC28F6D9241D7D5700636F97 /* BottomNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BottomNavigationViewController.h; sourceTree = "<group>"; };
+		BC28F6DA241D7D5700636F97 /* BottomNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BottomNavigationViewController.m; sourceTree = "<group>"; };
+		BC28F6DC241D84F600636F97 /* TKImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImageView.h; sourceTree = "<group>"; };
+		BC28F6DD241D84F600636F97 /* TKImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImageView.m; sourceTree = "<group>"; };
+		BC28F6DF241DC84F00636F97 /* SessionManaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionManaging.h; sourceTree = "<group>"; };
+		BC28F6E0241DC96D00636F97 /* SessionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionController.h; sourceTree = "<group>"; };
+		BC28F6E1241DC96D00636F97 /* SessionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionController.m; sourceTree = "<group>"; };
+		BC28F6E6241DCE8700636F97 /* FIRUserDeleting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRUserDeleting.h; sourceTree = "<group>"; };
+		BC28F6E7241DEF4100636F97 /* TKViewControllerFactoryImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKViewControllerFactoryImpl.h; sourceTree = "<group>"; };
+		BC28F6E8241DEF4100636F97 /* TKViewControllerFactoryImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKViewControllerFactoryImpl.m; sourceTree = "<group>"; };
+		BC28F6EA241DF04A00636F97 /* TKViewControllerFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKViewControllerFactory.h; sourceTree = "<group>"; };
+		BC28F6EC241DF3A900636F97 /* AppDependencyContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDependencyContainer.h; sourceTree = "<group>"; };
+		BC28F6ED241DF3A900636F97 /* AppDependencyContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDependencyContainer.m; sourceTree = "<group>"; };
 		BC4E674523AF155B007E284A /* FileSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSize.h; sourceTree = "<group>"; };
 		BC4E674623AF155B007E284A /* FileSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSize.m; sourceTree = "<group>"; };
 		BC4E674923AF1A33007E284A /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -281,6 +304,8 @@
 		BC10F45D23B6972600E0AF09 /* Other Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC28F6E0241DC96D00636F97 /* SessionController.h */,
+				BC28F6E1241DC96D00636F97 /* SessionController.m */,
 				BC10F45E23B6973700E0AF09 /* AuthenticationController.h */,
 				BC10F45F23B6973700E0AF09 /* AuthenticationController.m */,
 				BC10F47423B6D9B700E0AF09 /* RootNavigationController.h */,
@@ -315,10 +340,13 @@
 				BC164FE12352781800C02514 /* AppDelegate.m */,
 				BC164FE32352781800C02514 /* SceneDelegate.h */,
 				BC164FE42352781800C02514 /* SceneDelegate.m */,
+				BC28F6EC241DF3A900636F97 /* AppDependencyContainer.h */,
+				BC28F6ED241DF3A900636F97 /* AppDependencyContainer.m */,
 				BCC0EC122354C8BB00F5C0B9 /* Models */,
 				BCC0EC132354C8F900F5C0B9 /* Views */,
 				BCC0EC062354C69C00F5C0B9 /* View Controllers */,
 				BC10F45D23B6972600E0AF09 /* Other Controllers */,
+				BC28F6EB241DF27B00636F97 /* Factories */,
 				BC287EE3235CA34100B57477 /* Repositories */,
 				BCC0EC172354CD0C00F5C0B9 /* Data sources */,
 				BC4E674823AF1A14007E284A /* Utilities */,
@@ -351,6 +379,33 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		BC28F6D2241D7A8000636F97 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BC28F6D3241D7AD200636F97 /* SettingsTableViewController.h */,
+				BC28F6D4241D7AD200636F97 /* SettingsTableViewController.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		BC28F6D8241D7D2E00636F97 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BC28F6D9241D7D5700636F97 /* BottomNavigationViewController.h */,
+				BC28F6DA241D7D5700636F97 /* BottomNavigationViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BC28F6EB241DF27B00636F97 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				BC28F6E7241DEF4100636F97 /* TKViewControllerFactoryImpl.h */,
+				BC28F6E8241DEF4100636F97 /* TKViewControllerFactoryImpl.m */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		BC4E674823AF1A14007E284A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				BC10F46623B6A0AD00E0AF09 /* FIRUserSaving.h */,
+				BC28F6E6241DCE8700636F97 /* FIRUserDeleting.h */,
 				BC10F46523B69CB700E0AF09 /* FIRUserFetching.h */,
 				BC676476235D326500500BF6 /* FIRProjectCreating.h */,
 				BC25F75223AE865F00770E16 /* FIRProjectDeleting.h */,
@@ -390,7 +446,9 @@
 				BCF1EEEC23B11D160031186F /* FIRAssemblyFetching.h */,
 				BC25F75323AE95F600770E16 /* FIRFileDownloading.h */,
 				BC676475235D2F1700500BF6 /* FIRDocumentSerializable.h */,
+				BC28F6EA241DF04A00636F97 /* TKViewControllerFactory.h */,
 				BC10F47723B6DB7500E0AF09 /* RootNavigating.h */,
+				BC28F6DF241DC84F00636F97 /* SessionManaging.h */,
 				BC10F46123B69C5D00E0AF09 /* UserAuthenticating.h */,
 				BC766E36235CAF33002FEDA0 /* JSONObjectPayload.h */,
 				BC766E37235CB6DF002FEDA0 /* ProjectDataSourceDelegate.h */,
@@ -411,7 +469,9 @@
 		BCC0EC062354C69C00F5C0B9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC28F6D8241D7D2E00636F97 /* Main */,
 				BC10F45523B68ABC00E0AF09 /* Projects */,
+				BC28F6D2241D7A8000636F97 /* Settings */,
 				BC10F45723B68AE100E0AF09 /* Assemblies */,
 				BC10F45923B68AFD00E0AF09 /* Authentication */,
 				BC25F75B23AEFAB300770E16 /* DesignViewerViewController.h */,
@@ -435,6 +495,7 @@
 			children = (
 				BC164FE92352781800C02514 /* Main.storyboard */,
 				BC766E42235D025A002FEDA0 /* Project.storyboard */,
+				BC28F6D6241D7AE300636F97 /* Setting.storyboard */,
 				BC766E38235CB9DD002FEDA0 /* ProjectDetail.storyboard */,
 				BC5E8EA923B407810043A0E7 /* AssemblyDetail.storyboard */,
 				BC1D4D2623B67B7500849E9F /* Authentication.storyboard */,
@@ -473,6 +534,8 @@
 				BCECEFD423BA797C0005AB7E /* TKButton.m */,
 				BC1E948D235905A800E6C329 /* MessageView.h */,
 				BC1E948E235905A800E6C329 /* MessageView.m */,
+				BC28F6DC241D84F600636F97 /* TKImageView.h */,
+				BC28F6DD241D84F600636F97 /* TKImageView.m */,
 				BC1D4D2023B6794600849E9F /* TKRoundedView.h */,
 				BC1D4D2123B6794600849E9F /* TKRoundedView.m */,
 				BC1D4D2323B67AAB00849E9F /* TKRoundedButton.h */,
@@ -570,6 +633,7 @@
 				BC8EB5CF235CA10D00BCE201 /* GoogleService-Info.plist in Resources */,
 				BC4E675423AF4408007E284A /* Pluralization.stringsdict in Resources */,
 				BC5E8EAA23B407810043A0E7 /* AssemblyDetail.storyboard in Resources */,
+				BC28F6D7241D7AE300636F97 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +689,7 @@
 				BC67647A235D349B00500BF6 /* UITableView+UITableView_BackgroundView.m in Sources */,
 				BC1E948F235905A800E6C329 /* MessageView.m in Sources */,
 				BCF1EEEF23B11E1A0031186F /* AssemblyRepository.m in Sources */,
+				BC28F6E9241DEF4100636F97 /* TKViewControllerFactoryImpl.m in Sources */,
 				BCE0CE6B23B0771F00B79DDB /* AssemblyTableViewCell.m in Sources */,
 				BC164FE82352781800C02514 /* ProjectListViewController.m in Sources */,
 				BC051E2023B3297100BD05C5 /* Progress.c in Sources */,
@@ -648,6 +713,7 @@
 				BC10F46023B6973700E0AF09 /* AuthenticationController.m in Sources */,
 				BC766E3C235CBC86002FEDA0 /* ProjectInformationTableViewController.m in Sources */,
 				BC1D4D2223B6794600849E9F /* TKRoundedView.m in Sources */,
+				BC28F6E2241DC96D00636F97 /* SessionController.m in Sources */,
 				BCECEFD823BAB0E80005AB7E /* SignUpViewController.m in Sources */,
 				BCC0EC112354C8B600F5C0B9 /* Project.m in Sources */,
 				BC10F46423B69CA300E0AF09 /* UserRepository.m in Sources */,
@@ -658,10 +724,14 @@
 				BC10F46F23B6ADF800E0AF09 /* SessionPreparationViewController.m in Sources */,
 				BCECEFD523BA797C0005AB7E /* TKButton.m in Sources */,
 				BC5E8EB023B447640043A0E7 /* AssemblyInformationTableViewController.m in Sources */,
+				BC28F6EE241DF3A900636F97 /* AppDependencyContainer.m in Sources */,
 				BC164FE52352781800C02514 /* SceneDelegate.m in Sources */,
 				BCC0EC162354C93A00F5C0B9 /* ProjectTableViewCell.m in Sources */,
 				BCE0CE6E23B07B6900B79DDB /* Assembly.m in Sources */,
+				BC28F6DE241D84F600636F97 /* TKImageView.m in Sources */,
 				BC287EE6235CA35C00B57477 /* ProjectRepository.m in Sources */,
+				BC28F6DB241D7D5700636F97 /* BottomNavigationViewController.m in Sources */,
+				BC28F6D5241D7AD200636F97 /* SettingsTableViewController.m in Sources */,
 				BC10F47323B6C79200E0AF09 /* UserRole.c in Sources */,
 				BCE0CE6523B075C600B79DDB /* AssemblyListViewController.m in Sources */,
 			);

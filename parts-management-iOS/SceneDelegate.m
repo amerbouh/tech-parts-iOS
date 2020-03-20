@@ -1,5 +1,7 @@
 #import "SceneDelegate.h"
-#import "RootNavigationController.h"
+#import <Realm/Realm.h>
+#import <FirebaseFirestore/FirebaseFirestore.h>
+#import "AppDependencyContainer.h"
 #import "SessionPreparationViewController.h"
 
 @interface SceneDelegate ()
@@ -14,11 +16,21 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-    [[RootNavigationController getDefault] setApplicationWindow:self.window];
+    RLMRealm * realm = [RLMRealm defaultRealm];
+    FIRFirestore * firestore = [FIRFirestore firestore];
+    
+    // Make sure that the Realm instance was successfully created.
+    if (!realm) {
+        NSLog(@"A Realm instance could not be obtained. The application might not work correctly.");
+        return;
+    }
+    
+    // Create an instance of the App Dependency Container.
+    AppDependencyContainer * appDependencyContainer = [[AppDependencyContainer alloc] initWithRealm:realm firestore:firestore];
     
     // Initialize the SessionPreparationViewController root navigator instance.
     SessionPreparationViewController * sessionPreparationViewController = (SessionPreparationViewController *) self.window.rootViewController;
-    [sessionPreparationViewController setRootNavigator:[RootNavigationController getDefault]];
+    [sessionPreparationViewController setRootNavigator:[appDependencyContainer makeRootNavigationHandler]];
 }
 
 

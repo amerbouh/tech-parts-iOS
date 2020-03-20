@@ -42,4 +42,11 @@
     return [[User alloc] initWithIdentifier:identifier role:user_role_from_string([role UTF8String]) firstName:firstName lastName:lastName emailAddress:emailAddress profileImageDownloadURL:profileImageDownloadURL timestamp:creationDate.dateValue];
 }
 
+#pragma mark - Methods
+
++ (NSString *)primaryKey
+{
+    return @"identifier";
+}
+
 @end

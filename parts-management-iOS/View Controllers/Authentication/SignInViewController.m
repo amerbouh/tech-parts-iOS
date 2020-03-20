@@ -9,7 +9,6 @@
 #import "SignInViewController.h"
 #import "NSString+Empty.h"
 #import "TKRoundedButton.h"
-#import "UserAuthenticating.h"
 #import "AuthenticationController.h"
 #import "ForgotPasswordViewController.h"
 #import "UIViewController+PresentErrorAlertController.h"
@@ -27,9 +26,6 @@
 @property (weak, nonatomic) IBOutlet UIButton * forgotPasswordButton;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView * activityIndicatorView;
-
-/** A UserAuthenticating conforming object responsible for authenticating users. */
-@property (strong, nonatomic, nonnull) id <UserAuthenticating> userAuthenticator;
 
 /** @brief Generates a haptic feedback to communicate to the user that the submit button was taped. */
 - (void)generateHapticFeedback;
@@ -52,17 +48,6 @@
 @end
 
 @implementation SignInViewController
-
-#pragma mark - Initialization
-
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        _userAuthenticator = [AuthenticationController new];
-    }
-    return self;
-}
 
 #pragma mark - View's lifecycle
 
@@ -169,7 +154,7 @@
     __weak SignInViewController * weakSelf = self;
     
     // Attempt to authenticate the user.
-    [self.userAuthenticator signInUserWithEmailAddress:self.emailAddressTextField.text password:self.passwordTextField.text completionHandler:^(NSError * _Nullable error) {
+    [self.userAuthenticationHandler signInUserWithEmailAddress:self.emailAddressTextField.text password:self.passwordTextField.text completionHandler:^(NSError * _Nullable error) {
         [weakSelf hideActivityIndicatorView];
         [sender setEnabled:YES];
         
@@ -178,7 +163,7 @@
             return;
         } /* if NSError instance is not NULL */
         
-        [weakSelf.rootNavigator navigateToBottomNavigationViewController];
+        [weakSelf.rootNavigationHandler navigateToBottomNavigationViewController];
     }];
 }
 
@@ -189,7 +174,7 @@
     if ([segue.identifier isEqualToString:@"ShowForgotPasswordViewControllerSegue"]) {
         UINavigationController * navigationController = (UINavigationController *) segue.destinationViewController;
         ForgotPasswordViewController * forgotPasswordViewController = (ForgotPasswordViewController *) navigationController.visibleViewController;
-        forgotPasswordViewController.userAuthenticator = self.userAuthenticator;
+        forgotPasswordViewController.userAuthenticator = self.userAuthenticationHandler;
     }
 }
 

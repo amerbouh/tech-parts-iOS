@@ -8,13 +8,11 @@
 
 #import "AuthenticationController.h"
 #import "FirebaseAuth.h"
-#import "UserRepository.h"
-#import "FIRUserFetching.h"
 
 @interface AuthenticationController ()
 
-@property (strong, nonatomic, nonnull) id <FIRUserSaving> userSaver;
-@property (strong, nonatomic, nonnull) id <FIRUserFetching> userFetcher;
+@property (nonatomic, nonnull) id <FIRUserSaving> userSaver;
+@property (nonatomic, nonnull) id <FIRUserFetching> userFetcher;
 
 @end
 
@@ -22,15 +20,12 @@
 
 #pragma mark - Initialization
 
-- (instancetype)init
+- (instancetype)initWithUserSavingHandler:(id<FIRUserSaving>)userSavingHandler userFetchingHandler:(id<FIRUserFetching>)userFetchingHandler
 {
     self = [super init];
     if (self) {
-        UserRepository * userRepository = [UserRepository new];
-        
-        // Initialize the instance variables.
-        _userSaver = userRepository;
-        _userFetcher = userRepository;
+        _userSaver = userSavingHandler;
+        _userFetcher = userFetchingHandler;
     }
     return self;
 }

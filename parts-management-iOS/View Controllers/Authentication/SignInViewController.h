@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "RootNavigating.h"
+#import "UserAuthenticating.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SignInViewController : UIViewController
 
-@property (strong, nonatomic, nonnull) id <RootNavigating> rootNavigator;
+/** A RootNavigating conforming object responsible for navigation accross the application. */
+@property (strong, nonatomic, nonnull) id <RootNavigating> rootNavigationHandler;
+
+/** A UserAuthenticating conforming object responsible for authenticating users. */
+@property (strong, nonatomic, nonnull) id <UserAuthenticating> userAuthenticationHandler;
 
 @end
 
