@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param firestore A FIRFirestore instance representing the object used to interact with the application's database.
  
 */
-- (instancetype)initWithRealm:(RLMRealm * _Nonnull)realm window:(UIWindow * _Nonnull)window firestore:(FIRFirestore * _Nonnull)firestore;
+- (instancetype)initWithRealm:(RLMRealm * _Nonnull)realm firestore:(FIRFirestore * _Nonnull)firestore window:(UIWindow *)window;
 
 @end
 

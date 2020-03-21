@@ -25,7 +25,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithRealm:(RLMRealm *)realm window:(UIWindow *)window firestore:(FIRFirestore *)firestore
+- (instancetype)initWithRealm:(RLMRealm *)realm firestore:(FIRFirestore *)firestore window:(nonnull UIWindow *)window
 {
     self = [super init];
     if (self) {
