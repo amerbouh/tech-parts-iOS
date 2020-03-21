@@ -16,6 +16,7 @@
 @interface AppDependencyContainer ()
 
 @property (nonatomic, nonnull) RLMRealm * realm;
+@property (nonatomic, nonnull) UIWindow * window;
 @property (nonatomic, nonnull) FIRFirestore * firestore;
 
 @end
@@ -24,11 +25,12 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithRealm:(RLMRealm *)realm firestore:(FIRFirestore *)firestore
+- (instancetype)initWithRealm:(RLMRealm *)realm firestore:(FIRFirestore *)firestore window:(nonnull UIWindow *)window
 {
     self = [super init];
     if (self) {
         _realm = realm;
+        _window = window;
         _firestore = firestore;
     }
     return self;
@@ -46,12 +48,9 @@
 
 - (id<RootNavigating>)makeRootNavigationHandler
 {
-    UIWindow * applicationWindow = [[UIApplication sharedApplication] keyWindow];
-    
-    // Return a newly created instance of the RootNavigationController class.
     return [[RootNavigationController alloc] initWithAppDependencyContainer:self
                                                       viewControllerFactory:[TKViewControllerFactoryImpl new]
-                                                                     window:applicationWindow];
+                                                                     window:self.window];
 }
 
 - (id<UserAuthenticating>)makeUserAuthenticationHandler

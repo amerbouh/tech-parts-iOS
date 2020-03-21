@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "RootNavigating.h"
-#import "SessionController.h"
+#import "SessionManaging.h"
 #import "UserAuthenticating.h"
 
 @class RLMRealm;
+@class UIWindow;
 @class FIRFirestore;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -28,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param realm A RLMRealm instance representing the object used to read from the device's local storage.
  @param firestore A FIRFirestore instance representing the object used to interact with the application's database.
 */
-- (instancetype)initWithRealm:(RLMRealm * _Nonnull)realm firestore:(FIRFirestore * _Nonnull)firestore;
+- (instancetype)initWithRealm:(RLMRealm * _Nonnull)realm firestore:(FIRFirestore * _Nonnull)firestore window:(UIWindow *)window;
 
 @end
 
