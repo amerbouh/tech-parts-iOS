@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SessionController : NSObject <SessionManaging>
 
+/**
+ @brief Initializes and returns an instance  of the Session Controller with the provided parameters.
+
+ @param userDeletionHandler A FIRUserDeleting conforming object used to delet e user profiles from the device's local storage
+*/
 - (instancetype)initWithUserDeletionHandler:(id <FIRUserDeleting>)userDeletionHandler;
 
 @end

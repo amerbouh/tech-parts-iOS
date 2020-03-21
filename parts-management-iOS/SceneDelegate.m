@@ -26,7 +26,7 @@
     }
     
     // Create an instance of the App Dependency Container.
-    AppDependencyContainer * appDependencyContainer = [[AppDependencyContainer alloc] initWithRealm:realm firestore:firestore];
+    AppDependencyContainer * appDependencyContainer = [[AppDependencyContainer alloc] initWithRealm:realm window:self.window firestore:firestore];
     
     // Initialize the SessionPreparationViewController root navigator instance.
     SessionPreparationViewController * sessionPreparationViewController = (SessionPreparationViewController *) self.window.rootViewController;

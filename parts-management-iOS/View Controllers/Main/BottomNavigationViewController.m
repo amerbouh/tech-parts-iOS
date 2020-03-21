@@ -16,26 +16,28 @@
 
 @implementation BottomNavigationViewController
 
-#pragma mark - View's lifecycle
+#pragma mark - Initialization
 
-- (void)viewDidLoad
+- (instancetype)initWithProjectListViewController:(UINavigationController *)projectListViewController settingsViewController:(UINavigationController *)settingsViewController
 {
-    [super viewDidLoad];
-    
-    // Do any additional setup after loading the view.
-    [self configureTabBarItems];
+    self = [super initWithNibName:NULL bundle:NULL];
+    if (self) {
+        [self setViewControllers:@[projectListViewController, settingsViewController]];
+        [self configureTabBarItems];
+    }
+    return self;
 }
 
 #pragma mark - Methods
 
 - (void)configureTabBarItems
 {
-    UINavigationController * projectListNavigationController = (UINavigationController *) self.viewControllers[0];
-    UINavigationController * settingsNavigationController = (UINavigationController *) self.viewControllers[1];
+    UINavigationController * const projectListNavigationController = (UINavigationController *) self.viewControllers[0];
+    UINavigationController * const settingsNavigationController = (UINavigationController *) self.viewControllers[1];
     
     // Get an instance of the view controllers displayed by the tab bar's navigation controllers.
-    UIViewController * projectListViewController = projectListNavigationController.viewControllers[0];
-    UIViewController * settingsViewController = settingsNavigationController.viewControllers[0];
+    UIViewController * const projectListViewController = projectListNavigationController.viewControllers[0];
+    UIViewController * const settingsViewController = settingsNavigationController.viewControllers[0];
     
     // Configure the view controllers' tab bar items.
     [projectListViewController setTitle:NSLocalizedString(@"projects", NULL)];

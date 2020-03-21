@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SettingsTableViewController : UITableViewController
 
-@property (strong, nonatomic, nonnull) id <RootNavigating> rootNavigationHandler;
 @property (strong, nonatomic, nonnull) id <SessionManaging> sessionManager;
+@property (strong, nonatomic, nonnull) id <RootNavigating> rootNavigationHandler;
 
 @end
 
