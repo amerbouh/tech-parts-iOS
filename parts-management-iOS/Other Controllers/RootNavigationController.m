@@ -36,7 +36,12 @@
 
 - (void)navigateToBottomNavigationViewController
 {
-    UIViewController * bottomNavigationViewController = (UIViewController *) [self.viewControllerFactory makeBottomNavigationViewController];
+    UINavigationController * const projectListViewController = [self.viewControllerFactory makeProjectListViewController];
+    UINavigationController * const settingsViewController = [self.viewControllerFactory makeSettingsViewControllerWithSessionManager:[self.appDependencyContainer makeSessionManager]
+                                                                                                               rootNavigationHandler:[self.appDependencyContainer makeRootNavigationHandler]];
+    
+    // Create a new instance of the bottom navigation view controller.
+    UIViewController * bottomNavigationViewController = (UIViewController *) [self.viewControllerFactory makeBottomNavigationViewControllerWithProjectListViewController:projectListViewController settingsViewController:settingsViewController];
         
     // Set the Bottom Navigation View Controller instance as the window's root view controller.
     [self.window setRootViewController:bottomNavigationViewController];

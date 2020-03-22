@@ -53,9 +53,16 @@ static NSString * USERS_COLLECTION_NAME = @"users";
 {
     User * user = [User objectForPrimaryKey:identifier];
     
+    // Verify whether or not the user object we are trying to remove
+    // exists.
+    if (user.isInvalidated) {
+        completionHandler();
+        return;
+    }
+    
     // Get a weak reference to the current instance.
     __weak UserRepository * weakSelf = self;
-    
+        
     // Remove the appropriate User object from the device's local storage.
     [self.realm transactionWithBlock:^{
         [weakSelf.realm deleteObject:user];

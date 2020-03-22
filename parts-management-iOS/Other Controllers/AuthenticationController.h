@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AuthenticationController : NSObject <UserAuthenticating>
 
 /**
-@brief Initializes and returns an instance  of the Authentication Controller with the provided parameters.
+ @brief Initializes and returns an instance  of the Authentication Controller with the provided parameters.
 
-@param userSavingHandler A FIRUserSaving conforming object used to save user profiles on the device's local storage.
-@param userFetchingHandler A FIRUserFetching conforming object used to fetch user profiles.
+ @param userSavingHandler A FIRUserSaving conforming object used to save user profiles on the device's local storage.
+ @param userFetchingHandler A FIRUserFetching conforming object used to fetch user profiles.
 */
 - (instancetype)initWithUserSavingHandler:(id <FIRUserSaving>)userSavingHandler userFetchingHandler:(id <FIRUserFetching>)userFetchingHandler;
 
