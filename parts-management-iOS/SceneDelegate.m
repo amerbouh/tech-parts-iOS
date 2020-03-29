@@ -16,21 +16,19 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-    RLMRealm * realm = [RLMRealm defaultRealm];
-    FIRFirestore * firestore = [FIRFirestore firestore];
+    RLMRealm * const realm = [RLMRealm defaultRealm];
     
-    // Make sure that the Realm instance was successfully created.
     if (!realm) {
         NSLog(@"A Realm instance could not be obtained. The application might not work correctly.");
-        return;
-    }
-    
-    // Create an instance of the App Dependency Container.
-    AppDependencyContainer * appDependencyContainer = [[AppDependencyContainer alloc] initWithRealm:realm firestore:firestore window:self.window];
-    
-    // Initialize the SessionPreparationViewController root navigator instance.
-    SessionPreparationViewController * sessionPreparationViewController = (SessionPreparationViewController *) self.window.rootViewController;
-    [sessionPreparationViewController setRootNavigator:[appDependencyContainer makeRootNavigationHandler]];
+    } /* The Realm instance could not be created. */
+    else {
+        AppDependencyContainer * const appDependencyContainer = [[AppDependencyContainer alloc] initWithRealm:realm firestore:[FIRFirestore firestore]
+                                                                                                       window:self.window];
+        SessionPreparationViewController * const sessionPreparationViewController = (SessionPreparationViewController *) self.window.rootViewController;
+        
+        // Initialize the SessionPreparationViewController root navigator instance.
+        [sessionPreparationViewController setRootNavigator:[appDependencyContainer makeRootNavigationHandler]];
+    } /* The Realm instance could be created. */
 }
 
 

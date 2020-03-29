@@ -7,11 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import <Realm/Realm.h>
 #import <Firebase/Firebase.h>
 #import <FirebaseAuth/FirebaseAuth.h>
-#import <FirebaseMessaging/FirebaseMessaging.h>
-#import <UserNotifications/UserNotifications.h>
 
 @interface AppDelegate ()
 
