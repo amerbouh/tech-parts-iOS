@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "RootNavigating.h"
 #import "SessionManaging.h"
+#import "FIRUserFetching.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SettingsTableViewController : UITableViewController
 
 @property (strong, nonatomic, nonnull) id <SessionManaging> sessionManager;
+@property (strong, nonatomic, nonnull) id <FIRUserFetching> userFetchingHandler;
 @property (strong, nonatomic, nonnull) id <RootNavigating> rootNavigationHandler;
 
 @end

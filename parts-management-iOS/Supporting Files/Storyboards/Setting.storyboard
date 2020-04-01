@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QUP-1y-bkr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QUP-1y-bkr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,11 +17,11 @@
                         <sections>
                             <tableViewSection id="opr-0b-edE">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="90" id="VRh-kN-0zg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="VRh-kN-0zg">
                                         <rect key="frame" x="0.0" y="18" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VRh-kN-0zg" id="6tV-4f-Kat">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="cn7-2Q-83i" userLabel="Profile Image View">
@@ -32,16 +32,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KKq-VP-VG9" userLabel="Account Details Container Stack View">
-                                                    <rect key="frame" x="88" y="23" width="287" height="44.5"/>
+                                                    <rect key="frame" x="96" y="23" width="298" height="44.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anas Merbouh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c52-MT-Z41">
-                                                            <rect key="frame" x="0.0" y="0.0" width="287" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="298" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="anas.merbouh@outlook.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqZ-s4-raf">
-                                                            <rect key="frame" x="0.0" y="24" width="287" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="24" width="298" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="KKq-VP-VG9" secondAttribute="trailing" id="YIX-jD-kWG"/>
-                                                <constraint firstItem="KKq-VP-VG9" firstAttribute="leading" secondItem="cn7-2Q-83i" secondAttribute="trailing" constant="8" id="cV2-Oo-HUG"/>
+                                                <constraint firstItem="KKq-VP-VG9" firstAttribute="leading" secondItem="cn7-2Q-83i" secondAttribute="trailing" constant="16" id="cV2-Oo-HUG"/>
                                                 <constraint firstItem="cn7-2Q-83i" firstAttribute="leading" secondItem="6tV-4f-Kat" secondAttribute="leadingMargin" id="iOg-Tr-vMQ"/>
                                                 <constraint firstItem="KKq-VP-VG9" firstAttribute="centerY" secondItem="cn7-2Q-83i" secondAttribute="centerY" id="jCr-lk-I5S"/>
                                                 <constraint firstItem="cn7-2Q-83i" firstAttribute="centerY" secondItem="6tV-4f-Kat" secondAttribute="centerY" id="x1I-8H-a8B"/>
@@ -88,6 +88,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Gzu-rt-eDW"/>
+                    <connections>
+                        <outlet property="emailAddressLabel" destination="IqZ-s4-raf" id="yVT-j0-nCF"/>
+                        <outlet property="fullNameLabel" destination="c52-MT-Z41" id="w68-de-QbD"/>
+                        <outlet property="profileImageView" destination="cn7-2Q-83i" id="vv4-0n-ZLX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4W-qs-TqS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

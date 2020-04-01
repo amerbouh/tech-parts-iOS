@@ -7,16 +7,50 @@
 //
 
 #import "SettingsTableViewController.h"
+#import "User.h"
+#import "ImageDownloadOperation.h"
+#import "UIImageView+UIImageView_ReplaceImage.h"
 #import "UIViewController+PresentErrorAlertController.h"
 
 @interface SettingsTableViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel * fullNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel * emailAddressLabel;
+@property (weak, nonatomic) IBOutlet UIImageView * profileImageView;
+
+@property (strong, nonatomic, readonly) NSOperationQueue * queue;
+@property (strong, nonatomic, readwrite) ImageDownloadOperation * imageDownloadOperation;
+
 - (void)onSignOutActionClicked;
+- (void)populateProfileTableViewCell;
 - (void)presentSignOutAlertController;
+- (void)startProfileImageDownloadOperationWithDownloadURL:(NSURL * _Nonnull)imageDownloadURL;
 
 @end
 
 @implementation SettingsTableViewController
+
+#pragma mark - Initialization
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _queue = [[NSOperationQueue alloc] init];
+    }
+    return self;
+}
+
+#pragma mark - View's lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // Do any additional setup after loading the view.
+    [self populateProfileTableViewCell];
+    [self.profileImageView.layer setCornerRadius:self.profileImageView.frame.size.height / 2];
+}
 
 #pragma mark - Methods
 
@@ -32,6 +66,33 @@
         } /* An error occurred while trying to sign out the user. */
         
         [weakSelf.rootNavigationHandler navigateToSignInViewController];
+    }];
+}
+
+- (void)populateProfileTableViewCell
+{
+    NSString * const currentUserId = [self.sessionManager getCurrentUserId];
+    
+    // Make sure that the identifier of the current user is not NULL.
+    if (currentUserId == NULL) return;
+    
+    // Obtain a weak reference to the current view controller.
+    __weak SettingsTableViewController * const weakSelf = self;
+    
+    // Fetch the current user's profile.
+    [self.userFetchingHandler getUserWithIdentifier:self.sessionManager.getCurrentUserId completionHandler:^(User * _Nullable user, NSError * _Nullable error) {
+        [weakSelf.fullNameLabel setText:user.fullName];
+        [weakSelf.emailAddressLabel setText:user.emailAddress];
+        
+        // Create an NSURL instance of the user's profile image download URL and start a download operation,
+        // if applicable.
+        if (user.profileImageDownloadURL != NULL)
+        {
+            NSURL * const profileImageDownloadURL = [NSURL URLWithString:user.profileImageDownloadURL];
+        
+            // Start an image downloading operation.
+            [weakSelf startProfileImageDownloadOperationWithDownloadURL:profileImageDownloadURL];
+        }
     }];
 }
 
@@ -60,6 +121,24 @@
     
     // Present the alert controller.
     [self presentViewController:alertController animated:YES completion:NULL];
+}
+
+- (void)startProfileImageDownloadOperationWithDownloadURL:(NSURL *)imageDownloadURL
+{
+    __weak SettingsTableViewController * weakSelf = self;
+    
+    // Initialize the image download operation.
+    self.imageDownloadOperation = [[ImageDownloadOperation alloc] initWithImageDownloadUrl:imageDownloadURL];
+    
+    // Define the block to execute once the download operation completes.
+    self.imageDownloadOperation.completionBlock = ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.profileImageView replaceWithImage:weakSelf.imageDownloadOperation.downloadedImage];
+        });
+    };
+    
+    // Add the operation to the queue.
+    [self.queue addOperation:self.imageDownloadOperation];
 }
 
 #pragma mark - Table View delegate

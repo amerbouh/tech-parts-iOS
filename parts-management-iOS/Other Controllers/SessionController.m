@@ -30,6 +30,16 @@
 
 #pragma mark - Methods
 
+- (NSString * _Nullable)getCurrentUserId
+{
+    FIRUser * const currentUser = [[FIRAuth auth] currentUser];
+    
+    // Return NULL if no user is currently authenticated.
+    if (currentUser == NULL) return NULL;
+    
+    return currentUser.uid;
+}
+
 - (void)signOutUser:(void (^)(NSError * _Nullable))completionHandler
 {
     NSError * signOutError;

@@ -47,6 +47,12 @@
     NSLog(@"An error occurred while trying the register the user for remote notifications : %@", error);
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    printf("%s", "A remote notification was received");
+    completionHandler(UIBackgroundFetchResultNoData);
+}
+
 #pragma mark - Methods
 
 - (void)requestNotificationsAuthorization

@@ -68,6 +68,8 @@
 		BCE0CE6E23B07B6900B79DDB /* Assembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE0CE6D23B07B6900B79DDB /* Assembly.m */; };
 		BCE2711C23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2711B23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m */; };
 		BCE2712323B30C030009BE53 /* ProgressPickerViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2712223B30C030009BE53 /* ProgressPickerViewDataSource.m */; };
+		BCE7E8302434270F00696D18 /* ImageDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE7E82F2434270F00696D18 /* ImageDownloadOperation.m */; };
+		BCE7E83324344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE7E83224344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.m */; };
 		BCECEFD523BA797C0005AB7E /* TKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCECEFD423BA797C0005AB7E /* TKButton.m */; };
 		BCECEFD823BAB0E80005AB7E /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCECEFD723BAB0E80005AB7E /* SignUpViewController.m */; };
 		BCF1EEEF23B11E1A0031186F /* AssemblyRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF1EEEE23B11E1A0031186F /* AssemblyRepository.m */; };
@@ -199,6 +201,10 @@
 		BCE2712123B30C030009BE53 /* ProgressPickerViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressPickerViewDataSource.h; sourceTree = "<group>"; };
 		BCE2712223B30C030009BE53 /* ProgressPickerViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressPickerViewDataSource.m; sourceTree = "<group>"; };
 		BCE2712423B3122E0009BE53 /* FIRAssemblyCreating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRAssemblyCreating.h; sourceTree = "<group>"; };
+		BCE7E82E2434270F00696D18 /* ImageDownloadOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDownloadOperation.h; sourceTree = "<group>"; };
+		BCE7E82F2434270F00696D18 /* ImageDownloadOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadOperation.m; sourceTree = "<group>"; };
+		BCE7E83124344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIImageView_ReplaceImage.h"; sourceTree = "<group>"; };
+		BCE7E83224344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIImageView_ReplaceImage.m"; sourceTree = "<group>"; };
 		BCECEFD323BA797C0005AB7E /* TKButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKButton.h; sourceTree = "<group>"; };
 		BCECEFD423BA797C0005AB7E /* TKButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKButton.m; sourceTree = "<group>"; };
 		BCECEFD623BAB0E80005AB7E /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -310,6 +316,8 @@
 				BC10F45F23B6973700E0AF09 /* AuthenticationController.m */,
 				BC10F47423B6D9B700E0AF09 /* RootNavigationController.h */,
 				BC10F47523B6D9B700E0AF09 /* RootNavigationController.m */,
+				BCE7E82E2434270F00696D18 /* ImageDownloadOperation.h */,
+				BCE7E82F2434270F00696D18 /* ImageDownloadOperation.m */,
 			);
 			path = "Other Controllers";
 			sourceTree = "<group>";
@@ -424,6 +432,8 @@
 			children = (
 				BC0811F823AB3A01008B3D47 /* NSString+Empty.h */,
 				BC0811F923AB3A01008B3D47 /* NSString+Empty.m */,
+				BCE7E83124344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.h */,
+				BCE7E83224344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.m */,
 				BC676478235D349B00500BF6 /* UITableView+UITableView_BackgroundView.h */,
 				BC676479235D349B00500BF6 /* UITableView+UITableView_BackgroundView.m */,
 				BC25F75823AEBA3F00770E16 /* UIViewController+PresentErrorAlertController.h */,
@@ -686,6 +696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE7E83324344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.m in Sources */,
 				BC67647A235D349B00500BF6 /* UITableView+UITableView_BackgroundView.m in Sources */,
 				BC1E948F235905A800E6C329 /* MessageView.m in Sources */,
 				BCF1EEEF23B11E1A0031186F /* AssemblyRepository.m in Sources */,
@@ -694,6 +705,7 @@
 				BC164FE82352781800C02514 /* ProjectListViewController.m in Sources */,
 				BC051E2023B3297100BD05C5 /* Progress.c in Sources */,
 				BCD0099323574B49005D15CB /* ProjectDetailViewController.m in Sources */,
+				BCE7E8302434270F00696D18 /* ImageDownloadOperation.m in Sources */,
 				BC4E674723AF155B007E284A /* FileSize.m in Sources */,
 				BC25F75D23AEFAB300770E16 /* DesignViewerViewController.m in Sources */,
 				BC1D4D2523B67AAB00849E9F /* TKRoundedButton.m in Sources */,

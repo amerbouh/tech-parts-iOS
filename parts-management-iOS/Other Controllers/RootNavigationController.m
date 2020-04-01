@@ -38,6 +38,7 @@
 {
     UINavigationController * const projectListViewController = [self.viewControllerFactory makeProjectListViewController];
     UINavigationController * const settingsViewController = [self.viewControllerFactory makeSettingsViewControllerWithSessionManager:[self.appDependencyContainer makeSessionManager]
+                                                                                                                 userFetchingHandler: [self.appDependencyContainer makeUserFetchingHandler]
                                                                                                                rootNavigationHandler:[self.appDependencyContainer makeRootNavigationHandler]];
     
     // Create a new instance of the bottom navigation view controller.

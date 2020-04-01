@@ -35,7 +35,7 @@
     NSString * firstName = (NSString *) json[@"firstName"];
     NSString * lastName = (NSString *) json[@"lastName"];
     NSString * emailAddress = (NSString *) json[@"emailAddress"];
-    NSString * profileImageDownloadURL = (NSString *) json[@"profileImageDownloadURL"];
+    NSString * profileImageDownloadURL = (NSString *) json[@"profileImageDownloadUrl"];
     FIRTimestamp * creationDate = (FIRTimestamp *) json[@"createdAt"];
     
     // Call the class's initializer.
@@ -43,6 +43,11 @@
 }
 
 #pragma mark - Methods
+
+- (NSString *)fullName
+{
+    return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
+}
 
 + (NSString *)primaryKey
 {

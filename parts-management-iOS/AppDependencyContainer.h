@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "RootNavigating.h"
 #import "SessionManaging.h"
+#import "FIRUserFetching.h"
 #import "UserAuthenticating.h"
 
 @class RLMRealm;
@@ -20,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AppDependencyContainer : NSObject
 
 - (id <SessionManaging>)makeSessionManager;
+- (id <FIRUserFetching>)makeUserFetchingHandler;
 - (id <RootNavigating>)makeRootNavigationHandler;
 - (id <UserAuthenticating>)makeUserAuthenticationHandler;
 

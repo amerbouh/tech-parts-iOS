@@ -55,7 +55,8 @@ static NSString * USERS_COLLECTION_NAME = @"users";
     
     // Verify whether or not the user object we are trying to remove
     // exists.
-    if (user.isInvalidated) {
+    if (user.isInvalidated)
+    {
         completionHandler();
         return;
     }
@@ -74,20 +75,31 @@ static NSString * USERS_COLLECTION_NAME = @"users";
 
 - (void)getUserWithIdentifier:(NSString *)uid completionHandler:(void (^)(User * _Nullable, NSError * _Nullable))completionHandler
 {
-    FIRDocumentReference * userDocRef = [[self.database collectionWithPath:USERS_COLLECTION_NAME] documentWithPath:uid];
+    User * const user = [User objectForPrimaryKey:uid];
     
+    // Check if the user instance already exists ont the device's local
+    // storage.
+    if (user != NULL)
+    {
+        completionHandler(user, NULL);
+        return;
+    }
+    
+    // Get a reference to the user's record on the remote database.
+    FIRDocumentReference * userDocRef = [[self.database collectionWithPath:USERS_COLLECTION_NAME] documentWithPath:uid];
+           
     // Get the document's data.
     [userDocRef getDocumentWithCompletion:^(FIRDocumentSnapshot * _Nullable snapshot, NSError * _Nullable error) {
         if (error != NULL) {
             completionHandler(NULL, error);
         } else {
             if (!snapshot.exists) return;
-            
+                   
             // Create a User instance from the document's data.
-            User * user = [User initWithJSON:snapshot.data];
-            
+            User * fetchedUser = [User initWithJSON:snapshot.data];
+                   
             // Call the completion handler and pass the created user instance.
-            completionHandler(user, NULL);
+            completionHandler(fetchedUser, NULL);
         }
     }];
 }

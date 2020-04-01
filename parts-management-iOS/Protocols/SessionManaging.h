@@ -12,6 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol SessionManaging <NSObject>
 
+/** @brief Returns the identifier of the currenlty signed-in user. */
+- (NSString * _Nullable)getCurrentUserId;
+
+/**
+ @brief Signs out the currenlty authenticated user and removes his data from the device's local storage.
+ 
+ @param completionHandler The completion handler to call when the operation completes.
+ */
 - (void)signOutUser:(void (^_Nullable)(NSError * _Nullable error))completionHandler;
 
 @end

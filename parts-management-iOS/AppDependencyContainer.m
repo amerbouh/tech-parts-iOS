@@ -53,6 +53,11 @@
                                                                      window:self.window];
 }
 
+- (id<FIRUserFetching>)makeUserFetchingHandler
+{
+    return [[UserRepository alloc] initWithRealm:self.realm firestore:self.firestore];
+}
+
 - (id<UserAuthenticating>)makeUserAuthenticationHandler
 {
     UserRepository * userRepository = [[UserRepository alloc] initWithRealm:self.realm firestore:self.firestore];
