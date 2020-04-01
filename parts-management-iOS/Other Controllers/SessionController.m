@@ -9,13 +9,9 @@
 #import "SessionController.h"
 #import <FirebaseAuth/FirebaseAuth.h>
 
-@interface SessionController ()
-
-@property (nonatomic, nonnull) id <FIRUserDeleting> userDeletionHandler;
-
-@end
-
-@implementation SessionController
+@implementation SessionController {
+    id <FIRUserDeleting> _userDeletionHandler;
+}
 
 #pragma mark - Initialization
 
@@ -56,7 +52,7 @@
     
     // Remove the user's profile from the device's local storage and call the completion
     // handler.
-    [self.userDeletionHandler deleteUserWithIdentifier:currentUser.uid completionHandler:^{
+    [_userDeletionHandler deleteUserWithIdentifier:currentUser.uid completionHandler:^{
         completionHandler(signOutError);
     }];
 }

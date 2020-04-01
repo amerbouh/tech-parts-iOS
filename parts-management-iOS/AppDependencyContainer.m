@@ -13,15 +13,11 @@
 #import "AuthenticationController.h"
 #import "TKViewControllerFactoryImpl.h"
 
-@interface AppDependencyContainer ()
-
-@property (nonatomic, nonnull) RLMRealm * realm;
-@property (nonatomic, nonnull) UIWindow * window;
-@property (nonatomic, nonnull) FIRFirestore * firestore;
-
-@end
-
-@implementation AppDependencyContainer
+@implementation AppDependencyContainer {
+    RLMRealm * _realm;
+    UIWindow * _window;
+    FIRFirestore * _firestore;
+}
 
 #pragma mark - Initialization
 
@@ -40,7 +36,7 @@
 
 - (id<SessionManaging>)makeSessionManager
 {
-    UserRepository * userRepository = [[UserRepository alloc] initWithRealm:self.realm firestore:self.firestore];
+    UserRepository * userRepository = [[UserRepository alloc] initWithRealm:_realm firestore:_firestore];
     
     // Return a newly created instance of the Session Controller class.
     return [[SessionController alloc] initWithUserDeletionHandler:userRepository];
@@ -48,19 +44,22 @@
 
 - (id<RootNavigating>)makeRootNavigationHandler
 {
+    TKViewControllerFactoryImpl * viewControllerFactory = [TKViewControllerFactoryImpl new];
+    
+    // Return a newly created instance of the Root Navigation controller class.
     return [[RootNavigationController alloc] initWithAppDependencyContainer:self
-                                                      viewControllerFactory:[TKViewControllerFactoryImpl new]
-                                                                     window:self.window];
+                                                      viewControllerFactory:viewControllerFactory
+                                                                     window:_window];
 }
 
 - (id<FIRUserFetching>)makeUserFetchingHandler
 {
-    return [[UserRepository alloc] initWithRealm:self.realm firestore:self.firestore];
+    return [[UserRepository alloc] initWithRealm:_realm firestore:_firestore];
 }
 
 - (id<UserAuthenticating>)makeUserAuthenticationHandler
 {
-    UserRepository * userRepository = [[UserRepository alloc] initWithRealm:self.realm firestore:self.firestore];
+    UserRepository * userRepository = [[UserRepository alloc] initWithRealm:_realm firestore:_firestore];
     
     // Return a newly created instance of the AuthenticationController class.
     return [[AuthenticationController alloc] initWithUserSavingHandler:userRepository

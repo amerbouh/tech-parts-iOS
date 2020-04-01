@@ -8,13 +8,9 @@
 
 #import "ImageDownloadOperation.h"
 
-@interface ImageDownloadOperation ()
-
-@property (strong, nonatomic, nonnull) NSURL * imageDownloadUrl;
-
-@end
-
-@implementation ImageDownloadOperation
+@implementation ImageDownloadOperation {
+    NSURL * _imageDownloadUrl;
+}
 
 #pragma mark - Initialization
 
@@ -35,7 +31,7 @@
     
     // Fetch the image with the given download uRL.
     NSError * downloadError;
-    NSData * const imageData = [NSData dataWithContentsOfURL:self.imageDownloadUrl options:0 error:&downloadError];
+    NSData * const imageData = [NSData dataWithContentsOfURL:_imageDownloadUrl options:0 error:&downloadError];
         
     // Check if the operation has been cancelled while fetching the image.
     if (self.isCancelled) return;

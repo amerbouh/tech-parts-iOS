@@ -9,15 +9,11 @@
 #import "RootNavigationController.h"
 #import "AppDependencyContainer.h"
 
-@interface RootNavigationController ()
-
-@property (nonatomic, nonnull) UIWindow * window;
-@property (nonatomic, nonnull) AppDependencyContainer * appDependencyContainer;
-@property (nonatomic, nonnull) id <TKViewControllerFactory> viewControllerFactory;
-
-@end
-
-@implementation RootNavigationController
+@implementation RootNavigationController {
+    UIWindow * _window;
+    AppDependencyContainer * _appDependencyContainer;
+    id <TKViewControllerFactory> _viewControllerFactory;
+}
 
 #pragma mark - Initialization
 
@@ -36,31 +32,31 @@
 
 - (void)navigateToBottomNavigationViewController
 {
-    UINavigationController * const projectListViewController = [self.viewControllerFactory makeProjectListViewController];
-    UINavigationController * const settingsViewController = [self.viewControllerFactory makeSettingsViewControllerWithSessionManager:[self.appDependencyContainer makeSessionManager]
-                                                                                                                 userFetchingHandler: [self.appDependencyContainer makeUserFetchingHandler]
-                                                                                                               rootNavigationHandler:[self.appDependencyContainer makeRootNavigationHandler]];
+    UINavigationController * const projectListViewController = [_viewControllerFactory makeProjectListViewController];
+    UINavigationController * const settingsViewController = [_viewControllerFactory makeSettingsViewControllerWithSessionManager:[_appDependencyContainer makeSessionManager]
+                                                                                                                 userFetchingHandler: [_appDependencyContainer makeUserFetchingHandler]
+                                                                                                               rootNavigationHandler:[_appDependencyContainer makeRootNavigationHandler]];
     
     // Create a new instance of the bottom navigation view controller.
-    UIViewController * bottomNavigationViewController = (UIViewController *) [self.viewControllerFactory makeBottomNavigationViewControllerWithProjectListViewController:projectListViewController settingsViewController:settingsViewController];
+    UIViewController * bottomNavigationViewController = (UIViewController *) [_viewControllerFactory makeBottomNavigationViewControllerWithProjectListViewController:projectListViewController settingsViewController:settingsViewController];
         
     // Set the Bottom Navigation View Controller instance as the window's root view controller.
-    [self.window setRootViewController:bottomNavigationViewController];
+    [_window setRootViewController:bottomNavigationViewController];
     
     // Animate the transition.
-    [UIView transitionWithView:self.window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
+    [UIView transitionWithView:_window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
 }
 
 - (void)navigateToSignInViewController
 {
-    UIViewController * signInViewController = (UIViewController *) [self.viewControllerFactory makeSignInViewControllerWithRootNavigationHandler:[self.appDependencyContainer makeRootNavigationHandler]
-                                                                                                      userAuthenticationHandler:[self.appDependencyContainer makeUserAuthenticationHandler]];
+    UIViewController * signInViewController = (UIViewController *) [_viewControllerFactory makeSignInViewControllerWithRootNavigationHandler:[_appDependencyContainer makeRootNavigationHandler]
+                                                                                                      userAuthenticationHandler:[_appDependencyContainer makeUserAuthenticationHandler]];
     
     // Set the Sign In View Controller instance as the window's root view controller.
-    [self.window setRootViewController:signInViewController];
+    [_window setRootViewController:signInViewController];
     
     // Animate the transition.
-    [UIView transitionWithView:self.window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
+    [UIView transitionWithView:_window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
 }
 
 @end

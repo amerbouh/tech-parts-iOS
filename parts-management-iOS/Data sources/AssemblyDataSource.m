@@ -10,26 +10,24 @@
 #import "Assembly.h"
 #import "AssemblyTableViewCell.h"
 
-@interface AssemblyDataSource ()
+@implementation AssemblyDataSource {
+    
+    /** An array representing the list of assemblies managed by the data source instance. */
+    NSArray<Assembly *> * _assemblies;
 
-/** An array representing the list of assemblies managed by the data source instance. */
-@property (strong, nonatomic, nonnull) NSArray<Assembly *> * assemblies;
+    /** An array representing the list of filtered assemblies managed by the data source instance. */
+    NSArray<Assembly *> * _filteredAssemblies;
 
-/** An array representing the list of filtered assemblies managed by the data source instance. */
-@property (strong, nonatomic, nonnull) NSArray<Assembly *> * filteredAssemblies;
+    /** A FIRAssemblyFetching conforming object responsible for fetching Assembly instances from the database. */
+    id <FIRAssemblyFetching> _assemblyFetcher;
 
-/** A FIRAssemblyFetching conforming object responsible for fetching Assembly instances from the database. */
-@property (strong, nonatomic) id <FIRAssemblyFetching> assemblyFetcher;
+    /** A FIRAssemblyDeleting conforming object responsible for deleting Assembly instances from the database. */
+    id <FIRAssemblyDeleting> _assemblyDeleter;
 
-/** A FIRAssemblyDeleting conforming object responsible for deleting Assembly instances from the database. */
-@property (strong, nonatomic) id <FIRAssemblyDeleting> assemblyDeleter;
-
-/** A string representing the reuse identifier of the cells used to display an assembly. */
-@property (strong, nonatomic, nonnull) NSString * cellReuseIdentifier;
-
-@end
-
-@implementation AssemblyDataSource
+    /** A string representing the reuse identifier of the cells used to display an assembly. */
+    NSString * _cellReuseIdentifier;
+    
+}
 
 #pragma mark - Initialization
 
@@ -49,12 +47,12 @@
 
 - (NSUInteger)getAssembliesCount
 {
-    return self.assemblies.count;
+    return _assemblies.count;
 }
 
 - (Assembly *)getAssemblyAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.assemblies objectAtIndex:indexPath.row];
+    return [_assemblies objectAtIndex:indexPath.row];
 }
 
 - (void)deleteAssemblyAtIndexPath:(NSIndexPath *)indexPath
@@ -63,16 +61,16 @@
     
     // Initialize the Assembly instance.
     if (self.delegate.isFiltering) {
-        assembly = [self.filteredAssemblies objectAtIndex:indexPath.row];
+        assembly = [_filteredAssemblies objectAtIndex:indexPath.row];
     } else {
-        assembly = [self.assemblies objectAtIndex:indexPath.row];
+        assembly = [_assemblies objectAtIndex:indexPath.row];
     }
     
     // Create a weak reference to the data source to avoid strong reference cycles.
     __weak AssemblyDataSource * weakSelf = self;
     
     // Remove the project from the Cloud Firestore database.
-    [self.assemblyDeleter deleteAssemblyWithIdentifier:assembly.identifier completionHandler:^(NSError * _Nullable error) {
+    [_assemblyDeleter deleteAssemblyWithIdentifier:assembly.identifier completionHandler:^(NSError * _Nullable error) {
         if (error) { [weakSelf.delegate onDeletionFailedWithError:error]; }
     }];
 }
@@ -80,7 +78,7 @@
 - (void)filterAssembliesUsingPredicate:(NSString *)predicateString
 {
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", predicateString];
-    self.filteredAssemblies = [self.assemblies filteredArrayUsingPredicate:predicate];
+    _filteredAssemblies = [_assemblies filteredArrayUsingPredicate:predicate];
 }
 
 - (void)loadAssembliesForProjectWithIdentifier:(NSString *)projectIdentifier
@@ -88,11 +86,11 @@
     __weak AssemblyDataSource * weakSelf = self;
 
     // Start observing projects listed on the Cloud Firestore database.
-    [self.assemblyFetcher observeAssembliesForProjectWithIdentifier:projectIdentifier completionHandler:^(NSArray<Assembly *> * _Nullable assemblies, NSError * _Nullable error) {
+    [_assemblyFetcher observeAssembliesForProjectWithIdentifier:projectIdentifier completionHandler:^(NSArray<Assembly *> * _Nullable assemblies, NSError * _Nullable error) {
         if (error) { [weakSelf.delegate onFetchFailedWithError:error]; return; }
         
         // Update the Assemblies array.
-        weakSelf.assemblies = assemblies;
+        self->_assemblies = assemblies;
         
         // Inform the delegate that the assemblies were fetched.
         [weakSelf.delegate onFetchCompleted];
@@ -109,20 +107,20 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (self.delegate.isFiltering) {
-        return self.filteredAssemblies.count;
+        return _filteredAssemblies.count;
     }
-    return self.assemblies.count;
+    return _assemblies.count;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    AssemblyTableViewCell * cell = (AssemblyTableViewCell *) [tableView dequeueReusableCellWithIdentifier:self.cellReuseIdentifier forIndexPath:indexPath];
+    AssemblyTableViewCell * cell = (AssemblyTableViewCell *) [tableView dequeueReusableCellWithIdentifier:_cellReuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    Assembly * assembly = [self.assemblies objectAtIndex:indexPath.row];
+    Assembly * assembly = [_assemblies objectAtIndex:indexPath.row];
     
     if (self.delegate.isFiltering) {
-        assembly = [self.filteredAssemblies objectAtIndex:indexPath.row];
+        assembly = [_filteredAssemblies objectAtIndex:indexPath.row];
     }
     
     [cell populateWithAssembly:assembly];

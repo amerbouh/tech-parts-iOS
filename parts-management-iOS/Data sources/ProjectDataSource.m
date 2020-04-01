@@ -10,26 +10,24 @@
 #import "Project.h"
 #import "ProjectTableViewCell.h"
 
-@interface ProjectDataSource ()
-
-/** An array representing the list of projects managed by the data source instance. */
-@property (strong, nonatomic, nonnull) NSArray<Project *> * projects;
-
-/** An array representing the list of filtered projects managed by the data source instance. */
-@property (strong, nonatomic, nonnull) NSArray<Project *> * filteredProjects;
-
-/** A FIRProjectFetching conforming object responsible for fetching Project instances from the database. */
-@property (strong, nonatomic) id <FIRProjectFetching> projectFetcher;
-
-/** A FIRProjectDeleting conforming object responsible for deleting Project instances on the database. */
-@property (strong, nonatomic) id <FIRProjectDeleting> projectDeleter;
-
-/** A string representing the reuse identifier of the cells used to display a project. */
-@property (strong, nonatomic, nonnull) NSString * cellReuseIdentifier;
-
-@end
-
-@implementation ProjectDataSource
+@implementation ProjectDataSource {
+    
+    /** A string representing the reuse identifier of the cells used to display a project. */
+    NSString * _cellReuseIdentifier;
+    
+    /** An array representing the list of projects managed by the data source instance. */
+    NSArray<Project *> * _projects;
+    
+    /** An array representing the list of filtered projects managed by the data source instance. */
+    NSArray<Project *> * _filteredProjects;
+    
+    /** A FIRProjectFetching conforming object responsible for fetching Project instances from the database. */
+    id <FIRProjectFetching> _projectFetcher;
+    
+    /** A FIRProjectDeleting conforming object responsible for deleting Project instances on the database. */
+    id <FIRProjectDeleting> _projectDeleter;
+    
+}
 
 #pragma mark - Initialization
 
@@ -52,11 +50,11 @@
     __weak ProjectDataSource * weakSelf = self;
 
     // Start observing projects listed on the Cloud Firestore database.
-    [self.projectFetcher observeProjects:^(NSArray<Project *> * _Nullable projects, NSError * _Nullable error) {
+    [_projectFetcher observeProjects:^(NSArray<Project *> * _Nullable projects, NSError * _Nullable error) {
         if (error != nil) { [weakSelf.delegate onFetchFailedWithError:error] ; return; }
         
         // Update the Projects array.
-        weakSelf.projects = projects;
+        self->_projects = projects;
         
         // Inform the delegate that the projects were fetched.
         [weakSelf.delegate onFetchCompleted];
@@ -65,21 +63,21 @@
 
 - (NSUInteger)getProjectsCount
 {
-    return [self.projects count];
+    return [_projects count];
 }
 
 - (Project *)getProjectAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.delegate.isFiltering) {
-        return self.filteredProjects[indexPath.row];
+        return _filteredProjects[indexPath.row];
     }
-    return self.projects[indexPath.row];
+    return _projects[indexPath.row];
 }
 
 - (void)filterProjectsUsingPredicate:(NSString *)predicateString
 {
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", predicateString];
-    self.filteredProjects = [self.projects filteredArrayUsingPredicate:predicate];
+    _filteredProjects = [_projects filteredArrayUsingPredicate:predicate];
 }
 
 - (void)deleteProjectAtIndexPath:(NSIndexPath *)indexPath
@@ -88,16 +86,16 @@
     
     // Initialize the Project instance.
     if (self.delegate.isFiltering) {
-        project = [self.filteredProjects objectAtIndex:indexPath.row];
+        project = [_filteredProjects objectAtIndex:indexPath.row];
     } else {
-        project = [self.projects objectAtIndex:indexPath.row];
+        project = [_projects objectAtIndex:indexPath.row];
     }
     
     // Create a weak reference to the data source to avoid strong reference cycles.
     __weak ProjectDataSource * weakSelf = self;
     
     // Remove the project from the Cloud Firestore database.
-    [self.projectDeleter deleteProjectWithIdentifier:project.identifier completionHandler:^(NSError * _Nullable error) {
+    [_projectDeleter deleteProjectWithIdentifier:project.identifier completionHandler:^(NSError * _Nullable error) {
         if (error) { [weakSelf.delegate onDeletionFailedWithError:error]; }
     }];
 }
@@ -112,22 +110,22 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if ([self.delegate isFiltering]) {
-        return self.filteredProjects.count;
+        return _filteredProjects.count;
     }
-    return self.projects.count;
+    return _projects.count;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    ProjectTableViewCell * cell = (ProjectTableViewCell *) [tableView dequeueReusableCellWithIdentifier:self.cellReuseIdentifier forIndexPath:indexPath];
+    ProjectTableViewCell * cell = (ProjectTableViewCell *) [tableView dequeueReusableCellWithIdentifier:_cellReuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     Project * project;
     
     if ([self.delegate isFiltering]) {
-        project = self.filteredProjects[indexPath.row];
+        project = _filteredProjects[indexPath.row];
     } else {
-        project = self.projects[indexPath.row];
+        project = _projects[indexPath.row];
     }
     
     [cell populateWithProject:project];

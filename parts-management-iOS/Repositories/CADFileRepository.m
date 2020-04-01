@@ -9,13 +9,9 @@
 #import "CADFileRepository.h"
 #import <FirebaseStorage/FirebaseStorage.h>
 
-@interface CADFileRepository ()
-
-@property (strong, nonatomic, nonnull) FIRStorage * storage;
-
-@end
-
-@implementation CADFileRepository
+@implementation CADFileRepository {
+    FIRStorage * _storage;
+}
 
 #pragma mark - Initialization
 
@@ -32,7 +28,7 @@
 
 - (FIRStorageDownloadTask *)downloadFileWithGCSURI:(NSString *)GCSURI fileName:(NSString *)fileName completionHandler:(void (^)(NSURL * _Nullable, NSError * _Nullable))completionHandler
 {
-    FIRStorageReference * fileReference = [self.storage referenceForURL:GCSURI];
+    FIRStorageReference * fileReference = [_storage referenceForURL:GCSURI];
 
     // Get an instance of the File Manager.
     NSFileManager * fileManager = [NSFileManager defaultManager];

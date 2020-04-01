@@ -11,14 +11,10 @@
 #import "Realm.h"
 #import "FirebaseFirestore.h"
 
-@interface UserRepository ()
-
-@property (nonnull, nonatomic) RLMRealm * realm;
-@property (nonnull, nonatomic) FIRFirestore * database;
-
-@end
-
-@implementation UserRepository
+@implementation UserRepository {
+    RLMRealm * _realm;
+    FIRFirestore * _database;
+}
 
 static NSString * USERS_COLLECTION_NAME = @"users";
 
@@ -38,11 +34,8 @@ static NSString * USERS_COLLECTION_NAME = @"users";
 
 - (void)saveUser:(User *)user completionHandler:(void (^)(void))completionHandler
 {
-    __weak UserRepository * weakSelf = self;
-    
-    // Save the User instance on the device's local storage.
-    [self.realm transactionWithBlock:^{
-        [weakSelf.realm addObject:user];
+    [_realm transactionWithBlock:^{
+        [_realm addObject:user];
         
         // Call the completion handler.
         completionHandler();
@@ -61,12 +54,9 @@ static NSString * USERS_COLLECTION_NAME = @"users";
         return;
     }
     
-    // Get a weak reference to the current instance.
-    __weak UserRepository * weakSelf = self;
-        
     // Remove the appropriate User object from the device's local storage.
-    [self.realm transactionWithBlock:^{
-        [weakSelf.realm deleteObject:user];
+    [_realm transactionWithBlock:^{
+        [_realm deleteObject:user];
         
         // Call the completion handler.
         completionHandler();
@@ -86,7 +76,7 @@ static NSString * USERS_COLLECTION_NAME = @"users";
     }
     
     // Get a reference to the user's record on the remote database.
-    FIRDocumentReference * userDocRef = [[self.database collectionWithPath:USERS_COLLECTION_NAME] documentWithPath:uid];
+    FIRDocumentReference * userDocRef = [[_database collectionWithPath:USERS_COLLECTION_NAME] documentWithPath:uid];
            
     // Get the document's data.
     [userDocRef getDocumentWithCompletion:^(FIRDocumentSnapshot * _Nullable snapshot, NSError * _Nullable error) {
