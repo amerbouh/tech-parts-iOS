@@ -316,8 +316,6 @@
 				BC10F45F23B6973700E0AF09 /* AuthenticationController.m */,
 				BC10F47423B6D9B700E0AF09 /* RootNavigationController.h */,
 				BC10F47523B6D9B700E0AF09 /* RootNavigationController.m */,
-				BCE7E82E2434270F00696D18 /* ImageDownloadOperation.h */,
-				BCE7E82F2434270F00696D18 /* ImageDownloadOperation.m */,
 			);
 			path = "Other Controllers";
 			sourceTree = "<group>";
@@ -423,6 +421,8 @@
 				BC10F47223B6C79200E0AF09 /* UserRole.c */,
 				BC4E674923AF1A33007E284A /* Reachability.h */,
 				BC4E674A23AF1A33007E284A /* Reachability.m */,
+				BCE7E82E2434270F00696D18 /* ImageDownloadOperation.h */,
+				BCE7E82F2434270F00696D18 /* ImageDownloadOperation.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";

@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol TKViewControllerFactory <NSObject>
 
-/** @brief Initializes and returns an instance of the Project List View Controller with the provided parameters. */
+/** @brief Initializes and returns an instance of the Project List View Controller. */
 - (UINavigationController * _Nonnull)makeProjectListViewController;
 
 /**
@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  @brief Initializes and returns an instance of the Sign In View Controller with the provided parameters.
  
- @param rootNavigationHandler A RootNavigating conforming object used to handle navigation.
+ @param rootNavigationHandler          A RootNavigating conforming object used to handle navigation.
  @param userAuthenticationHandler A UserAuthenticating conforming object used to handle authentication.
  */
 - (SignInViewController * _Nonnull)makeSignInViewControllerWithRootNavigationHandler:(id <RootNavigating> _Nonnull)rootNavigationHandler userAuthenticationHandler:(id <UserAuthenticating> _Nonnull)userAuthenticationHandler;
@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
  @brief Initializes and returns an instance of the Bottom Navigation View Controller with the provided parameters.
  
  @param projectListViewController A UINavigationController presenting an instance of the project list view controller.
- @param settingsViewController A UINavigationController presenting an instance of the settings view controller.
+ @param settingsViewController        A UINavigationController presenting an instance of the settings view controller.
  */
 - (BottomNavigationViewController * _Nonnull)makeBottomNavigationViewControllerWithProjectListViewController:(UINavigationController * _Nonnull)projectListViewController settingsViewController:(UINavigationController *)settingsViewController;
 

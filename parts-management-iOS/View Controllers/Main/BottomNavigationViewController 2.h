@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  @brief Initializes and returns an instance of the Bottom Navigation View Controller with the provided parameters.
 
  @param projectListViewController A UINavigationController presenting an instance of the project list view controller.
- @param settingsViewController A UINavigationController presenting an instance of the settings view controller.
+ @param settingsViewController       A UINavigationController presenting an instance of the settings view controller.
 */
 - (instancetype)initWithProjectListViewController:(UINavigationController * _Nonnull)projectListViewController settingsViewController:(UINavigationController * _Nonnull)settingsViewController;
 

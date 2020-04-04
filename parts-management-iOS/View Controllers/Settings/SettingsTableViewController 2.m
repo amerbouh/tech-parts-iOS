@@ -18,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel * emailAddressLabel;
 @property (weak, nonatomic) IBOutlet UIImageView * profileImageView;
 
+@property (strong, nonatomic, readonly) NSOperationQueue * queue;
+@property (strong, nonatomic, readwrite) ImageDownloadOperation * imageDownloadOperation;
+
 - (void)onSignOutActionClicked;
 - (void)populateProfileTableViewCell;
 - (void)presentSignOutAlertController;
@@ -25,10 +28,7 @@
 
 @end
 
-@implementation SettingsTableViewController {
-    NSOperationQueue * _queue;
-    ImageDownloadOperation * _imageDownloadOperation;
-}
+@implementation SettingsTableViewController
 
 #pragma mark - Initialization
 
@@ -128,21 +128,17 @@
     __weak SettingsTableViewController * weakSelf = self;
     
     // Initialize the image download operation.
-    _imageDownloadOperation = [[ImageDownloadOperation alloc] initWithImageDownloadUrl:imageDownloadURL];
-    
-    // Initialize a pointer to the class's image download operation instance variable for use
-    // in a block.
-    ImageDownloadOperation * const imageDownloadOperation = _imageDownloadOperation;
+    self.imageDownloadOperation = [[ImageDownloadOperation alloc] initWithImageDownloadUrl:imageDownloadURL];
     
     // Define the block to execute once the download operation completes.
-    _imageDownloadOperation.completionBlock = ^{
+    self.imageDownloadOperation.completionBlock = ^{
         dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.profileImageView replaceWithImage:imageDownloadOperation.downloadedImage];
+            [weakSelf.profileImageView replaceWithImage:weakSelf.imageDownloadOperation.downloadedImage];
         });
     };
     
     // Add the operation to the queue.
-    [_queue addOperation:_imageDownloadOperation];
+    [self.queue addOperation:self.imageDownloadOperation];
 }
 
 #pragma mark - Table View delegate
