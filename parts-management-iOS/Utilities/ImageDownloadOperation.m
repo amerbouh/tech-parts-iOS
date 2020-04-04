@@ -7,18 +7,11 @@
 //
 
 #import "ImageDownloadOperation.h"
-
-struct RandomNumberGenerator
-{
-    int min, max;
-    
-    
-    
-};
+#import "ImageCacheController.h"
 
 @implementation ImageDownloadOperation {
     NSURL * _imageDownloadUrl;
-    NSCache<NSURL *, UIImage *> * _cache;
+    id <ImageCaching> _imageCache;
 }
 
 #pragma mark - Initialization
@@ -26,9 +19,9 @@ struct RandomNumberGenerator
 - (instancetype)initWithImageDownloadUrl:(NSURL *)imageDownloadUrl
 {
     self = [super init];
-    if (self) {
-        _cache = [NSCache new];
+    if (self) {;
         _imageDownloadUrl = [imageDownloadUrl copy];
+        _imageCache = ImageCacheController.sharedImageCache;
     }
     return self;
 }
@@ -40,7 +33,7 @@ struct RandomNumberGenerator
     if (self.isCancelled) return;
     
     // Check if the image is present on the cache.
-    self.downloadedImage = [_cache objectForKey:_imageDownloadUrl];
+    self.downloadedImage = [_imageCache imageForURL:_imageDownloadUrl];
     
     // If the image was found on the cache, stop the execution of
     // the method.
@@ -58,7 +51,7 @@ struct RandomNumberGenerator
         
     // Add the downloaded image to the cache.
     UIImage * const downloadedImage = [UIImage imageWithData:imageData];
-    [_cache setObject:downloadedImage forKey:_imageDownloadUrl];
+    [_imageCache addImage:downloadedImage forURL:_imageDownloadUrl];
     
     // Check if the operation has been cancelled while caching the image.
     if (self.isCancelled) return;

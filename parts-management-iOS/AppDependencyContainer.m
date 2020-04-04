@@ -15,13 +15,13 @@
 
 @interface AppDependencyContainer ()
 
-@property (nonatomic, nonnull) RLMRealm * realm;
-@property (nonatomic, nonnull) UIWindow * window;
-@property (nonatomic, nonnull) FIRFirestore * firestore;
-
 @end
 
-@implementation AppDependencyContainer
+@implementation AppDependencyContainer {
+    RLMRealm * _realm;
+    UIWindow * _window;
+    FIRFirestore * _firestore;
+}
 
 #pragma mark - Initialization
 
@@ -46,7 +46,8 @@
 
 - (id<SessionManaging>)makeSessionManager
 {
-    UserRepository * userRepository = [[UserRepository alloc] initWithRealm:self.realm firestore:self.firestore];
+    UserRepository * userRepository = [[UserRepository alloc] initWithRealm:_realm
+                                                                  firestore:_firestore];
     
     // Return a newly created instance of the Session Controller class.
     return [[SessionController alloc] initWithUserDeletionHandler:userRepository];
@@ -56,13 +57,14 @@
 {
     return [[RootNavigationController alloc] initWithAppDependencyContainer:self
                                                       viewControllerFactory:[TKViewControllerFactoryImpl new]
-                                                                     window:self.window];
+                                                                     window:_window];
 }
 
 - (id<UserAuthenticating>)makeUserAuthenticationHandler
 {
-    UserRepository * userRepository = [[UserRepository alloc] initWithRealm:self.realm firestore:self.firestore];
-    
+    UserRepository * userRepository = [[UserRepository alloc] initWithRealm:_realm
+                                                                  firestore:_firestore];
+
     // Return a newly created instance of the AuthenticationController class.
     return [[AuthenticationController alloc] initWithUserSavingHandler:userRepository
                                                    userFetchingHandler:userRepository];

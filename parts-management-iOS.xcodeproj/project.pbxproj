@@ -57,6 +57,7 @@
 		BC766E43235D025A002FEDA0 /* Project.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC766E42235D025A002FEDA0 /* Project.storyboard */; };
 		BC8EB5CF235CA10D00BCE201 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */; };
 		BC9D4FFF23574D90000EF6DE /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9D4FFE23574D90000EF6DE /* MessageView.xib */; };
+		BCB936DE243904DC00C84EBB /* ImageCacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB936DD243904DC00C84EBB /* ImageCacheController.m */; };
 		BCC0EC0B2354C6D500F5C0B9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCC0EC0A2354C6D500F5C0B9 /* Localizable.strings */; };
 		BCC0EC112354C8B600F5C0B9 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC0EC102354C8B600F5C0B9 /* Project.m */; };
 		BCC0EC162354C93A00F5C0B9 /* ProjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC0EC152354C93A00F5C0B9 /* ProjectTableViewCell.m */; };
@@ -178,6 +179,9 @@
 		BC766E42235D025A002FEDA0 /* Project.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Project.storyboard; sourceTree = "<group>"; };
 		BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC9D4FFE23574D90000EF6DE /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
+		BCB936DC243904DC00C84EBB /* ImageCacheController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCacheController.h; sourceTree = "<group>"; };
+		BCB936DD243904DC00C84EBB /* ImageCacheController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCacheController.m; sourceTree = "<group>"; };
+		BCB936DF2439056900C84EBB /* ImageCaching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCaching.h; sourceTree = "<group>"; };
 		BCC0EC0A2354C6D500F5C0B9 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BCC0EC0F2354C8B600F5C0B9 /* Project.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		BCC0EC102354C8B600F5C0B9 /* Project.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
@@ -312,6 +316,8 @@
 			children = (
 				BC28F6E0241DC96D00636F97 /* SessionController.h */,
 				BC28F6E1241DC96D00636F97 /* SessionController.m */,
+				BCB936DC243904DC00C84EBB /* ImageCacheController.h */,
+				BCB936DD243904DC00C84EBB /* ImageCacheController.m */,
 				BC10F45E23B6973700E0AF09 /* AuthenticationController.h */,
 				BC10F45F23B6973700E0AF09 /* AuthenticationController.m */,
 				BC10F47423B6D9B700E0AF09 /* RootNavigationController.h */,
@@ -445,6 +451,7 @@
 		BC766E35235CAF23002FEDA0 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				BCB936DF2439056900C84EBB /* ImageCaching.h */,
 				BC10F46623B6A0AD00E0AF09 /* FIRUserSaving.h */,
 				BC28F6E6241DCE8700636F97 /* FIRUserDeleting.h */,
 				BC10F46523B69CB700E0AF09 /* FIRUserFetching.h */,
@@ -717,6 +724,7 @@
 				BC0811FA23AB3A01008B3D47 /* NSString+Empty.m in Sources */,
 				BCE2712323B30C030009BE53 /* ProgressPickerViewDataSource.m in Sources */,
 				BC051E1B23B321A300BD05C5 /* Progress.h in Sources */,
+				BCB936DE243904DC00C84EBB /* ImageCacheController.m in Sources */,
 				BCE2711C23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m in Sources */,
 				BC5E8EAD23B40AA10043A0E7 /* AssemblyDetailViewController.m in Sources */,
 				BC676474235D056B00500BF6 /* CreateProjectTableViewController.m in Sources */,
