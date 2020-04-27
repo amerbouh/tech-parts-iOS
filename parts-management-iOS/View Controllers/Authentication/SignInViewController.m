@@ -154,7 +154,7 @@
     __weak SignInViewController * weakSelf = self;
     
     // Attempt to authenticate the user.
-    [self.userAuthenticationHandler signInUserWithEmailAddress:self.emailAddressTextField.text password:self.passwordTextField.text completionHandler:^(NSError * _Nullable error) {
+    [self.userAuthenticationHandler signInUserWithEmailAddress:self.emailAddressTextField.text password:self.passwordTextField.text completionHandler:^(User * _Nullable user, NSError * _Nullable error) {
         [weakSelf hideActivityIndicatorView];
         [sender setEnabled:YES];
         
@@ -163,7 +163,7 @@
             return;
         } /* if NSError instance is not NULL */
         
-        [weakSelf.rootNavigationHandler navigateToBottomNavigationViewController];
+        [weakSelf.rootNavigationHandler navigateToBottomNavigationViewControllerWithUser:user];
     }];
 }
 

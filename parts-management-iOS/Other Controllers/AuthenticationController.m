@@ -33,24 +33,24 @@
     [[FIRAuth auth] sendPasswordResetWithEmail:emailAddress completion:completionHandler];
 }
 
-- (void)signInUserWithEmailAddress:(NSString *)emailAddress password:(NSString *)password completionHandler:(void (^)(NSError * _Nullable))completionHandler
+- (void)signInUserWithEmailAddress:(NSString *)emailAddress password:(NSString *)password completionHandler:(void (^)(User * _Nullable, NSError * _Nullable))completionHandler
 {
     [[FIRAuth auth] signInWithEmail:emailAddress password:password completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
         if (error != NULL) {
-            completionHandler(error);
+            completionHandler(NULL, error);
             return;
         } /* if NSError instance is not NULL */
         
         // Fetch the User record on the database matching the logged in user uid.
         [self->_userFetcher getUserWithIdentifier:authResult.user.uid completionHandler:^(User * _Nullable user, NSError * _Nullable error) {
             if (error != NULL) {
-                completionHandler(error);
+                completionHandler(NULL, error);
                 return;
             } /* if NSError instance is not NULL */
             
             // Save the User record on the device's local storage and call the completion handler.
-            [self->_userSaver saveUser:user completionHandler:^{ completionHandler(NULL); }];
-        }];        
+            [self->_userSaver saveUser:user completionHandler:^{ completionHandler(user, NULL); }];
+        }];
     }];
 }
 

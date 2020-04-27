@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AuthorizationManaging.h"
 #import "ProjectDataSourceDelegate.h"
 
 @interface ProjectListViewController : UIViewController <UITableViewDelegate, UISearchResultsUpdating, ProjectDataSourceDelegate>
 
+@property (strong, nonatomic, nonnull) id <AuthorizationManaging> authorizationManager;
 
 @end
 

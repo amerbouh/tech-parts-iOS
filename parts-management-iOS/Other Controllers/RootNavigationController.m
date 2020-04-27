@@ -30,9 +30,21 @@
 
 #pragma mark - Methods
 
-- (void)navigateToBottomNavigationViewController
+- (void)navigateToSignInViewController
 {
-    UINavigationController * const projectListViewController = [_viewControllerFactory makeProjectListViewController];
+    UIViewController * signInViewController = (UIViewController *) [_viewControllerFactory makeSignInViewControllerWithRootNavigationHandler:[_appDependencyContainer makeRootNavigationHandler]
+                                                                                                      userAuthenticationHandler:[_appDependencyContainer makeUserAuthenticationHandler]];
+    
+    // Set the Sign In View Controller instance as the window's root view controller.
+    [_window setRootViewController:signInViewController];
+    
+    // Animate the transition.
+    [UIView transitionWithView:_window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
+}
+
+- (void)navigateToBottomNavigationViewControllerWithUser:(User *)user
+{
+    UINavigationController * const projectListViewController = [_viewControllerFactory makeProjectListViewControllerWithUser:user];
     UINavigationController * const settingsViewController = [_viewControllerFactory makeSettingsViewControllerWithSessionManager:[_appDependencyContainer makeSessionManager]
                                                                                                                  userFetchingHandler: [_appDependencyContainer makeUserFetchingHandler]
                                                                                                                rootNavigationHandler:[_appDependencyContainer makeRootNavigationHandler]];
@@ -47,16 +59,5 @@
     [UIView transitionWithView:_window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
 }
 
-- (void)navigateToSignInViewController
-{
-    UIViewController * signInViewController = (UIViewController *) [_viewControllerFactory makeSignInViewControllerWithRootNavigationHandler:[_appDependencyContainer makeRootNavigationHandler]
-                                                                                                      userAuthenticationHandler:[_appDependencyContainer makeUserAuthenticationHandler]];
-    
-    // Set the Sign In View Controller instance as the window's root view controller.
-    [_window setRootViewController:signInViewController];
-    
-    // Animate the transition.
-    [UIView transitionWithView:_window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
-}
 
 @end

@@ -16,6 +16,12 @@
 /** @brief Attaches the View Controller's FIRAuthStateDidChangeListenerHandle instance. */
 - (void)attachAuthStateListener;
 
+/** @brief Loads the profile of the user with the given identifier.
+
+    @param uid An NSString representing the identifier of the user.
+ */
+- (void)loadUserForUid:(NSString *)uid;
+
 @end
 
 @implementation SessionPreparationViewController
@@ -45,6 +51,21 @@
     return YES;
 }
 
+- (void)loadUserForUid:(NSString *)uid
+{
+    __weak SessionPreparationViewController * weakSelf = self;
+    
+    // Load the appropriate user.
+    [self.userFetchingHandler getUserWithIdentifier:uid completionHandler:^(User * _Nullable user, NSError * _Nullable error) {
+        if (error != NULL) {
+            [weakSelf.rootNavigator navigateToSignInViewController];
+        } /* An error occurred while trying to fetch the user. */
+        else {
+            [weakSelf.rootNavigator navigateToBottomNavigationViewControllerWithUser:user];
+        }
+    }];
+}
+
 - (void)attachAuthStateListener
 {
     __weak SessionPreparationViewController * weakSelf = self;
@@ -52,7 +73,7 @@
     // Attach the auth state listener.
     self.authStateListener = [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth * _Nonnull auth, FIRUser * _Nullable user) {
         if (user != NULL) {
-            [weakSelf.rootNavigator navigateToBottomNavigationViewController];
+            [weakSelf loadUserForUid:user.uid];
         } /* if a user is currently logged-in */
         else {
             [weakSelf.rootNavigator navigateToSignInViewController];

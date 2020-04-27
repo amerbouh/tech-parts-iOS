@@ -8,6 +8,8 @@
 
 #import "TKViewControllerFactoryImpl.h"
 #import "SignInViewController.h"
+#import "AuthorizationController.h"
+#import "ProjectListViewController.h"
 #import "SettingsTableViewController.h"
 #import "BottomNavigationViewController.h"
 
@@ -15,9 +17,17 @@
 
 #pragma mark - Methods
 
-- (UINavigationController *)makeProjectListViewController
+- (UINavigationController *)makeProjectListViewControllerWithUser:(User *)user
 {
-    return (UINavigationController *) [[UIStoryboard storyboardWithName:@"Project" bundle:NULL] instantiateInitialViewController];
+    UINavigationController * const projectListNavigationController = (UINavigationController *) [[UIStoryboard storyboardWithName:@"Project" bundle:NULL] instantiateInitialViewController];
+    
+    // Get an instance of the Project List View Controller.
+    ProjectListViewController * const projectListViewController = (ProjectListViewController *) projectListNavigationController.viewControllers[0];
+    
+    // Initialize the Project List View Controller's properties.
+    [projectListViewController setAuthorizationManager:[[AuthorizationController alloc] initWithUser:user]];
+    
+    return projectListNavigationController;
 }
 
 - (UINavigationController *)makeSettingsViewControllerWithSessionManager:(id <SessionManaging>)sessionManager userFetchingHandler:(id <FIRUserFetching>)userFetchingHandler rootNavigationHandler:(id <RootNavigating>)rootNavigationHandler

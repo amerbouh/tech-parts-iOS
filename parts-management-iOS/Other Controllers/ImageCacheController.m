@@ -25,6 +25,11 @@
 
 #pragma mark - Methods
 
+- (void)addImage:(UIImage *)image forURL:(NSURL *)URL
+{
+    [_imageCache setObject:image forKey:URL];
+}
+
 - (void)removeImageForURL:(NSURL *)URL
 {
     [_imageCache removeObjectForKey:URL];
@@ -33,11 +38,6 @@
 - (UIImage *)imageForURL:(NSURL *)URL
 {
     return [_imageCache objectForKey:URL];
-}
-
-- (void)addImage:(UIImage *)image forURL:(NSURL *)URL
-{
-    [_imageCache setObject:image forKey:URL];
 }
 
 #pragma mark - Helper Methods

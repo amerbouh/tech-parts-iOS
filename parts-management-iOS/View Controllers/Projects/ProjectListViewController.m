@@ -7,6 +7,7 @@
 //
 
 #import "ProjectListViewController.h"
+#import "Operation.h"
 #import "MessageView.h"
 #import "NSString+Empty.h"
 #import "ProjectDataSource.h"
@@ -29,6 +30,9 @@
 
 /** @brief Prepares the UITableView instance used to display a list of projects. */
 - (void)configureTableView;
+
+/** @brief Configures the navigation bar used to displayed various actions. */
+- (void)configureNavigationBar;
 
 /** @brief Prepares the UISearchController instance used  to display search results. */
 - (void)configureSearchController;
@@ -68,6 +72,7 @@ static NSString * _showProjectDetailSegueIdentifier = @"ShowProjectDetailVCSegue
     
     // Do any additional setup after loading the view.
     [self configureTableView];
+    [self configureNavigationBar];
     [self configureSearchController];
     [self.dataSource loadProjects];
     [self.navigationItem setSearchController:self.searchController];
@@ -79,6 +84,14 @@ static NSString * _showProjectDetailSegueIdentifier = @"ShowProjectDetailVCSegue
 {
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self.dataSource];
+}
+
+- (void)configureNavigationBar
+{
+    if ([self.authorizationManager authorizeOperation:CREATE_PROJECT] == NO)
+    {
+        [self.navigationItem setRightBarButtonItem:NULL];
+    } /* Hide the right bar button item. */
 }
 
 - (void)configureSearchController

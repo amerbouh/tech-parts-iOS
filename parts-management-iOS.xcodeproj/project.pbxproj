@@ -58,6 +58,8 @@
 		BC8EB5CF235CA10D00BCE201 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */; };
 		BC9D4FFF23574D90000EF6DE /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9D4FFE23574D90000EF6DE /* MessageView.xib */; };
 		BCB936DE243904DC00C84EBB /* ImageCacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB936DD243904DC00C84EBB /* ImageCacheController.m */; };
+		BCB936E224394FAE00C84EBB /* AuthorizationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB936E124394FAE00C84EBB /* AuthorizationController.m */; };
+		BCB936E52439505A00C84EBB /* Operation.c in Sources */ = {isa = PBXBuildFile; fileRef = BCB936E42439505A00C84EBB /* Operation.c */; };
 		BCC0EC0B2354C6D500F5C0B9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCC0EC0A2354C6D500F5C0B9 /* Localizable.strings */; };
 		BCC0EC112354C8B600F5C0B9 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC0EC102354C8B600F5C0B9 /* Project.m */; };
 		BCC0EC162354C93A00F5C0B9 /* ProjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC0EC152354C93A00F5C0B9 /* ProjectTableViewCell.m */; };
@@ -182,6 +184,11 @@
 		BCB936DC243904DC00C84EBB /* ImageCacheController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCacheController.h; sourceTree = "<group>"; };
 		BCB936DD243904DC00C84EBB /* ImageCacheController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCacheController.m; sourceTree = "<group>"; };
 		BCB936DF2439056900C84EBB /* ImageCaching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCaching.h; sourceTree = "<group>"; };
+		BCB936E024394FAE00C84EBB /* AuthorizationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizationController.h; sourceTree = "<group>"; };
+		BCB936E124394FAE00C84EBB /* AuthorizationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizationController.m; sourceTree = "<group>"; };
+		BCB936E32439505A00C84EBB /* Operation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Operation.h; sourceTree = "<group>"; };
+		BCB936E42439505A00C84EBB /* Operation.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Operation.c; sourceTree = "<group>"; };
+		BCB936E62439528600C84EBB /* AuthorizationManaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizationManaging.h; sourceTree = "<group>"; };
 		BCC0EC0A2354C6D500F5C0B9 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BCC0EC0F2354C8B600F5C0B9 /* Project.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		BCC0EC102354C8B600F5C0B9 /* Project.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
@@ -318,6 +325,8 @@
 				BC28F6E1241DC96D00636F97 /* SessionController.m */,
 				BCB936DC243904DC00C84EBB /* ImageCacheController.h */,
 				BCB936DD243904DC00C84EBB /* ImageCacheController.m */,
+				BCB936E024394FAE00C84EBB /* AuthorizationController.h */,
+				BCB936E124394FAE00C84EBB /* AuthorizationController.m */,
 				BC10F45E23B6973700E0AF09 /* AuthenticationController.h */,
 				BC10F45F23B6973700E0AF09 /* AuthenticationController.m */,
 				BC10F47423B6D9B700E0AF09 /* RootNavigationController.h */,
@@ -425,6 +434,8 @@
 				BC051E1F23B3297100BD05C5 /* Progress.c */,
 				BC10F47123B6C79200E0AF09 /* UserRole.h */,
 				BC10F47223B6C79200E0AF09 /* UserRole.c */,
+				BCB936E32439505A00C84EBB /* Operation.h */,
+				BCB936E42439505A00C84EBB /* Operation.c */,
 				BC4E674923AF1A33007E284A /* Reachability.h */,
 				BC4E674A23AF1A33007E284A /* Reachability.m */,
 				BCE7E82E2434270F00696D18 /* ImageDownloadOperation.h */,
@@ -468,6 +479,7 @@
 				BC28F6DF241DC84F00636F97 /* SessionManaging.h */,
 				BC10F46123B69C5D00E0AF09 /* UserAuthenticating.h */,
 				BC766E36235CAF33002FEDA0 /* JSONObjectPayload.h */,
+				BCB936E62439528600C84EBB /* AuthorizationManaging.h */,
 				BC766E37235CB6DF002FEDA0 /* ProjectDataSourceDelegate.h */,
 				BCF1EEF023B123A70031186F /* AssemblyDataSourceDelegate.h */,
 				BCE2711D23B2E4160009BE53 /* ProjectDetailViewControllerDelegate.h */,
@@ -712,6 +724,7 @@
 				BC164FE82352781800C02514 /* ProjectListViewController.m in Sources */,
 				BC051E2023B3297100BD05C5 /* Progress.c in Sources */,
 				BCD0099323574B49005D15CB /* ProjectDetailViewController.m in Sources */,
+				BCB936E224394FAE00C84EBB /* AuthorizationController.m in Sources */,
 				BCE7E8302434270F00696D18 /* ImageDownloadOperation.m in Sources */,
 				BC4E674723AF155B007E284A /* FileSize.m in Sources */,
 				BC25F75D23AEFAB300770E16 /* DesignViewerViewController.m in Sources */,
@@ -725,6 +738,7 @@
 				BCE2712323B30C030009BE53 /* ProgressPickerViewDataSource.m in Sources */,
 				BC051E1B23B321A300BD05C5 /* Progress.h in Sources */,
 				BCB936DE243904DC00C84EBB /* ImageCacheController.m in Sources */,
+				BCB936E52439505A00C84EBB /* Operation.c in Sources */,
 				BCE2711C23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m in Sources */,
 				BC5E8EAD23B40AA10043A0E7 /* AssemblyDetailViewController.m in Sources */,
 				BC676474235D056B00500BF6 /* CreateProjectTableViewController.m in Sources */,

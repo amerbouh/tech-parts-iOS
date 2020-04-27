@@ -11,7 +11,9 @@
 #import "SessionManaging.h"
 #import "FIRUserFetching.h"
 #import "UserAuthenticating.h"
+#import "AuthorizationManaging.h"
 
+@class User;
 @class SignInViewController;
 @class UINavigationController;
 @class BottomNavigationViewController;
@@ -22,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol TKViewControllerFactory <NSObject>
 
 /** @brief Initializes and returns an instance of the Project List View Controller with the provided parameters. */
-- (UINavigationController * _Nonnull)makeProjectListViewController;
+- (UINavigationController * _Nonnull)makeProjectListViewControllerWithUser:(User * _Nonnull)user;
 
 /**
  @brief Initializes and returns an instance of the Settings  View Controller with the provided parameters.
