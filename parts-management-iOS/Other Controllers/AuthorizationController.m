@@ -34,11 +34,19 @@
     // Resolve whether or not the user is allowed to perform the given
     // operation.
     switch (operation) {
+        case EDIT_PROJECT:
+            isOperationAuthorized = _user.role == MENTOR;
+            break;
+            
         case CREATE_PROJECT:
             isOperationAuthorized = _user.role == MENTOR;
             break;
             
         case DELETE_PROJECT:
+            isOperationAuthorized = _user.role == MENTOR;
+            break;
+            
+        case CREATE_ASSEMBLY:
             isOperationAuthorized = _user.role == MENTOR;
             break;
             

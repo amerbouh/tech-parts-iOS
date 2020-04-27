@@ -13,8 +13,10 @@
 
 typedef enum Operation
 {
+    EDIT_PROJECT,
     CREATE_PROJECT,
-    DELETE_PROJECT
+    DELETE_PROJECT,
+    CREATE_ASSEMBLY
 } Operation;
 
 #endif /* Operation_h */

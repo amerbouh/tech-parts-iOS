@@ -73,12 +73,12 @@ static NSString * _projectInformationEmbedSegueIdentifier = @"ProjectInformation
 - (void)configureBarButtonItems
 {
     [self.navigationItem setRightBarButtonItem:NULL];
-    
-    // Configure the bar button items according to selected segmented control index.
-    if (self.segmentedControl.selectedSegmentIndex == 0) {
+ 
+    // Configure the bar button items according to selected segmented control index and the authorization status.
+    if (self.segmentedControl.selectedSegmentIndex == 0 && [self.authorizationManager authorizeOperation:EDIT_PROJECT] == YES) {
         UIBarButtonItem * editBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editBarButtonItemTaped:)];
         [self.navigationItem setRightBarButtonItem:editBarButtonItem];
-    } else {
+    } else if (self.segmentedControl.selectedSegmentIndex == 1 && [self.authorizationManager authorizeOperation:CREATE_ASSEMBLY] == YES) {
         UIBarButtonItem * addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addBarButtonItemTaped:)];
         [self.navigationItem setRightBarButtonItem:addBarButtonItem];
     }

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AuthorizationManaging.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** A Project instance representing the project details displayed to the user by the View Controller . */
 @property (strong, nonatomic, nonnull) Project * project;
+
+/** An AuthorizationManaging conforming object reprensenting the object used to managed access control related matters. */
+@property (strong, nonatomic, nonnull) id <AuthorizationManaging> authorizationManager;
 
 @end
 

@@ -193,8 +193,9 @@ static NSString * _showProjectDetailSegueIdentifier = @"ShowProjectDetailVCSegue
         Project * project = (Project *) sender;
         ProjectDetailViewController * projectDetailViewController = (ProjectDetailViewController *) segue.destinationViewController;
         
-        // Assign the Project Detail View Controller's project instance.
+        // Initialize the Project Detail View Controller's properties.
         [projectDetailViewController setProject:project];
+        [projectDetailViewController setAuthorizationManager:self.authorizationManager];
     }
 }
 
