@@ -126,6 +126,14 @@ static NSString * _showProjectDetailSegueIdentifier = @"ShowProjectDetailVCSegue
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.authorizationManager authorizeOperation:DELETE_PROJECT]) {
+        return UITableViewCellEditingStyleDelete;
+    } /* The currently signed-in user can delete projects. */
+    return UITableViewCellEditingStyleNone;
+}
+
 #pragma mark - Project Data Source delegate
 
 - (BOOL)isFiltering
