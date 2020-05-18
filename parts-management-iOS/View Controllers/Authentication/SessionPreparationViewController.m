@@ -7,6 +7,7 @@
 //
 
 #import "SessionPreparationViewController.h"
+#import <Intents/Intents.h>
 #import <FirebaseAuth/FirebaseAuth.h>
 
 @interface SessionPreparationViewController ()
@@ -52,7 +53,9 @@
     // Attach the auth state listener.
     self.authStateListener = [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth * _Nonnull auth, FIRUser * _Nullable user) {
         if (user != NULL) {
-            [weakSelf.rootNavigator navigateToBottomNavigationViewController];
+            [INPreferences requestSiriAuthorization:^(INSiriAuthorizationStatus status) {
+                [weakSelf.rootNavigator navigateToBottomNavigationViewController];
+            }];
         } /* if a user is currently logged-in */
         else {
             [weakSelf.rootNavigator navigateToSignInViewController];

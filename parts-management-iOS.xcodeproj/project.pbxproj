@@ -55,6 +55,7 @@
 		BC766E3C235CBC86002FEDA0 /* ProjectInformationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC766E3B235CBC86002FEDA0 /* ProjectInformationTableViewController.m */; };
 		BC766E41235CED3A002FEDA0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BC766E40235CED3A002FEDA0 /* User.m */; };
 		BC766E43235D025A002FEDA0 /* Project.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC766E42235D025A002FEDA0 /* Project.storyboard */; };
+		BC78C18124732E98006440CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC78C18024732E98006440CA /* InfoPlist.strings */; };
 		BC8EB5CF235CA10D00BCE201 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */; };
 		BC9D4FFF23574D90000EF6DE /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9D4FFE23574D90000EF6DE /* MessageView.xib */; };
 		BCB936DE243904DC00C84EBB /* ImageCacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB936DD243904DC00C84EBB /* ImageCacheController.m */; };
@@ -177,6 +178,7 @@
 		BC766E3F235CED3A002FEDA0 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		BC766E40235CED3A002FEDA0 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		BC766E42235D025A002FEDA0 /* Project.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Project.storyboard; sourceTree = "<group>"; };
+		BC78C18024732E98006440CA /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC9D4FFE23574D90000EF6DE /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
 		BCB936DC243904DC00C84EBB /* ImageCacheController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCacheController.h; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 		BCC0EC092354C6BF00F5C0B9 /* Localizations */ = {
 			isa = PBXGroup;
 			children = (
+				BC78C18024732E98006440CA /* InfoPlist.strings */,
 				BCC0EC0A2354C6D500F5C0B9 /* Localizable.strings */,
 				BC4E675323AF4408007E284A /* Pluralization.stringsdict */,
 			);
@@ -638,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC6905B223AC82950010CFCC /* Colors.xcassets in Resources */,
+				BC78C18124732E98006440CA /* InfoPlist.strings in Resources */,
 				BC766E43235D025A002FEDA0 /* Project.storyboard in Resources */,
 				BC1D4D2723B67B7500849E9F /* Authentication.storyboard in Resources */,
 				BC766E39235CB9DD002FEDA0 /* ProjectDetail.storyboard in Resources */,
