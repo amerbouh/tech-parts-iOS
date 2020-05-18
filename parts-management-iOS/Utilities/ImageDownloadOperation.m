@@ -39,7 +39,7 @@
     // the method.
     if (self.downloadedImage != NULL) return;
     
-    // Fetch the image with the given download uRL.
+    // Fetch the image with the given download URL.
     NSError * downloadError;
     NSData * const imageData = [NSData dataWithContentsOfURL:_imageDownloadUrl options:0 error:&downloadError];
         

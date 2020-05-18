@@ -18,17 +18,12 @@
 {
     self = [super init];
     if (self) {
-        _imageCache = [NSCache new];
+        _imageCache = [NSCache new]; 
     }
     return self;
 }
 
 #pragma mark - Methods
-
-- (void)addImage:(UIImage *)image forURL:(NSURL *)URL
-{
-    [_imageCache setObject:image forKey:URL];
-}
 
 - (void)removeImageForURL:(NSURL *)URL
 {
@@ -38,6 +33,11 @@
 - (UIImage *)imageForURL:(NSURL *)URL
 {
     return [_imageCache objectForKey:URL];
+}
+
+- (void)addImage:(UIImage *)image forURL:(NSURL *)URL
+{
+    [_imageCache setObject:image forKey:URL];
 }
 
 #pragma mark - Helper Methods

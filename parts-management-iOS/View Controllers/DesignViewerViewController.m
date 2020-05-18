@@ -41,7 +41,8 @@
 
 #pragma mark - View's lifecycle
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
@@ -72,7 +73,8 @@
     [self.scene.rootNode addChildNode:self.cameraNode];
 }
 
-- (IBAction)doneBarButtonItemTaped:(UIBarButtonItem *)sender {
+- (IBAction)doneBarButtonItemTaped:(UIBarButtonItem *)sender
+{
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

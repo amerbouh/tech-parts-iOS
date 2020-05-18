@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) NSString * authorName;
 
 /** A string representing the name of the robot. */
-@property (strong, nonatomic, nullable) NSString * robotName;
+@property (strong, nonatomic, nonnull) NSString * robotName;
 
 /** A string representing the description of the project. */
 @property (strong, nonatomic, nonnull) NSString * shortDescription;
@@ -77,7 +77,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param challengeName A string representing the name of the FRC challenge the project is created for.
  @param timestamp A date object representing creation date of the project.
 */
-- (instancetype)initWithName:(NSString * _Nonnull)name cost:(NSNumber * _Nonnull)cost season:(NSNumber * _Nonnull)season assembliesCount:(NSNumber * _Nonnull)assembliesCount robotName:(NSString * _Nonnull)robotName authorName:(NSString * _Nonnull)authorName shortDescription:(NSString * _Nonnull)shortDescription challengeName:(NSString * _Nonnull)challengeName timestamp:(NSDate * _Nonnull)timestamp lastUpdateTimestamp:(NSDate * _Nonnull)lastUpdateTimestamp;
+- (instancetype)initWithName:(NSString * _Nonnull)name cost:(NSNumber * _Nonnull)cost season:(NSNumber * _Nonnull)season assembliesCount:(NSNumber * _Nonnull)assembliesCount robotName:(NSString * _Nonnull)robotName shortDescription:(NSString * _Nonnull)shortDescription challengeName:(NSString * _Nonnull)challengeName timestamp:(NSDate * _Nonnull)timestamp lastUpdateTimestamp:(NSDate * _Nonnull)lastUpdateTimestamp;
 
 /**
  @brief Initializes a new Project instance with the provided parameters.

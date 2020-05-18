@@ -15,9 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CreateProjectTableViewController : UITableViewController
 
-/** A FIRProjectCreating conforming object responsible for creating / updating Project instances on the database. */
-@property (strong, nonatomic) id <FIRProjectCreating> projectCreator;
-
 /**
  @brief Sets the Project instance to edit in this View Controller.
  

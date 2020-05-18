@@ -14,7 +14,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithName:(NSString *)name cost:(NSNumber *)cost season:(NSNumber *)season assembliesCount:(NSNumber *)assembliesCount robotName:(NSString *)robotName authorName:(NSString *)authorName shortDescription:(NSString *)shortDescription challengeName:(NSString *)challengeName timestamp:(NSDate *)timestamp lastUpdateTimestamp:(NSDate *)lastUpdateTimestamp
+- (instancetype)initWithName:(NSString *)name cost:(NSNumber *)cost season:(NSNumber *)season assembliesCount:(NSNumber *)assembliesCount robotName:(NSString *)robotName shortDescription:(NSString *)shortDescription challengeName:(NSString *)challengeName timestamp:(NSDate *)timestamp lastUpdateTimestamp:(NSDate *)lastUpdateTimestamp
 {
     self = [super init];
     if (self) {
@@ -23,7 +23,6 @@
         _season = season;
         _timestamp = timestamp;
         _robotName = robotName;
-        _authorName = authorName;
         _challengeName = challengeName;
         _assembliesCount = assembliesCount;
         _shortDescription = shortDescription;
@@ -143,7 +142,7 @@
         @"shortDescription": self.shortDescription,
         @"assembliesCount": self.assembliesCount,
         @"createdAt": [FIRTimestamp timestampWithDate:self.timestamp],
-        @"updatedAt": [FIRTimestamp timestampWithDate:self.lastUpdateTimestamp]
+        @"updatedAt": [FIRTimestamp timestampWithDate:self.lastUpdateTimestamp],
     };
 }
 

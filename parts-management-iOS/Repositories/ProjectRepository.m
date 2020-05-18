@@ -28,7 +28,7 @@ static NSString * PROJECTS_COLLECTION_NAME = @"projects";
 
 #pragma mark - Methods
 
-- (void)createProject:(Project *)project completionHandler:(void (^)(NSError * _Nullable))completionHandler
+- (void)createProject:(Project *)project authorUid:(NSString *)authorUid completionHandler:(void (^)(NSError * _Nullable))completionHandler
 {
     FIRCollectionReference * projectsCollection = [_database collectionWithPath:PROJECTS_COLLECTION_NAME];
     FIRDocumentReference * projectDocumentRef = [projectsCollection documentWithAutoID];
@@ -36,8 +36,12 @@ static NSString * PROJECTS_COLLECTION_NAME = @"projects";
     // Set the project's identifier.
     [project setIdentifier:projectDocumentRef.documentID];
     
+    // Create a NSMutableDictionary representing the document data that is being uploaded to Cloud Firestore.
+    NSMutableDictionary<NSString *, id> * projectDocumentData = [NSMutableDictionary dictionaryWithDictionary: [project toDocumentData]];
+    [projectDocumentData setValue:authorUid forKey:@"authorUid"];
+    
     // Upload the document to the Cloud Firestore database.
-    [projectDocumentRef setData:[project toDocumentData] completion:completionHandler];
+    [projectDocumentRef setData:projectDocumentData completion:completionHandler];
 }
 
 - (void)updateProject:(Project *)project completionHandler:(void (^)(NSError * _Nullable))completionHandler

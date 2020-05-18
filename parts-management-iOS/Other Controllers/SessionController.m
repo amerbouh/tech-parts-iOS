@@ -28,7 +28,7 @@
 
 - (NSString * _Nullable)getCurrentUserId
 {
-    FIRUser * currentUser = [[FIRAuth auth] currentUser];
+    FIRUser * const currentUser = [[FIRAuth auth] currentUser];
     
     // Returns the identifier of the currently signed-in user.
     return [currentUser uid];

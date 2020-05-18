@@ -9,7 +9,9 @@
 #import "CreateProjectTableViewController.h"
 #import "Project.h"
 #import "NSString+Empty.h"
+#import "SessionManaging.h"
 #import "ProjectRepository.h"
+#import "SessionController.h"
 #import "UIViewController+PresentErrorAlertController.h"
 
 @interface CreateProjectTableViewController ()
@@ -22,8 +24,17 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell * seasonDatePickerTableViewCell;
 @property (weak, nonatomic) IBOutlet UITextView * descriptionTextView;
 
+/** A boolean indicating whether or not the date picker is being shown to the user. */
 @property BOOL isDatePickerRowExpanded;
+
+/** A Project instance representing the project that is currently being created by the user. */
 @property (strong, nonatomic, nullable) Project * project;
+
+/** A SessionManaging conforming object responsible for managing session-related data. */
+@property (strong, nonatomic, nonnull) id <SessionManaging> sessionManager;
+
+/** A FIRProjectCreating conforming object responsible for creating / updating Project instances on the database. */
+@property (strong, nonatomic, nonnull) id <FIRProjectCreating> projectCreator;
 
 - (void)createProject;
 - (void)updateProject;
@@ -37,8 +48,8 @@
 
 @implementation CreateProjectTableViewController
 
-static CGFloat DEFAULT_ROW_HEIGHT = (CGFloat) 50;
-static CGFloat DEFAULT_DATE_PICKER_EXPANDED_STATE_HEIGHT = (CGFloat) 216;
+static const CGFloat DEFAULT_ROW_HEIGHT = (CGFloat) 50;
+static const CGFloat DEFAULT_DATE_PICKER_EXPANDED_STATE_HEIGHT = (CGFloat) 216;
 
 #pragma mark - Initialization
 
@@ -47,6 +58,7 @@ static CGFloat DEFAULT_DATE_PICKER_EXPANDED_STATE_HEIGHT = (CGFloat) 216;
     self = [super initWithCoder:coder];
     if (self) {
         _projectCreator = [ProjectRepository new];
+        _sessionManager = [SessionController new];
     }
     return self;
 }
@@ -94,6 +106,7 @@ static CGFloat DEFAULT_DATE_PICKER_EXPANDED_STATE_HEIGHT = (CGFloat) 216;
     NSDate * currentDate = [NSDate new];
     NSString * season = self.seasonLabel.text;
     NSString * robotName = self.robotNameTextField.text;
+    NSString * authorUid = self.sessionManager.getCurrentUserId;
     NSString * projectName = self.projectNameTextField.text;
     NSString * challengeName = self.challengeNameTextField.text;
     NSString * description = self.descriptionTextView.text;
@@ -103,15 +116,15 @@ static CGFloat DEFAULT_DATE_PICKER_EXPANDED_STATE_HEIGHT = (CGFloat) 216;
     // Create a configure a number formatter.
     NSNumberFormatter * numberFormatter = [NSNumberFormatter new];
     [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-       
+    
     // Initialize a Project instance with the given inputs.
-    Project * project = [[Project alloc] initWithName:projectName cost:cost season:[numberFormatter numberFromString:season] assembliesCount:assembliesCount robotName:robotName authorName:@"Sylvain Gauvreau" shortDescription:description challengeName:challengeName timestamp:currentDate lastUpdateTimestamp:currentDate];
+    Project * project = [[Project alloc] initWithName:projectName cost:cost season:[numberFormatter numberFromString:season] assembliesCount:assembliesCount robotName:robotName shortDescription:description challengeName:challengeName timestamp:currentDate lastUpdateTimestamp:currentDate];
        
     // Create a weak reference to the View Controller to avoid strong reference cycles.
     __weak CreateProjectTableViewController * weakSelf = self;
        
     // Upload the created project to Firebase.
-    [self.projectCreator createProject:project completionHandler:^(NSError * _Nullable error) {
+    [self.projectCreator createProject:project authorUid:authorUid completionHandler:^(NSError * _Nullable error) {
         if (error == NULL) {
             [weakSelf dismissViewControllerAnimated:YES completion:NULL];
         } else {

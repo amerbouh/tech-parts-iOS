@@ -18,9 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
  @brief Uploads the given project to the Cloud Firestore database.
  
  @param project A Project representing the data uploaded to Cloud Firestore.
+ @param authorUid A string representing the user identifier of the author creating the project creation request.
  @param completionHandler The completion handler to call when request completes.
  */
-- (void)createProject:(Project * _Nonnull)project completionHandler:(void (^_Nullable)(NSError * _Nullable error))completionHandler;
+- (void)createProject:(Project * _Nonnull)project authorUid:(NSString * _Nonnull)authorUid completionHandler:(void (^_Nullable)(NSError * _Nullable error))completionHandler;
 
 /**
 @brief Updates the given project on the Cloud Firestore database.
