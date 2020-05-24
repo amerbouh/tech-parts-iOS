@@ -9,13 +9,12 @@
 #import "AppDependencyContainer.h"
 #import "UserRepository.h"
 #import "SessionController.h"
+#import "SiriShorcutsController.h"
 #import "RootNavigationController.h"
 #import "AuthenticationController.h"
+#import "RegistrationTokenRepository.h"
 #import "TKViewControllerFactoryImpl.h"
-
-@interface AppDependencyContainer ()
-
-@end
+#import "NotificationsController.h"
 
 @implementation AppDependencyContainer {
     RLMRealm * _realm;
@@ -68,6 +67,27 @@
     // Return a newly created instance of the AuthenticationController class.
     return [[AuthenticationController alloc] initWithUserSavingHandler:userRepository
                                                    userFetchingHandler:userRepository];
+}
+
+- (id<NotificationsManaging>)makeRemoteNotificationsManager
+{
+    RegistrationTokenRepository const * const registrationTokenRepository = [RegistrationTokenRepository new];
+    
+     // Return a newly created instance of the NotificationsController class.
+    return [[NotificationsController alloc] init:registrationTokenRepository];
+}
+
+- (id<SiriShortcutsAuthorizationManaging>)makeSiriShorcutsAuthorizationManager
+{
+    return [SiriShorcutsController new];
+}
+
+- (id<NotificationsAuthorizationManaging>)makeNotificationsAuthorizationManager
+{
+    RegistrationTokenRepository const * const registrationTokenRepository = [RegistrationTokenRepository new];
+    
+     // Return a newly created instance of the NotificationsController class.
+    return [[NotificationsController alloc] init:registrationTokenRepository];
 }
 
 @end

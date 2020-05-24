@@ -12,6 +12,7 @@
 #import "CreateProjectTableViewController.h"
 #import "ProjectDetailViewControllerDelegate.h"
 #import "ProjectInformationTableViewController.h"
+#import <Intents/Intents.h>
 
 @interface ProjectDetailViewController ()
 
@@ -107,6 +108,15 @@ static NSString * _projectInformationEmbedSegueIdentifier = @"ProjectInformation
         [self.assemblyListViewControllerContainerView endEditing:YES];
         [self.projectInformationTableViewControllerContainerView setAlpha:1];
     } else {
+        INInteraction * const interaction = [[INInteraction alloc] initWithIntent:self.project.intent response:NULL];
+        
+        // Set the interaction's identifier.
+        interaction.identifier = self.project.identifier;
+        
+        // Donate the interaction so Siri can suggest the appropriate shorcuts to the user.
+        [interaction donateInteractionWithCompletion:NULL];
+        
+        // Display the container view displaying the Assembly List View Controller.
         [self.projectInformationTableViewControllerContainerView setAlpha:0];
         [self.assemblyListViewControllerContainerView setAlpha:1];
     }

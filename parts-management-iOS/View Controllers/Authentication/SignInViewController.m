@@ -141,6 +141,27 @@
     } /* if the notification's name is not UIKeyboardWillHideNotification */
 }
 
+- (void)onSuccessfulSignIn
+{
+    void (^siriAuthorizationCompletionHandler)(void) = ^{
+        [self.rootNavigationHandler navigateToBottomNavigationViewController];
+    };
+    
+    // The block of code to execute once we receive a response from the user for notifications
+    // authorization.
+    void (^notificationsAuthorizationCompletionHandler)(void) = ^{
+        [self.siriShortcutsAuthorizationManager requestSiriAuthorization:siriAuthorizationCompletionHandler];
+    };
+    
+    // Request the user's permission to display notifications.
+    [self.notificationsAuthorizationManager requestNotificationsAuthorization:notificationsAuthorizationCompletionHandler];
+}
+
+- (void)onSignInFailureWithError:(NSError *)error;
+{
+    [self presentErrorAlertControllerWithMessage:error.localizedDescription];
+}
+
 - (IBAction)signInButtonTaped:(TKRoundedButton *)sender
 {
     [sender setEnabled:NO];
@@ -155,15 +176,12 @@
     
     // Attempt to authenticate the user.
     [self.userAuthenticationHandler signInUserWithEmailAddress:self.emailAddressTextField.text password:self.passwordTextField.text completionHandler:^(NSError * _Nullable error) {
-        [weakSelf hideActivityIndicatorView];
-        [sender setEnabled:YES];
-        
         if (error != NULL) {
-            [weakSelf presentErrorAlertControllerWithMessage:error.localizedDescription];
-            return;
+            [weakSelf onSignInFailureWithError:error];
         } /* if NSError instance is not NULL */
-        
-        [weakSelf.rootNavigationHandler navigateToBottomNavigationViewController];
+        else {
+            [weakSelf onSuccessfulSignIn];
+        } /* if NSError instance is NULL */
     }];
 }
 

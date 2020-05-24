@@ -17,6 +17,8 @@
 		BC10F46F23B6ADF800E0AF09 /* SessionPreparationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC10F46E23B6ADF800E0AF09 /* SessionPreparationViewController.m */; };
 		BC10F47323B6C79200E0AF09 /* UserRole.c in Sources */ = {isa = PBXBuildFile; fileRef = BC10F47223B6C79200E0AF09 /* UserRole.c */; };
 		BC10F47623B6D9B700E0AF09 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC10F47523B6D9B700E0AF09 /* RootNavigationController.m */; };
+		BC1365D12479849000A4934A /* SiriShorcutsController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC1365D02479848F00A4934A /* SiriShorcutsController.m */; };
+		BC1365D42479BB3400A4934A /* RegistrationTokenRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = BC1365D32479BB3400A4934A /* RegistrationTokenRepository.m */; };
 		BC164FE22352781800C02514 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC164FE12352781800C02514 /* AppDelegate.m */; };
 		BC164FE52352781800C02514 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC164FE42352781800C02514 /* SceneDelegate.m */; };
 		BC164FE82352781800C02514 /* ProjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC164FE72352781800C02514 /* ProjectListViewController.m */; };
@@ -41,6 +43,7 @@
 		BC28F6E2241DC96D00636F97 /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6E1241DC96D00636F97 /* SessionController.m */; };
 		BC28F6E9241DEF4100636F97 /* TKViewControllerFactoryImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6E8241DEF4100636F97 /* TKViewControllerFactoryImpl.m */; };
 		BC28F6EE241DF3A900636F97 /* AppDependencyContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6ED241DF3A900636F97 /* AppDependencyContainer.m */; };
+		BC410CC62478FBC8003F7EC0 /* NotificationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC410CC52478FBC8003F7EC0 /* NotificationsController.m */; };
 		BC4E674723AF155B007E284A /* FileSize.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E674623AF155B007E284A /* FileSize.m */; };
 		BC4E674B23AF1A33007E284A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E674A23AF1A33007E284A /* Reachability.m */; };
 		BC4E675423AF4408007E284A /* Pluralization.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = BC4E675323AF4408007E284A /* Pluralization.stringsdict */; };
@@ -48,7 +51,7 @@
 		BC5E8EAD23B40AA10043A0E7 /* AssemblyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5E8EAC23B40AA10043A0E7 /* AssemblyDetailViewController.m */; };
 		BC5E8EB023B447640043A0E7 /* AssemblyInformationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5E8EAF23B447640043A0E7 /* AssemblyInformationTableViewController.m */; };
 		BC676474235D056B00500BF6 /* CreateProjectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC676473235D056B00500BF6 /* CreateProjectTableViewController.m */; };
-		BC67647A235D349B00500BF6 /* UITableView+UITableView_BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC676479235D349B00500BF6 /* UITableView+UITableView_BackgroundView.m */; };
+		BC67647A235D349B00500BF6 /* UITableView+BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC676479235D349B00500BF6 /* UITableView+BackgroundView.m */; };
 		BC6905B223AC82950010CFCC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6905B123AC82950010CFCC /* Colors.xcassets */; };
 		BC72370723B85BBD0055A6CE /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72370623B85BBD0055A6CE /* ForgotPasswordViewController.m */; };
 		BC766E39235CB9DD002FEDA0 /* ProjectDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC766E38235CB9DD002FEDA0 /* ProjectDetail.storyboard */; };
@@ -56,6 +59,12 @@
 		BC766E41235CED3A002FEDA0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BC766E40235CED3A002FEDA0 /* User.m */; };
 		BC766E43235D025A002FEDA0 /* Project.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC766E42235D025A002FEDA0 /* Project.storyboard */; };
 		BC78C18124732E98006440CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC78C18024732E98006440CA /* InfoPlist.strings */; };
+		BC78C1AA24733859006440CA /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = BC78C1A924733859006440CA /* Intents.intentdefinition */; };
+		BC78C1B424733BFF006440CA /* IntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78C1B324733BFF006440CA /* IntentHandler.m */; };
+		BC78C1B824733BFF006440CA /* parts-management-intents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BC78C1B024733BFF006440CA /* parts-management-intents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BC78C1BD24733D6A006440CA /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = BC78C1A924733859006440CA /* Intents.intentdefinition */; };
+		BC78C1C52473461E006440CA /* NSUserActivity+ViewWorkInProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78C1C42473461E006440CA /* NSUserActivity+ViewWorkInProgress.m */; };
+		BC78C1CB247351A1006440CA /* ViewWorkInProgresIntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78C1CA247351A1006440CA /* ViewWorkInProgresIntentHandler.m */; };
 		BC8EB5CF235CA10D00BCE201 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */; };
 		BC9D4FFF23574D90000EF6DE /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9D4FFE23574D90000EF6DE /* MessageView.xib */; };
 		BCB936DE243904DC00C84EBB /* ImageCacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB936DD243904DC00C84EBB /* ImageCacheController.m */; };
@@ -71,11 +80,35 @@
 		BCE2711C23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2711B23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m */; };
 		BCE2712323B30C030009BE53 /* ProgressPickerViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2712223B30C030009BE53 /* ProgressPickerViewDataSource.m */; };
 		BCE7E8302434270F00696D18 /* ImageDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE7E82F2434270F00696D18 /* ImageDownloadOperation.m */; };
-		BCE7E83324344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE7E83224344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.m */; };
+		BCE7E83324344F7E00696D18 /* UIImageView+ReplaceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE7E83224344F7E00696D18 /* UIImageView+ReplaceImage.m */; };
 		BCECEFD523BA797C0005AB7E /* TKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCECEFD423BA797C0005AB7E /* TKButton.m */; };
 		BCECEFD823BAB0E80005AB7E /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCECEFD723BAB0E80005AB7E /* SignUpViewController.m */; };
 		BCF1EEEF23B11E1A0031186F /* AssemblyRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF1EEEE23B11E1A0031186F /* AssemblyRepository.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC78C1B624733BFF006440CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC164FD52352781800C02514 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC78C1AF24733BFF006440CA;
+			remoteInfo = "parts-management-intents";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BC78C1BC24733BFF006440CA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BC78C1B824733BFF006440CA /* parts-management-intents.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		25D06C376D438F4534F4A01F /* Pods_parts_management_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parts_management_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +134,14 @@
 		BC10F47423B6D9B700E0AF09 /* RootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
 		BC10F47523B6D9B700E0AF09 /* RootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
 		BC10F47723B6DB7500E0AF09 /* RootNavigating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNavigating.h; sourceTree = "<group>"; };
+		BC1365CF2479848F00A4934A /* SiriShorcutsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SiriShorcutsController.h; sourceTree = "<group>"; };
+		BC1365D02479848F00A4934A /* SiriShorcutsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SiriShorcutsController.m; sourceTree = "<group>"; };
+		BC1365D22479BB3400A4934A /* RegistrationTokenRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistrationTokenRepository.h; sourceTree = "<group>"; };
+		BC1365D32479BB3400A4934A /* RegistrationTokenRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationTokenRepository.m; sourceTree = "<group>"; };
+		BC1365D52479BBA500A4934A /* FIRRegistrationTokenSaving.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRRegistrationTokenSaving.h; sourceTree = "<group>"; };
+		BC1365D62479C69E00A4934A /* NotificationsManaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsManaging.h; sourceTree = "<group>"; };
+		BC1365D72479C8B600A4934A /* SiriShortcutsAuthorizationManaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SiriShortcutsAuthorizationManaging.h; sourceTree = "<group>"; };
+		BC1365D82479C9F200A4934A /* NotificationsAuthorizationManaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsAuthorizationManaging.h; sourceTree = "<group>"; };
 		BC164FDD2352781800C02514 /* Tech Parts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tech Parts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC164FE02352781800C02514 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC164FE12352781800C02514 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -150,6 +191,8 @@
 		BC28F6EA241DF04A00636F97 /* TKViewControllerFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKViewControllerFactory.h; sourceTree = "<group>"; };
 		BC28F6EC241DF3A900636F97 /* AppDependencyContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDependencyContainer.h; sourceTree = "<group>"; };
 		BC28F6ED241DF3A900636F97 /* AppDependencyContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDependencyContainer.m; sourceTree = "<group>"; };
+		BC410CC42478FBC8003F7EC0 /* NotificationsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsController.h; sourceTree = "<group>"; };
+		BC410CC52478FBC8003F7EC0 /* NotificationsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationsController.m; sourceTree = "<group>"; };
 		BC4E674523AF155B007E284A /* FileSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSize.h; sourceTree = "<group>"; };
 		BC4E674623AF155B007E284A /* FileSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSize.m; sourceTree = "<group>"; };
 		BC4E674923AF1A33007E284A /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -165,8 +208,8 @@
 		BC676473235D056B00500BF6 /* CreateProjectTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateProjectTableViewController.m; sourceTree = "<group>"; };
 		BC676475235D2F1700500BF6 /* FIRDocumentSerializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRDocumentSerializable.h; sourceTree = "<group>"; };
 		BC676476235D326500500BF6 /* FIRProjectCreating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRProjectCreating.h; sourceTree = "<group>"; };
-		BC676478235D349B00500BF6 /* UITableView+UITableView_BackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+UITableView_BackgroundView.h"; sourceTree = "<group>"; };
-		BC676479235D349B00500BF6 /* UITableView+UITableView_BackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+UITableView_BackgroundView.m"; sourceTree = "<group>"; };
+		BC676478235D349B00500BF6 /* UITableView+BackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+BackgroundView.h"; sourceTree = "<group>"; };
+		BC676479235D349B00500BF6 /* UITableView+BackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BackgroundView.m"; sourceTree = "<group>"; };
 		BC6905B123AC82950010CFCC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BC72370523B85BBD0055A6CE /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		BC72370623B85BBD0055A6CE /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
@@ -179,6 +222,15 @@
 		BC766E40235CED3A002FEDA0 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		BC766E42235D025A002FEDA0 /* Project.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Project.storyboard; sourceTree = "<group>"; };
 		BC78C18024732E98006440CA /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		BC78C1A924733859006440CA /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		BC78C1B024733BFF006440CA /* parts-management-intents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "parts-management-intents.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC78C1B224733BFF006440CA /* IntentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntentHandler.h; sourceTree = "<group>"; };
+		BC78C1B324733BFF006440CA /* IntentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntentHandler.m; sourceTree = "<group>"; };
+		BC78C1B524733BFF006440CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC78C1C32473461E006440CA /* NSUserActivity+ViewWorkInProgress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUserActivity+ViewWorkInProgress.h"; sourceTree = "<group>"; };
+		BC78C1C42473461E006440CA /* NSUserActivity+ViewWorkInProgress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserActivity+ViewWorkInProgress.m"; sourceTree = "<group>"; };
+		BC78C1C9247351A1006440CA /* ViewWorkInProgresIntentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewWorkInProgresIntentHandler.h; sourceTree = "<group>"; };
+		BC78C1CA247351A1006440CA /* ViewWorkInProgresIntentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewWorkInProgresIntentHandler.m; sourceTree = "<group>"; };
 		BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC9D4FFE23574D90000EF6DE /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
 		BCB936DC243904DC00C84EBB /* ImageCacheController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCacheController.h; sourceTree = "<group>"; };
@@ -209,8 +261,8 @@
 		BCE2712423B3122E0009BE53 /* FIRAssemblyCreating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRAssemblyCreating.h; sourceTree = "<group>"; };
 		BCE7E82E2434270F00696D18 /* ImageDownloadOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDownloadOperation.h; sourceTree = "<group>"; };
 		BCE7E82F2434270F00696D18 /* ImageDownloadOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadOperation.m; sourceTree = "<group>"; };
-		BCE7E83124344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIImageView_ReplaceImage.h"; sourceTree = "<group>"; };
-		BCE7E83224344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIImageView_ReplaceImage.m"; sourceTree = "<group>"; };
+		BCE7E83124344F7E00696D18 /* UIImageView+ReplaceImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ReplaceImage.h"; sourceTree = "<group>"; };
+		BCE7E83224344F7E00696D18 /* UIImageView+ReplaceImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ReplaceImage.m"; sourceTree = "<group>"; };
 		BCECEFD323BA797C0005AB7E /* TKButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKButton.h; sourceTree = "<group>"; };
 		BCECEFD423BA797C0005AB7E /* TKButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKButton.m; sourceTree = "<group>"; };
 		BCECEFD623BAB0E80005AB7E /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -228,6 +280,13 @@
 			files = (
 				BC25F76123AEFBD100770E16 /* SceneKit.framework in Frameworks */,
 				2B85A4539584729A71ED9F69 /* Pods_parts_management_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC78C1AD24733BFF006440CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,8 +377,12 @@
 			children = (
 				BC28F6E0241DC96D00636F97 /* SessionController.h */,
 				BC28F6E1241DC96D00636F97 /* SessionController.m */,
+				BC1365CF2479848F00A4934A /* SiriShorcutsController.h */,
+				BC1365D02479848F00A4934A /* SiriShorcutsController.m */,
 				BCB936DC243904DC00C84EBB /* ImageCacheController.h */,
 				BCB936DD243904DC00C84EBB /* ImageCacheController.m */,
+				BC410CC42478FBC8003F7EC0 /* NotificationsController.h */,
+				BC410CC52478FBC8003F7EC0 /* NotificationsController.m */,
 				BC10F45E23B6973700E0AF09 /* AuthenticationController.h */,
 				BC10F45F23B6973700E0AF09 /* AuthenticationController.m */,
 				BC10F47423B6D9B700E0AF09 /* RootNavigationController.h */,
@@ -332,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				BC164FDF2352781800C02514 /* parts-management-iOS */,
+				BC78C1B124733BFF006440CA /* parts-management-intents */,
 				BC164FDE2352781800C02514 /* Products */,
 				B9D223876E3CA53D897532AB /* Pods */,
 				075657E5FA447BFD56D06CEB /* Frameworks */,
@@ -342,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				BC164FDD2352781800C02514 /* Tech Parts.app */,
+				BC78C1B024733BFF006440CA /* parts-management-intents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -385,10 +450,12 @@
 				BC10F46323B69CA300E0AF09 /* UserRepository.m */,
 				BC287EE4235CA35C00B57477 /* ProjectRepository.h */,
 				BC287EE5235CA35C00B57477 /* ProjectRepository.m */,
-				BCF1EEED23B11E1A0031186F /* AssemblyRepository.h */,
-				BCF1EEEE23B11E1A0031186F /* AssemblyRepository.m */,
 				BC25F75423AEA13600770E16 /* CADFileRepository.h */,
 				BC25F75523AEA13600770E16 /* CADFileRepository.m */,
+				BCF1EEED23B11E1A0031186F /* AssemblyRepository.h */,
+				BCF1EEEE23B11E1A0031186F /* AssemblyRepository.m */,
+				BC1365D22479BB3400A4934A /* RegistrationTokenRepository.h */,
+				BC1365D32479BB3400A4934A /* RegistrationTokenRepository.m */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -440,10 +507,12 @@
 			children = (
 				BC0811F823AB3A01008B3D47 /* NSString+Empty.h */,
 				BC0811F923AB3A01008B3D47 /* NSString+Empty.m */,
-				BCE7E83124344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.h */,
-				BCE7E83224344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.m */,
-				BC676478235D349B00500BF6 /* UITableView+UITableView_BackgroundView.h */,
-				BC676479235D349B00500BF6 /* UITableView+UITableView_BackgroundView.m */,
+				BCE7E83124344F7E00696D18 /* UIImageView+ReplaceImage.h */,
+				BCE7E83224344F7E00696D18 /* UIImageView+ReplaceImage.m */,
+				BC676478235D349B00500BF6 /* UITableView+BackgroundView.h */,
+				BC676479235D349B00500BF6 /* UITableView+BackgroundView.m */,
+				BC78C1C32473461E006440CA /* NSUserActivity+ViewWorkInProgress.h */,
+				BC78C1C42473461E006440CA /* NSUserActivity+ViewWorkInProgress.m */,
 				BC25F75823AEBA3F00770E16 /* UIViewController+PresentErrorAlertController.h */,
 				BC25F75923AEBA3F00770E16 /* UIViewController+PresentErrorAlertController.m */,
 			);
@@ -463,18 +532,42 @@
 				BCE2712423B3122E0009BE53 /* FIRAssemblyCreating.h */,
 				BC5E8EA823B3DC040043A0E7 /* FIRAssemblyDeleting.h */,
 				BCF1EEEC23B11D160031186F /* FIRAssemblyFetching.h */,
+				BC1365D52479BBA500A4934A /* FIRRegistrationTokenSaving.h */,
 				BC25F75323AE95F600770E16 /* FIRFileDownloading.h */,
 				BC676475235D2F1700500BF6 /* FIRDocumentSerializable.h */,
 				BC28F6EA241DF04A00636F97 /* TKViewControllerFactory.h */,
 				BC10F47723B6DB7500E0AF09 /* RootNavigating.h */,
 				BC28F6DF241DC84F00636F97 /* SessionManaging.h */,
 				BC10F46123B69C5D00E0AF09 /* UserAuthenticating.h */,
+				BC1365D62479C69E00A4934A /* NotificationsManaging.h */,
+				BC1365D72479C8B600A4934A /* SiriShortcutsAuthorizationManaging.h */,
+				BC1365D82479C9F200A4934A /* NotificationsAuthorizationManaging.h */,
 				BC766E36235CAF33002FEDA0 /* JSONObjectPayload.h */,
 				BC766E37235CB6DF002FEDA0 /* ProjectDataSourceDelegate.h */,
 				BCF1EEF023B123A70031186F /* AssemblyDataSourceDelegate.h */,
 				BCE2711D23B2E4160009BE53 /* ProjectDetailViewControllerDelegate.h */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BC78C1AB2473385F006440CA /* Siri */ = {
+			isa = PBXGroup;
+			children = (
+				BC78C1A924733859006440CA /* Intents.intentdefinition */,
+			);
+			path = Siri;
+			sourceTree = "<group>";
+		};
+		BC78C1B124733BFF006440CA /* parts-management-intents */ = {
+			isa = PBXGroup;
+			children = (
+				BC78C1B224733BFF006440CA /* IntentHandler.h */,
+				BC78C1B324733BFF006440CA /* IntentHandler.m */,
+				BC78C1C9247351A1006440CA /* ViewWorkInProgresIntentHandler.h */,
+				BC78C1CA247351A1006440CA /* ViewWorkInProgresIntentHandler.m */,
+				BC78C1B524733BFF006440CA /* Info.plist */,
+			);
+			path = "parts-management-intents";
 			sourceTree = "<group>";
 		};
 		BC9D4FFD23574D76000EF6DE /* XIBs */ = {
@@ -502,6 +595,7 @@
 		BCC0EC072354C6AF00F5C0B9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BC78C1AB2473385F006440CA /* Siri */,
 				BC9D4FFD23574D76000EF6DE /* XIBs */,
 				BCC0EC082354C6B600F5C0B9 /* Storyboards */,
 				BCC0EC092354C6BF00F5C0B9 /* Localizations */,
@@ -593,15 +687,34 @@
 				BC164FDA2352781800C02514 /* Frameworks */,
 				BC164FDB2352781800C02514 /* Resources */,
 				468EE64A4E8EBA6E76FD48F8 /* [CP] Embed Pods Frameworks */,
+				BC78C1BC24733BFF006440CA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BC78C1B724733BFF006440CA /* PBXTargetDependency */,
 			);
 			name = "parts-management-iOS";
 			productName = "parts-management-iOS";
 			productReference = BC164FDD2352781800C02514 /* Tech Parts.app */;
 			productType = "com.apple.product-type.application";
+		};
+		BC78C1AF24733BFF006440CA /* parts-management-intents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC78C1B924733BFF006440CA /* Build configuration list for PBXNativeTarget "parts-management-intents" */;
+			buildPhases = (
+				BC78C1AC24733BFF006440CA /* Sources */,
+				BC78C1AD24733BFF006440CA /* Frameworks */,
+				BC78C1AE24733BFF006440CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "parts-management-intents";
+			productName = "parts-management-intents";
+			productReference = BC78C1B024733BFF006440CA /* parts-management-intents.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -614,6 +727,9 @@
 				TargetAttributes = {
 					BC164FDC2352781800C02514 = {
 						CreatedOnToolsVersion = 11.1;
+					};
+					BC78C1AF24733BFF006440CA = {
+						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
 			};
@@ -631,6 +747,7 @@
 			projectRoot = "";
 			targets = (
 				BC164FDC2352781800C02514 /* parts-management-iOS */,
+				BC78C1AF24733BFF006440CA /* parts-management-intents */,
 			);
 		};
 /* End PBXProject section */
@@ -655,6 +772,13 @@
 				BC4E675423AF4408007E284A /* Pluralization.stringsdict in Resources */,
 				BC5E8EAA23B407810043A0E7 /* AssemblyDetail.storyboard in Resources */,
 				BC28F6D7241D7AE300636F97 /* Setting.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC78C1AE24733BFF006440CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,12 +831,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCE7E83324344F7E00696D18 /* UIImageView+UIImageView_ReplaceImage.m in Sources */,
-				BC67647A235D349B00500BF6 /* UITableView+UITableView_BackgroundView.m in Sources */,
+				BCE7E83324344F7E00696D18 /* UIImageView+ReplaceImage.m in Sources */,
+				BC67647A235D349B00500BF6 /* UITableView+BackgroundView.m in Sources */,
 				BC1E948F235905A800E6C329 /* MessageView.m in Sources */,
 				BCF1EEEF23B11E1A0031186F /* AssemblyRepository.m in Sources */,
 				BC28F6E9241DEF4100636F97 /* TKViewControllerFactoryImpl.m in Sources */,
 				BCE0CE6B23B0771F00B79DDB /* AssemblyTableViewCell.m in Sources */,
+				BC410CC62478FBC8003F7EC0 /* NotificationsController.m in Sources */,
 				BC164FE82352781800C02514 /* ProjectListViewController.m in Sources */,
 				BC051E2023B3297100BD05C5 /* Progress.c in Sources */,
 				BCD0099323574B49005D15CB /* ProjectDetailViewController.m in Sources */,
@@ -749,19 +874,41 @@
 				BCECEFD523BA797C0005AB7E /* TKButton.m in Sources */,
 				BC5E8EB023B447640043A0E7 /* AssemblyInformationTableViewController.m in Sources */,
 				BC28F6EE241DF3A900636F97 /* AppDependencyContainer.m in Sources */,
+				BC78C1C52473461E006440CA /* NSUserActivity+ViewWorkInProgress.m in Sources */,
 				BC164FE52352781800C02514 /* SceneDelegate.m in Sources */,
+				BC1365D12479849000A4934A /* SiriShorcutsController.m in Sources */,
 				BCC0EC162354C93A00F5C0B9 /* ProjectTableViewCell.m in Sources */,
 				BCE0CE6E23B07B6900B79DDB /* Assembly.m in Sources */,
 				BC28F6DE241D84F600636F97 /* TKImageView.m in Sources */,
 				BC287EE6235CA35C00B57477 /* ProjectRepository.m in Sources */,
 				BC28F6DB241D7D5700636F97 /* BottomNavigationViewController.m in Sources */,
 				BC28F6D5241D7AD200636F97 /* SettingsTableViewController.m in Sources */,
+				BC1365D42479BB3400A4934A /* RegistrationTokenRepository.m in Sources */,
 				BC10F47323B6C79200E0AF09 /* UserRole.c in Sources */,
+				BC78C1AA24733859006440CA /* Intents.intentdefinition in Sources */,
 				BCE0CE6523B075C600B79DDB /* AssemblyListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BC78C1AC24733BFF006440CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC78C1BD24733D6A006440CA /* Intents.intentdefinition in Sources */,
+				BC78C1CB247351A1006440CA /* ViewWorkInProgresIntentHandler.m in Sources */,
+				BC78C1B424733BFF006440CA /* IntentHandler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC78C1B724733BFF006440CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC78C1AF24733BFF006440CA /* parts-management-intents */;
+			targetProxy = BC78C1B624733BFF006440CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BC164FE92352781800C02514 /* Main.storyboard */ = {
@@ -931,6 +1078,44 @@
 			};
 			name = Release;
 		};
+		BC78C1BA24733BFF006440CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VWKUK9SSFL;
+				INFOPLIST_FILE = "parts-management-intents/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team3990.PartsManagement.parts-management-intents";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC78C1BB24733BFF006440CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VWKUK9SSFL;
+				INFOPLIST_FILE = "parts-management-intents/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team3990.PartsManagement.parts-management-intents";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -948,6 +1133,15 @@
 			buildConfigurations = (
 				BC164FF72352781900C02514 /* Debug */,
 				BC164FF82352781900C02514 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC78C1B924733BFF006440CA /* Build configuration list for PBXNativeTarget "parts-management-intents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC78C1BA24733BFF006440CA /* Debug */,
+				BC78C1BB24733BFF006440CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

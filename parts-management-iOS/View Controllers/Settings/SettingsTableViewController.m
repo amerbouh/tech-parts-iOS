@@ -9,7 +9,7 @@
 #import "SettingsTableViewController.h"
 #import "User.h"
 #import "ImageDownloadOperation.h"
-#import "UIImageView+UIImageView_ReplaceImage.h"
+#import "UIImageView+ReplaceImage.h"
 #import "UIViewController+PresentErrorAlertController.h"
 
 @interface SettingsTableViewController ()

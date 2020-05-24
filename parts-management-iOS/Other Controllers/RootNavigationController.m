@@ -50,7 +50,9 @@
 - (void)navigateToSignInViewController
 {
     UIViewController * signInViewController = (UIViewController *) [_viewControllerFactory makeSignInViewControllerWithRootNavigationHandler:[_appDependencyContainer makeRootNavigationHandler]
-                                                                                                      userAuthenticationHandler:[_appDependencyContainer makeUserAuthenticationHandler]];
+                                                                                                                   userAuthenticationHandler:[_appDependencyContainer makeUserAuthenticationHandler]
+                                                                                                           siriShortcutsAuthorizationManager:[_appDependencyContainer makeSiriShorcutsAuthorizationManager]
+                                                                                                           notificationsAuthorizationManager:[_appDependencyContainer makeNotificationsAuthorizationManager]];
     
     // Set the Sign In View Controller instance as the window's root view controller.
     [_window setRootViewController:signInViewController];

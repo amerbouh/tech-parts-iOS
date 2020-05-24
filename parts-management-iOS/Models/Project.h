@@ -10,6 +10,7 @@
 #import "FileSize.h"
 #import "JSONObjectPayload.h"
 #import "FIRDocumentSerializable.h"
+#import "ViewWorkInProgressIntent.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -55,6 +56,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** A date object representing the last update date of the project.  */
 @property (strong, nonatomic, nonnull) NSDate * lastUpdateTimestamp;
+
+/** A ViewWorkInProgressIntent instance representing the Intent associated with the Project. */
+@property (strong, nonatomic, nonnull, readonly) ViewWorkInProgressIntent * intent;
 
 /** Returns the total cost of production of the robot based on local's currency format. */
 - (NSString *)getFormattedTotalCost;

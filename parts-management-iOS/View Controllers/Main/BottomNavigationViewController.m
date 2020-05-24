@@ -7,10 +7,14 @@
 //
 
 #import "BottomNavigationViewController.h"
+#import "ViewWorkInProgressIntent.h"
+#import "NSUserActivity+ViewWorkInProgress.h"
+#import "AssemblyListViewController.h"
 
 @interface BottomNavigationViewController ()
 
 - (void)configureTabBarItems;
+- (void)driveProjectAssemblyListPresentationWithActivity:(NSUserActivity * _Nonnull)activity;
 
 @end
 
@@ -44,6 +48,31 @@
     [projectListNavigationController.tabBarItem setImage:[UIImage imageNamed:@"documents"]];
     [settingsViewController setTitle:NSLocalizedString(@"settings", NULL)];
     [settingsNavigationController.tabBarItem setImage:[UIImage imageNamed:@"settings"]];
+}
+
+- (void)restoreUserActivityState:(NSUserActivity *)activity
+{
+    [super restoreUserActivityState:activity];
+    
+    // Handle the activity if its type corresponds to the View Work In Progress intent.
+    if ([activity.activityType isEqualToString:NSStringFromClass(ViewWorkInProgressIntent.self)]) {
+        [self driveProjectAssemblyListPresentationWithActivity:activity];
+    }
+}
+
+- (void)driveProjectAssemblyListPresentationWithActivity:(NSUserActivity *)activity
+{
+    NSString * const projectIdentifier = [activity.userInfo valueForKey:[NSUserActivity stringFromUserActivityKey:NSUserActivityKeyProjectID]];
+    
+    // Make sure the the project's identifier is not null before proceeding to the Assembly List View Controller presentation.
+    if (projectIdentifier == NULL) return;
+    
+    // Get an instance of the Assembly List View Controller.
+    AssemblyListViewController * const assemblyListViewController = (AssemblyListViewController *) [[UIStoryboard storyboardWithName:@"ProjectDetail" bundle:NULL] instantiateViewControllerWithIdentifier:@"assemblyListViewController"];
+    [assemblyListViewController setProjectIdentifier:projectIdentifier];
+    
+    // Present the Assembly List View Controller.
+    [self presentViewController:assemblyListViewController animated:YES completion:NULL];
 }
 
 @end

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "RootNavigating.h"
 #import "UserAuthenticating.h"
+#import "SiriShortcutsAuthorizationManaging.h"
+#import "NotificationsAuthorizationManaging.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,6 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** A UserAuthenticating conforming object responsible for authenticating users. */
 @property (strong, nonatomic, nonnull) id <UserAuthenticating> userAuthenticationHandler;
+
+/** A SiriShortcutsAuthorizationManaging conforming object responsible for handling Siri Shortcuts authorizations. */
+@property (strong, nonatomic, nonnull) id <SiriShortcutsAuthorizationManaging> siriShortcutsAuthorizationManager;
+
+/** A SiriShortcutsAuthorizationManaging conforming object responsible for handling notifications authorizations. */
+@property (strong, nonatomic, nonnull) id <NotificationsAuthorizationManaging> notificationsAuthorizationManager;
 
 @end
 

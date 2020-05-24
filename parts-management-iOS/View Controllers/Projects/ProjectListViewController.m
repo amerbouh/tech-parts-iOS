@@ -13,7 +13,7 @@
 #import "ProjectRepository.h"
 #import "ProjectTableViewCell.h"
 #import "ProjectDetailViewController.h"
-#import "UITableView+UITableView_BackgroundView.h"
+#import "UITableView+BackgroundView.h"
 #import "UIViewController+PresentErrorAlertController.h"
 
 @interface ProjectListViewController ()

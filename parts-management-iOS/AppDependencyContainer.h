@@ -11,6 +11,9 @@
 #import "SessionManaging.h"
 #import "FIRUserFetching.h"
 #import "UserAuthenticating.h"
+#import "NotificationsManaging.h"
+#import "SiriShortcutsAuthorizationManaging.h"
+#import "NotificationsAuthorizationManaging.h"
 
 @class RLMRealm;
 @class UIWindow;
@@ -24,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (id <FIRUserFetching>)makeUserFetchingHandler;
 - (id <RootNavigating>)makeRootNavigationHandler;
 - (id <UserAuthenticating>)makeUserAuthenticationHandler;
+- (id <NotificationsManaging>)makeRemoteNotificationsManager;
+- (id <SiriShortcutsAuthorizationManaging>)makeSiriShorcutsAuthorizationManager;
+- (id <NotificationsAuthorizationManaging>)makeNotificationsAuthorizationManager;
 
 /**
  @brief Initializes and returns an instance of the App Dependency Container with the provided parameters.
@@ -31,7 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param realm A RLMRealm instance representing the object used to read from the device's local storage.
  @param window A UIWindow instance representing the object used to dispatch events to the application's views.
  @param firestore A FIRFirestore instance representing the object used to interact with the application's database.
- 
 */
 - (instancetype)initWithRealm:(RLMRealm * _Nonnull)realm firestore:(FIRFirestore * _Nonnull)firestore window:(UIWindow *)window;
 

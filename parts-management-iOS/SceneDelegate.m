@@ -22,7 +22,8 @@
         NSLog(@"A Realm instance could not be obtained. The application might not work correctly.");
     } /* The Realm instance could not be created. */
     else {
-        AppDependencyContainer * const appDependencyContainer = [[AppDependencyContainer alloc] initWithRealm:realm firestore:[FIRFirestore firestore]
+        AppDependencyContainer * const appDependencyContainer = [[AppDependencyContainer alloc] initWithRealm:realm
+                                                                                                    firestore:[FIRFirestore firestore]
                                                                                                        window:self.window];
         SessionPreparationViewController * const sessionPreparationViewController = (SessionPreparationViewController *) self.window.rootViewController;
         
