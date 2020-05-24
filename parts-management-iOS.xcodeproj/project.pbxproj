@@ -162,6 +162,7 @@
 		BC1E948D235905A800E6C329 /* MessageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageView.h; sourceTree = "<group>"; };
 		BC1E948E235905A800E6C329 /* MessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageView.m; sourceTree = "<group>"; };
 		BC1F8D74237DC3CE00C3CEBC /* parts-management-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "parts-management-iOS.entitlements"; sourceTree = "<group>"; };
+		BC24830E247AD56D00D810E3 /* FIRRegistrationTokenDeleting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRRegistrationTokenDeleting.h; sourceTree = "<group>"; };
 		BC25F75023AE845300770E16 /* FIRProjectFetching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRProjectFetching.h; sourceTree = "<group>"; };
 		BC25F75223AE865F00770E16 /* FIRProjectDeleting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRProjectDeleting.h; sourceTree = "<group>"; };
 		BC25F75323AE95F600770E16 /* FIRFileDownloading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRFileDownloading.h; sourceTree = "<group>"; };
@@ -533,6 +534,7 @@
 				BC5E8EA823B3DC040043A0E7 /* FIRAssemblyDeleting.h */,
 				BCF1EEEC23B11D160031186F /* FIRAssemblyFetching.h */,
 				BC1365D52479BBA500A4934A /* FIRRegistrationTokenSaving.h */,
+				BC24830E247AD56D00D810E3 /* FIRRegistrationTokenDeleting.h */,
 				BC25F75323AE95F600770E16 /* FIRFileDownloading.h */,
 				BC676475235D2F1700500BF6 /* FIRDocumentSerializable.h */,
 				BC28F6EA241DF04A00636F97 /* TKViewControllerFactory.h */,

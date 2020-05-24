@@ -21,4 +21,14 @@
     [[fcmTokensRef child:userIdentifier] setValue:registrationToken];
 }
 
+- (void)deleteRegistrationTokenForUserWithIdentifier:(NSString *)userIdentifier completionHandler:(void (^)(NSError * _Nullable))completionHandler
+{
+    FIRDatabaseReference const * const fcmTokensRef = [[[FIRDatabase database] reference] child:@"fcmTokens"];
+    
+    // Delete the registration token for the user with the given identifier.
+    [[fcmTokensRef child:userIdentifier] removeValueWithCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+        completionHandler(error);
+    }];
+}
+
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SessionManaging.h"
 #import "FIRUserDeleting.h"
+#import "FIRRegistrationTokenDeleting.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,9 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  @brief Initializes and returns an instance  of the Session Controller with the provided parameters.
 
- @param userDeletionHandler A FIRUserDeleting conforming object used to delet e user profiles from the device's local storage
+ @param userDeletionHandler                              A FIRUserDeleting conforming object used to delete user profiles from the device's local storage
+ @param registrationTokenDeletionHandler A FIRRegistrationTokenDeleting conforming object used to delete registration tokens from the Realtime Database.
 */
-- (instancetype)initWithUserDeletionHandler:(id <FIRUserDeleting>)userDeletionHandler;
+- (instancetype)initWithUserDeletionHandler:(id <FIRUserDeleting>)userDeletionHandler registrationTokenDeletionHandler:(id <FIRRegistrationTokenDeleting>)registrationTokenDeletionHandler;
 
 @end
 

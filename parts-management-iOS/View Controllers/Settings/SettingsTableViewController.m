@@ -103,16 +103,21 @@
     // Get a weak reference to the view controller.
     __weak SettingsTableViewController * weakSelf = self;
     
-    // Configure the alert controller's actions...
-    UIAlertAction * confirmAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"signOut", NULL) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-        [weakSelf onSignOutActionClicked];[weakSelf.sessionManager signOutUser:^(NSError * _Nullable error) {
-            if (error) {
-                return;
-            } /* An error occurred while trying to sign out the user. */
-            
-            [weakSelf.rootNavigationHandler navigateToSignInViewController];
+    // The block of code to execute once we the user taps the confirm action
+    // button.
+    void (^confirmActionHandler)(UIAlertAction *) = ^(UIAlertAction * action) {
+        [weakSelf onSignOutActionClicked];
+        
+        // Sign out the current user.
+        [weakSelf.sessionManager signOutUser:^(NSError * _Nullable error) {
+            if (error == NULL) {
+                [weakSelf.rootNavigationHandler navigateToSignInViewController];
+            } /* No error occurred while trying to sign out the user. */
         }];
-    }];
+    };
+    
+    // Configure the alert controller's actions...
+    UIAlertAction * confirmAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"signOut", NULL) style:UIAlertActionStyleDestructive handler:confirmActionHandler];
     UIAlertAction * dismissAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", NULL) style:UIAlertActionStyleCancel handler:NULL];
     
     // Add the created actions to the alert controller.

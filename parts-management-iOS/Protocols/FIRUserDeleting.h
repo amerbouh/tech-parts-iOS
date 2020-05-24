@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol FIRUserDeleting <NSObject>
 
-- (void)deleteUserWithIdentifier:(NSString *)identifier completionHandler:(void (^_Nullable)(void))completionHandler;
+- (void)deleteUserWithIdentifier:(NSString *)identifier;
 
 @end
 

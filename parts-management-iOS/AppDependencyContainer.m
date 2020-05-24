@@ -45,11 +45,13 @@
 
 - (id<SessionManaging>)makeSessionManager
 {
-    UserRepository * userRepository = [[UserRepository alloc] initWithRealm:_realm
+    UserRepository const * const userRepository = [[UserRepository alloc] initWithRealm:_realm
                                                                   firestore:_firestore];
+    RegistrationTokenRepository const * const registrationTokenRepository = [RegistrationTokenRepository new];
     
     // Return a newly created instance of the Session Controller class.
-    return [[SessionController alloc] initWithUserDeletionHandler:userRepository];
+    return [[SessionController alloc] initWithUserDeletionHandler:userRepository
+                                 registrationTokenDeletionHandler:registrationTokenRepository];
 }
 
 - (id<RootNavigating>)makeRootNavigationHandler
@@ -61,7 +63,7 @@
 
 - (id<UserAuthenticating>)makeUserAuthenticationHandler
 {
-    UserRepository * userRepository = [[UserRepository alloc] initWithRealm:_realm
+    UserRepository const * const userRepository = [[UserRepository alloc] initWithRealm:_realm
                                                                   firestore:_firestore];
 
     // Return a newly created instance of the AuthenticationController class.

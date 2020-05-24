@@ -159,6 +159,7 @@
 
 - (void)onSignInFailureWithError:(NSError *)error;
 {
+    [self hideActivityIndicatorView];
     [self presentErrorAlertControllerWithMessage:error.localizedDescription];
 }
 

@@ -42,25 +42,21 @@ static NSString * USERS_COLLECTION_NAME = @"users";
     }];
 }
 
-- (void)deleteUserWithIdentifier:(NSString *)identifier completionHandler:(void (^)(void))completionHandler
+- (void)deleteUserWithIdentifier:(NSString *)identifier
 {
     User * user = [User objectForPrimaryKey:identifier];
     
     // Verify whether or not the user object we are trying to remove
     // exists.
-    if (user.isInvalidated)
+    if (user == NULL || user.isInvalidated)
     {
-        completionHandler();
         return;
     }
     
     // Remove the appropriate User object from the device's local storage.
-    [_realm transactionWithBlock:^{
-        [_realm deleteObject:user];
-        
-        // Call the completion handler.
-        completionHandler();
-    }];
+    [_realm beginWriteTransaction];
+    [_realm deleteObject:user];
+    [_realm commitWriteTransaction];
 }
 
 - (void)getUserWithIdentifier:(NSString *)uid completionHandler:(void (^)(User * _Nullable, NSError * _Nullable))completionHandler

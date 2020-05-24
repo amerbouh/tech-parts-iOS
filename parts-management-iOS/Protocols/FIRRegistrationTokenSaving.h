@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol FIRRegistrationTokenSaving <NSObject>
 
-- (void)saveRegistrationToken:(NSString *)registrationToken forUserWithIdentifier:(NSString *)userIdentifier;
+- (void)saveRegistrationToken:(NSString * _Nonnull)registrationToken forUserWithIdentifier:(NSString * _Nonnull)userIdentifier;
 
 @end
 

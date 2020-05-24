@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "FIRRegistrationTokenSaving.h"
+#import "FIRRegistrationTokenDeleting.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RegistrationTokenRepository : NSObject <FIRRegistrationTokenSaving>
+@interface RegistrationTokenRepository : NSObject <FIRRegistrationTokenSaving, FIRRegistrationTokenDeleting>
 
 @end
 

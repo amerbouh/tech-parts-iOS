@@ -9,17 +9,23 @@
 #import "SessionController.h"
 #import <FirebaseAuth/FirebaseAuth.h>
 
-@implementation SessionController {
-    id <FIRUserDeleting> _userDeletionHandler;
-}
+@interface SessionController ()
+
+@property (strong, nonatomic, nonnull) id <FIRUserDeleting> userDeletionHandler;
+@property (strong, nonatomic, nonnull) id <FIRRegistrationTokenDeleting> registrationTokenDeletionHandler;
+
+@end
+
+@implementation SessionController
 
 #pragma mark - Initialization
 
-- (instancetype)initWithUserDeletionHandler:(id<FIRUserDeleting>)userDeletionHandler
+- (instancetype)initWithUserDeletionHandler:(id<FIRUserDeleting>)userDeletionHandler registrationTokenDeletionHandler:(id<FIRRegistrationTokenDeleting>)registrationTokenDeletionHandler
 {
     self = [super init];
     if (self) {
         _userDeletionHandler = userDeletionHandler;
+        _registrationTokenDeletionHandler = registrationTokenDeletionHandler;
     }
     return self;
 }
@@ -36,7 +42,6 @@
 
 - (void)signOutUser:(void (^)(NSError * _Nullable))completionHandler
 {
-    NSError * signOutError;
     FIRUser * currentUser = [[FIRAuth auth] currentUser];
     
     // Make sure that a user is currently logged-in.
@@ -45,13 +50,30 @@
         return;
     } /* There is no currenlty logged-in user. */
     
-    // Attempt to sign out the user.
-    [[FIRAuth auth] signOut:&signOutError];
+    // Obtain a weak reference to the controller object.
+    __weak SessionController const * const weakSelf = self;
     
-    // Remove the user's profile from the device's local storage and call the completion
-    // handler.
-    [_userDeletionHandler deleteUserWithIdentifier:currentUser.uid completionHandler:^{
-        completionHandler(signOutError);
+    // Remove the user's registration token from the Realtime Database.
+    [self.registrationTokenDeletionHandler deleteRegistrationTokenForUserWithIdentifier:currentUser.uid completionHandler:^(NSError * _Nullable error) {
+        if (error) {
+            completionHandler(error);
+            return;
+        } /* An error occurred while trying to delete the token. */
+        
+        // Attempt to sign out the user.
+        NSError * signOutError;
+        [[FIRAuth auth] signOut:&signOutError];
+        
+        // Check if an error occurred while trying to sign out the user.
+        if (signOutError) {
+            completionHandler(signOutError);
+        } /* An error occurred while trying to sign out the user. */
+    
+        // Remove the user's profile from the device's local storage.
+        [weakSelf.userDeletionHandler deleteUserWithIdentifier:currentUser.uid];
+        
+        // Call the completion handler.
+        completionHandler(NULL);
     }];
 }
 
