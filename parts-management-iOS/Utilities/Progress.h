@@ -18,7 +18,7 @@ typedef enum Progress {
 } Progress;
 
 /**
- Generates a string representing the provided Progress enum case.
+ @brief Generates a string representing the provided Progress enum case.
  
  @param progress A Progress enum case representing the progress the function will generate a string
                 from.
@@ -28,7 +28,7 @@ typedef enum Progress {
 const char * string_from_progress(Progress progress);
 
 /**
-Generates a Progress enum case representing the provided string.
+@brief Generates a Progress enum case representing the provided string.
 
 @param progress_string A string  representing the progress the function will generate.
 

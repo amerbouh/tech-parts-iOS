@@ -7,25 +7,22 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewWorkInProgressIntent.h"
+#import "StartupController.h"
 #import "SessionController.h"
-#import "RegistrationTokenRepository.h"
 #import "NotificationsController.h"
-#import <Firebase/Firebase.h>
+#import "ViewWorkInProgressIntent.h"
+#import "RegistrationTokenRepository.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [FIRApp configure];
+    StartupController const * const startupController = [[StartupController alloc] initWithApp:application appDelegate:self];
     
-    // Assign the FIRMessaging's delegate.
-    [FIRMessaging.messaging setDelegate:self];
+    // Run the startup sequence.
+    [startupController runStartupSequence];
     
-    // Attempt to register for remote notifications.
-    [application registerForRemoteNotifications];
-
     return YES;
 }
 

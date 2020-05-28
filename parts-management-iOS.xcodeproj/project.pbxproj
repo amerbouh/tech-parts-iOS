@@ -43,6 +43,7 @@
 		BC28F6E2241DC96D00636F97 /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6E1241DC96D00636F97 /* SessionController.m */; };
 		BC28F6E9241DEF4100636F97 /* TKViewControllerFactoryImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6E8241DEF4100636F97 /* TKViewControllerFactoryImpl.m */; };
 		BC28F6EE241DF3A900636F97 /* AppDependencyContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6ED241DF3A900636F97 /* AppDependencyContainer.m */; };
+		BC2DD177247F5427006A7B47 /* StartupController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD176247F5427006A7B47 /* StartupController.m */; };
 		BC410CC62478FBC8003F7EC0 /* NotificationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC410CC52478FBC8003F7EC0 /* NotificationsController.m */; };
 		BC4E674723AF155B007E284A /* FileSize.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E674623AF155B007E284A /* FileSize.m */; };
 		BC4E674B23AF1A33007E284A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E674A23AF1A33007E284A /* Reachability.m */; };
@@ -190,6 +191,8 @@
 		BC28F6EA241DF04A00636F97 /* TKViewControllerFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKViewControllerFactory.h; sourceTree = "<group>"; };
 		BC28F6EC241DF3A900636F97 /* AppDependencyContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDependencyContainer.h; sourceTree = "<group>"; };
 		BC28F6ED241DF3A900636F97 /* AppDependencyContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDependencyContainer.m; sourceTree = "<group>"; };
+		BC2DD175247F5427006A7B47 /* StartupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartupController.h; sourceTree = "<group>"; };
+		BC2DD176247F5427006A7B47 /* StartupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartupController.m; sourceTree = "<group>"; };
 		BC410CC42478FBC8003F7EC0 /* NotificationsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsController.h; sourceTree = "<group>"; };
 		BC410CC52478FBC8003F7EC0 /* NotificationsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationsController.m; sourceTree = "<group>"; };
 		BC4E674523AF155B007E284A /* FileSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSize.h; sourceTree = "<group>"; };
@@ -376,6 +379,8 @@
 		BC10F45D23B6972600E0AF09 /* Other Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC2DD175247F5427006A7B47 /* StartupController.h */,
+				BC2DD176247F5427006A7B47 /* StartupController.m */,
 				BC28F6E0241DC96D00636F97 /* SessionController.h */,
 				BC28F6E1241DC96D00636F97 /* SessionController.m */,
 				BC1365CF2479848F00A4934A /* SiriShorcutsController.h */,
@@ -870,6 +875,7 @@
 				BC10F46423B69CA300E0AF09 /* UserRepository.m in Sources */,
 				BC72370723B85BBD0055A6CE /* ForgotPasswordViewController.m in Sources */,
 				BC4E674B23AF1A33007E284A /* Reachability.m in Sources */,
+				BC2DD177247F5427006A7B47 /* StartupController.m in Sources */,
 				BC766E41235CED3A002FEDA0 /* User.m in Sources */,
 				BC25F75A23AEBA3F00770E16 /* UIViewController+PresentErrorAlertController.m in Sources */,
 				BC10F46F23B6ADF800E0AF09 /* SessionPreparationViewController.m in Sources */,
