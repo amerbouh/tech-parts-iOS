@@ -16,6 +16,9 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable CGFloat borderWidth;
 @property (nonatomic, assign) IBInspectable UIColor * borderColor;
 
+/** @brief Configures the appearance of the button. */
+- (void)configure;
+
 @end
 
 NS_ASSUME_NONNULL_END

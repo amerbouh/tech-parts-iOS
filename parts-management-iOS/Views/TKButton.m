@@ -8,13 +8,6 @@
 
 #import "TKButton.h"
 
-@interface TKButton ()
-
-/** @brief Configures the appearance of the button. */
-- (void)configure;
-
-@end
-
 @implementation TKButton
 
 #pragma mark - Initialization
