@@ -7,9 +7,26 @@
 //
 
 #import "TKButton.h"
-#import <QuartzCore/QuartzCore.h>
+
+@interface TKButton ()
+
+/** @brief Configures the appearance of the button. */
+- (void)configure;
+
+@end
 
 @implementation TKButton
+
+#pragma mark - Initialization
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self configure];
+    }
+    return self;
+}
 
 #pragma mark - View's lifecycle
 
@@ -28,7 +45,7 @@
     [super prepareForInterfaceBuilder];
     
     // Configure the appearance of the button.
-    [self configure];
+    [self setTitle:@"T4K Button" forState:UIControlStateNormal];
 }
 
 - (void)configure

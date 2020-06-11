@@ -4,10 +4,6 @@
 #import "AppDependencyContainer.h"
 #import "SessionPreparationViewController.h"
 
-@interface SceneDelegate ()
-
-@end
-
 @implementation SceneDelegate
 
 
