@@ -35,11 +35,23 @@
     NSString * firstName = (NSString *) json[@"firstName"];
     NSString * lastName = (NSString *) json[@"lastName"];
     NSString * emailAddress = (NSString *) json[@"emailAddress"];
-    NSString * profileImageDownloadURL = (NSString *) json[@"profileImageDownloadURL"];
+    NSString * profileImageDownloadURL = (NSString *) json[@"profileImageDownloadUrl"];
     FIRTimestamp * creationDate = (FIRTimestamp *) json[@"createdAt"];
     
     // Call the class's initializer.
     return [[User alloc] initWithIdentifier:identifier role:user_role_from_string([role UTF8String]) firstName:firstName lastName:lastName emailAddress:emailAddress profileImageDownloadURL:profileImageDownloadURL timestamp:creationDate.dateValue];
+}
+
+#pragma mark - Methods
+
+- (NSString *)fullName
+{
+    return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
+}
+
++ (NSString *)primaryKey
+{
+    return @"identifier";
 }
 
 @end

@@ -1,10 +1,8 @@
 #import "SceneDelegate.h"
-#import "RootNavigationController.h"
+#import <Realm/Realm.h>
+#import <FirebaseFirestore/FirebaseFirestore.h>
+#import "AppDependencyContainer.h"
 #import "SessionPreparationViewController.h"
-
-@interface SceneDelegate ()
-
-@end
 
 @implementation SceneDelegate
 
@@ -14,11 +12,20 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-    [[RootNavigationController getDefault] setApplicationWindow:self.window];
+    RLMRealm * const realm = [RLMRealm defaultRealm];
     
-    // Initialize the SessionPreparationViewController root navigator instance.
-    SessionPreparationViewController * sessionPreparationViewController = (SessionPreparationViewController *) self.window.rootViewController;
-    [sessionPreparationViewController setRootNavigator:[RootNavigationController getDefault]];
+    if (!realm) {
+        NSLog(@"A Realm instance could not be obtained. The application might not work correctly.");
+    } /* The Realm instance could not be created. */
+    else {
+        AppDependencyContainer * const appDependencyContainer = [[AppDependencyContainer alloc] initWithRealm:realm
+                                                                                                    firestore:[FIRFirestore firestore]
+                                                                                                       window:self.window];
+        SessionPreparationViewController * const sessionPreparationViewController = (SessionPreparationViewController *) self.window.rootViewController;
+        
+        // Initialize the SessionPreparationViewController root navigator instance.
+        [sessionPreparationViewController setRootNavigator:[appDependencyContainer makeRootNavigationHandler]];
+    } /* The Realm instance could be created. */
 }
 
 

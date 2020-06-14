@@ -11,23 +11,21 @@
 #import "Realm.h"
 #import "FirebaseFirestore.h"
 
-@interface UserRepository ()
-
-@property (nonnull, nonatomic) FIRFirestore * database;
-
-@end
-
-@implementation UserRepository
+@implementation UserRepository {
+    RLMRealm * _realm;
+    FIRFirestore * _database;
+}
 
 static NSString * USERS_COLLECTION_NAME = @"users";
 
 #pragma mark - Initialization
 
-- (instancetype)init
+- (instancetype)initWithRealm:(RLMRealm *)realm firestore:(FIRFirestore *)firestore
 {
     self = [super init];
     if (self) {
-        _database = [FIRFirestore firestore];
+        _realm    = realm;
+        _database = firestore;
     }
     return self;
 }
@@ -36,33 +34,58 @@ static NSString * USERS_COLLECTION_NAME = @"users";
 
 - (void)saveUser:(User *)user completionHandler:(void (^)(void))completionHandler
 {
-    RLMRealm * realm = [RLMRealm defaultRealm];
-    
-    // Save the User instance on the device's local storage.
-    [realm transactionWithBlock:^{
-        [realm addObject:user];
+    [_realm transactionWithBlock:^{
+        [_realm addObject:user];
         
         // Call the completion handler.
         completionHandler();
     }];
 }
 
+- (void)deleteUserWithIdentifier:(NSString *)identifier
+{
+    User * user = [User objectForPrimaryKey:identifier];
+    
+    // Verify whether or not the user object we are trying to remove
+    // exists.
+    if (user == NULL || user.isInvalidated)
+    {
+        return;
+    }
+    
+    // Remove the appropriate User object from the device's local storage.
+    [_realm beginWriteTransaction];
+    [_realm deleteObject:user];
+    [_realm commitWriteTransaction];
+}
+
 - (void)getUserWithIdentifier:(NSString *)uid completionHandler:(void (^)(User * _Nullable, NSError * _Nullable))completionHandler
 {
-    FIRDocumentReference * userDocRef = [[self.database collectionWithPath:USERS_COLLECTION_NAME] documentWithPath:uid];
+    User * const user = [User objectForPrimaryKey:uid];
     
+    // Check if the user instance already exists ont the device's local
+    // storage.
+    if (user != NULL)
+    {
+        completionHandler(user, NULL);
+        return;
+    }
+    
+    // Get a reference to the user's record on the remote database.
+    FIRDocumentReference * userDocRef = [[_database collectionWithPath:USERS_COLLECTION_NAME] documentWithPath:uid];
+           
     // Get the document's data.
     [userDocRef getDocumentWithCompletion:^(FIRDocumentSnapshot * _Nullable snapshot, NSError * _Nullable error) {
         if (error != NULL) {
             completionHandler(NULL, error);
         } else {
             if (!snapshot.exists) return;
-            
+                   
             // Create a User instance from the document's data.
-            User * user = [User initWithJSON:snapshot.data];
-            
+            User * fetchedUser = [User initWithJSON:snapshot.data];
+                   
             // Call the completion handler and pass the created user instance.
-            completionHandler(user, NULL);
+            completionHandler(fetchedUser, NULL);
         }
     }];
 }

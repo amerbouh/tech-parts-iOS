@@ -1,1 +1,4 @@
-DS_Store
+.DS_Store
+
+# Semi-personal settings, often included in workspaces
+xcuserdata

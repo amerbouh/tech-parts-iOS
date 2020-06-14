@@ -10,6 +10,7 @@
 
 @interface TKRoundedView ()
 
+/** @brief Configures the appearance of the view. */
 - (void)configure;
 
 @end
@@ -27,14 +28,6 @@
 }
 
 #pragma mark - Methods
-
-- (void)prepareForInterfaceBuilder
-{
-    [super prepareForInterfaceBuilder];
-    
-    // Configure the view.
-    [self configure];
-}
 
 - (void)configure
 {

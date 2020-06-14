@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SceneKit/SceneKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

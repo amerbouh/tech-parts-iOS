@@ -13,7 +13,7 @@
 #import "ProjectRepository.h"
 #import "ProjectTableViewCell.h"
 #import "ProjectDetailViewController.h"
-#import "UITableView+UITableView_BackgroundView.h"
+#import "UITableView+BackgroundView.h"
 #import "UIViewController+PresentErrorAlertController.h"
 
 @interface ProjectListViewController ()
@@ -70,9 +70,7 @@ static NSString * _showProjectDetailSegueIdentifier = @"ShowProjectDetailVCSegue
     [self configureTableView];
     [self configureSearchController];
     [self.dataSource loadProjects];
-    [self setTitle:NSLocalizedString(@"projects", NULL)];
     [self.navigationItem setSearchController:self.searchController];
-    [self.navigationController.tabBarItem setImage:[UIImage imageNamed:@"documents"]];
 }
 
 #pragma mark - Methods

@@ -7,41 +7,23 @@
 //
 
 #import "AppDelegate.h"
-#import <Realm/Realm.h>
-#import <Firebase/Firebase.h>
-#import <FirebaseAuth/FirebaseAuth.h>
-#import <FirebaseMessaging/FirebaseMessaging.h>
-#import <UserNotifications/UserNotifications.h>
-
-@interface AppDelegate ()
-
-- (void)requestNotificationsAuthorization;
-- (void)attemptRemoteNotificationsRegistration;
-
-@end
+#import "LogController.h"
+#import "StartupController.h"
+#import "SessionController.h"
+#import "NotificationsController.h"
+#import "ViewWorkInProgressIntent.h"
+#import "RegistrationTokenRepository.h"
 
 @implementation AppDelegate
-
-- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey,id> *)launchOptions
-{
-    [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
-    return YES;
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [FIRApp configure];
+    StartupController const * const startupController = [[StartupController alloc] initWithApp:application appDelegate:self];
     
-    // Assign the FIRMessaging's delegate.
-    [FIRMessaging.messaging setDelegate:self];
+    // Run the startup sequence.
+    [startupController runStartupSequence];
     
-    // Request the user's authorization to receive notifications.
-    [self requestNotificationsAuthorization];
-    
-    // Attempt to register for remote notifications.
-    [self attemptRemoteNotificationsRegistration];
-
     return YES;
 }
 
@@ -50,38 +32,41 @@
     NSLog(@"An error occurred while trying the register the user for remote notifications : %@", error);
 }
 
-#pragma mark - Methods
-
-- (void)requestNotificationsAuthorization
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler
 {
-    UNAuthorizationOptions const authorizationOptions = UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge;
-    
-    // Request the user's authorization to receive notifications.
-    [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:authorizationOptions completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        if (granted == NO) NSLog(@"L'utilisateur n'a pas autorisé la réception de notifications.");
-    }];
-}
-
-- (void)attemptRemoteNotificationsRegistration
-{
-    UNUserNotificationCenter * const userNotificationCenter = [UNUserNotificationCenter currentNotificationCenter];
-    
-    // Get the current notification settings.
-    [userNotificationCenter getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-        if (settings.authorizationStatus != UNAuthorizationStatusAuthorized) return;
+    if ([userActivity.activityType isEqualToString:NSStringFromClass(ViewWorkInProgressIntent.self)]) {
+        UITabBarController * rootViewController = (UITabBarController *) self.window.rootViewController;
         
-        // Dispatch the remote notifications registration block to the main thread.
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[UIApplication sharedApplication] registerForRemoteNotifications];
-        });
-    }];
+        // Make sure that the application's root view controller instance is not NULL.
+        if (rootViewController == NULL) return NO;
+        
+        // Pass the user activity to the passed in view controllers to route the user to the part of the app used to display
+        // assemblies.
+        restorationHandler(rootViewController.viewControllers);
+        
+        return YES;
+    }
+    
+    // Display a message on the console to inform that the user's activity could not be continued.
+    NSLog(@"Can't continue unknown NSUserActivity type %@", userActivity.activityType);
+    
+    return NO;
 }
 
 #pragma mark - FIRMessaging delegate
 
 - (void)messaging:(FIRMessaging *)messaging didReceiveRegistrationToken:(NSString *)fcmToken
 {
-    NSLog(@"L'appareil de l'utilisateur a été enregistré avec FCM avec succèes ! Son device token est: %@", fcmToken);
+    RegistrationTokenRepository const * const registrationTokenRepository = [RegistrationTokenRepository new];
+    NotificationsController const * const remoteNotificationsController = [[NotificationsController alloc] initWithLoggingManager:[LogController sharedInstance] registrationTokenSaver:registrationTokenRepository];
+    
+    // Obtain the user identifier associated with the current session.
+    NSString * const currentUserIdentifier = [[SessionController new] getCurrentUserId];
+    
+    // Send the registration token to the server if a session is currently active.
+    if (currentUserIdentifier != NULL) {
+        [remoteNotificationsController sendRegistrationTokenToServer:fcmToken forUserWithIdentifier:currentUserIdentifier];
+    }
 }
 
 #pragma mark - UISceneSession lifecycle
