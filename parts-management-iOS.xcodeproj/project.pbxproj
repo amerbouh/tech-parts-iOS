@@ -85,6 +85,7 @@
 		BCECEFD523BA797C0005AB7E /* TKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCECEFD423BA797C0005AB7E /* TKButton.m */; };
 		BCECEFD823BAB0E80005AB7E /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCECEFD723BAB0E80005AB7E /* SignUpViewController.m */; };
 		BCF1EEEF23B11E1A0031186F /* AssemblyRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF1EEEE23B11E1A0031186F /* AssemblyRepository.m */; };
+		BCF5F95D24947FBA0079CBBF /* LogController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F95C24947FBA0079CBBF /* LogController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -273,6 +274,9 @@
 		BCF1EEED23B11E1A0031186F /* AssemblyRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssemblyRepository.h; sourceTree = "<group>"; };
 		BCF1EEEE23B11E1A0031186F /* AssemblyRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssemblyRepository.m; sourceTree = "<group>"; };
 		BCF1EEF023B123A70031186F /* AssemblyDataSourceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssemblyDataSourceDelegate.h; sourceTree = "<group>"; };
+		BCF5F95B24947FBA0079CBBF /* LogController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogController.h; sourceTree = "<group>"; };
+		BCF5F95C24947FBA0079CBBF /* LogController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogController.m; sourceTree = "<group>"; };
+		BCF5F95E2494847C0079CBBF /* Logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
 		E060825D0A863773373B4503 /* Pods_parts_management_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parts_management_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB856ADF1FBEF8019601DCA /* Pods-parts-management-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parts-management-iOS.release.xcconfig"; path = "Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -379,6 +383,8 @@
 		BC10F45D23B6972600E0AF09 /* Other Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5F95B24947FBA0079CBBF /* LogController.h */,
+				BCF5F95C24947FBA0079CBBF /* LogController.m */,
 				BC2DD175247F5427006A7B47 /* StartupController.h */,
 				BC2DD176247F5427006A7B47 /* StartupController.m */,
 				BC28F6E0241DC96D00636F97 /* SessionController.h */,
@@ -528,6 +534,7 @@
 		BC766E35235CAF23002FEDA0 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5F95E2494847C0079CBBF /* Logging.h */,
 				BCB936DF2439056900C84EBB /* ImageCaching.h */,
 				BC10F46623B6A0AD00E0AF09 /* FIRUserSaving.h */,
 				BC28F6E6241DCE8700636F97 /* FIRUserDeleting.h */,
@@ -874,6 +881,7 @@
 				BCC0EC112354C8B600F5C0B9 /* Project.m in Sources */,
 				BC10F46423B69CA300E0AF09 /* UserRepository.m in Sources */,
 				BC72370723B85BBD0055A6CE /* ForgotPasswordViewController.m in Sources */,
+				BCF5F95D24947FBA0079CBBF /* LogController.m in Sources */,
 				BC4E674B23AF1A33007E284A /* Reachability.m in Sources */,
 				BC2DD177247F5427006A7B47 /* StartupController.m in Sources */,
 				BC766E41235CED3A002FEDA0 /* User.m in Sources */,

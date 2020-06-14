@@ -10,16 +10,18 @@
 #import <UserNotifications/UNUserNotificationCenter.h>
 
 @implementation NotificationsController {
+    id <Logging> _loggingManager;
     id <FIRRegistrationTokenSaving> _registrationTokenSaver;
     UNUserNotificationCenter const * _userNotificationCenter;
 }
 
 #pragma mark - Initialization
 
-- (instancetype)init:(id <FIRRegistrationTokenSaving>)registrationTokenSaver
+- (instancetype)initWithLoggingManager:(id<Logging>)loggingManager registrationTokenSaver:(id<FIRRegistrationTokenSaving>)registrationTokenSaver
 {
     self = [super init];
     if (self) {
+        _loggingManager         = loggingManager;
         _registrationTokenSaver = registrationTokenSaver;
         _userNotificationCenter = [UNUserNotificationCenter currentNotificationCenter];
     }
@@ -34,7 +36,7 @@
     
     // Request the user's authorization to receive notifications.
     [_userNotificationCenter requestAuthorizationWithOptions:authorizationOptions completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        if (granted == NO) NSLog(@"L'utilisateur n'a pas autorisé la réception de notifications.");
+        if (granted == NO) [self->_loggingManager logNetworkingInfo:@"L'utilisateur n'a pas autorisé la réception de notifications."];
         
         // Call the completion handler.
         completionHandler();

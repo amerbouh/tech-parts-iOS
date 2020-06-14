@@ -7,6 +7,7 @@
 //
 
 #import "AppDependencyContainer.h"
+#import "LogController.h"
 #import "UserRepository.h"
 #import "SessionController.h"
 #import "SiriShorcutsController.h"
@@ -75,8 +76,9 @@
 {
     RegistrationTokenRepository const * const registrationTokenRepository = [RegistrationTokenRepository new];
     
-     // Return a newly created instance of the NotificationsController class.
-    return [[NotificationsController alloc] init:registrationTokenRepository];
+    // Return a newly created instance of the NotificationsController class.
+    return [[NotificationsController alloc] initWithLoggingManager:[LogController sharedInstance]
+                                    registrationTokenSaver:registrationTokenRepository];
 }
 
 - (id<SiriShortcutsAuthorizationManaging>)makeSiriShorcutsAuthorizationManager
@@ -88,8 +90,9 @@
 {
     RegistrationTokenRepository const * const registrationTokenRepository = [RegistrationTokenRepository new];
     
-     // Return a newly created instance of the NotificationsController class.
-    return [[NotificationsController alloc] init:registrationTokenRepository];
+    // Return a newly created instance of the NotificationsController class.
+    return [[NotificationsController alloc] initWithLoggingManager:[LogController sharedInstance]
+                                    registrationTokenSaver:registrationTokenRepository];
 }
 
 @end

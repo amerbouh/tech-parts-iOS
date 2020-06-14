@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LogController.h"
 #import "StartupController.h"
 #import "SessionController.h"
 #import "NotificationsController.h"
@@ -57,7 +58,7 @@
 - (void)messaging:(FIRMessaging *)messaging didReceiveRegistrationToken:(NSString *)fcmToken
 {
     RegistrationTokenRepository const * const registrationTokenRepository = [RegistrationTokenRepository new];
-    NotificationsController const * const remoteNotificationsController = [[NotificationsController alloc] init:registrationTokenRepository];
+    NotificationsController const * const remoteNotificationsController = [[NotificationsController alloc] initWithLoggingManager:[LogController sharedInstance] registrationTokenSaver:registrationTokenRepository];
     
     // Obtain the user identifier associated with the current session.
     NSString * const currentUserIdentifier = [[SessionController new] getCurrentUserId];
