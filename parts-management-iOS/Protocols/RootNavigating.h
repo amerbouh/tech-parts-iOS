@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)navigateToBottomNavigationViewController;
 
 /** @brief Navigates to the SignInViewController and sets it as the window's root view controller. */
-- (void)navigateToSignInViewControllerUsingRootNavigator:(id <RootNavigating>)rootNavigator;
+- (void)navigateToSignInViewController;
 
 @end
 

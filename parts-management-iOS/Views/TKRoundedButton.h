@@ -6,12 +6,12 @@
 //  Copyright © 2019 Anas Merbouh. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TKButton.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 IB_DESIGNABLE
-@interface TKRoundedButton : UIButton
+@interface TKRoundedButton : TKButton
 
 @property (nonatomic, assign) IBInspectable CGFloat cornerRadius;
 

@@ -13,7 +13,7 @@
 #import "AssemblyTableViewCell.h"
 #import "AssemblyDetailViewController.h"
 #import "CreateAssemblyTableViewController.h"
-#import "UITableView+UITableView_BackgroundView.h"
+#import "UITableView+BackgroundView.h"
 #import "UIViewController+PresentErrorAlertController.h"
 
 @interface AssemblyListViewController ()
@@ -42,9 +42,9 @@
 
 @implementation AssemblyListViewController
 
-static NSString * _cellReuseIdentifier = @"AssemblyTableViewCell";
-static NSString * _showAssemblyDetailViewControllerSegueIdentifier = @"ShowAssemblyDetailViewControllerSegue";
-static NSString * _showCreateAssemblyTableViewControllerSegueIdentifier = @"ShowCreateAssemblyTableViewControllerSegue";
+static NSString * const _cellReuseIdentifier = @"AssemblyTableViewCell";
+static NSString * const _showAssemblyDetailViewControllerSegueIdentifier = @"ShowAssemblyDetailViewControllerSegue";
+static NSString * const _showCreateAssemblyTableViewControllerSegueIdentifier = @"ShowCreateAssemblyTableViewControllerSegue";
 
 #pragma mark - Initialization
 

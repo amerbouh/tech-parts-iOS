@@ -84,6 +84,16 @@
 
 #pragma mark - Methods
 
+- (ViewWorkInProgressIntent *)intent
+{
+    ViewWorkInProgressIntent * const intent = [ViewWorkInProgressIntent new];
+    
+    // Configure the intent...
+    intent.projectName = self.name;
+    
+    return intent;
+}
+
 - (NSString *)getFormattedTotalCost
 {
     NSNumberFormatter * numberFormatter = [NSNumberFormatter new];

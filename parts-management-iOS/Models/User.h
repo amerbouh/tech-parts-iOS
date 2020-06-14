@@ -36,6 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** A date object representing creation date of the user.  */
 @property (strong, nonatomic, nonnull) NSDate * timestamp;
 
+/** A date object representing creation date of the user.  */
+@property (strong, nonatomic, nonnull, readonly) NSString * fullName;
+
 - (instancetype)initWithIdentifier:(NSString * _Nonnull)identifier role:(UserRole)role firstName:(NSString * _Nonnull)firstName lastName:(NSString * _Nonnull)lastName emailAddress:(NSString * _Nonnull)emailAddress profileImageDownloadURL:(NSString * _Nonnull)profileImageDownloadURL timestamp:(NSDate * _Nonnull)timestamp;
 
 @end

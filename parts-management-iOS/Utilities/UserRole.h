@@ -17,7 +17,7 @@ typedef enum UserRole {
 } UserRole;
 
 /**
- Generates a string representing the provided User Role enum case.
+ @brief Generates a string representing the provided User Role enum case.
  
  @param user_role A User Role enum case representing the role the function will generate a string
                  from.
@@ -27,7 +27,7 @@ typedef enum UserRole {
 const char * string_from_user_role(UserRole user_role);
 
 /**
-Generates a User Role enum case representing the provided string.
+@brief Generates a User Role enum case representing the provided string.
 
 @param user_role_string A string representing the user role the function will generate.
 

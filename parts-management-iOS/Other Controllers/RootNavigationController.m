@@ -7,61 +7,58 @@
 //
 
 #import "RootNavigationController.h"
-#import "SignInViewController.h"
+#import "AppDependencyContainer.h"
 
-@interface RootNavigationController ()
+@implementation RootNavigationController {
+    UIWindow * _window;
+    AppDependencyContainer * _appDependencyContainer;
+    id <TKViewControllerFactory> _viewControllerFactory;
+}
 
-@property (strong, nonatomic, nonnull) UIWindow * window;
+#pragma mark - Initialization
 
-@end
-
-@implementation RootNavigationController
+- (instancetype)initWithAppDependencyContainer:(AppDependencyContainer *)appDependencyContainer viewControllerFactory:(id<TKViewControllerFactory>)viewControllerFactory window:(UIWindow *)window
+{
+    self = [super init];
+    if (self) {
+        _window = window;
+        _viewControllerFactory = viewControllerFactory;
+        _appDependencyContainer = appDependencyContainer;
+    }
+    return self;
+}
 
 #pragma mark - Methods
 
-- (void)setApplicationWindow:(UIWindow *)applicationWindow
-{
-    self.window = applicationWindow;
-}
-
 - (void)navigateToBottomNavigationViewController
 {
-    UIViewController * bottomNavigationViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"BottomNavigationViewController"];
+    UINavigationController * const projectListViewController = [_viewControllerFactory makeProjectListViewController];
+    UINavigationController * const settingsViewController = [_viewControllerFactory makeSettingsViewControllerWithSessionManager:[_appDependencyContainer makeSessionManager]
+                                                                                                                 userFetchingHandler: [_appDependencyContainer makeUserFetchingHandler]
+                                                                                                               rootNavigationHandler:[_appDependencyContainer makeRootNavigationHandler]];
+    
+    // Create a new instance of the bottom navigation view controller.
+    UIViewController * bottomNavigationViewController = (UIViewController *) [_viewControllerFactory makeBottomNavigationViewControllerWithProjectListViewController:projectListViewController settingsViewController:settingsViewController];
         
-    // Set the Sign In View Controller instance as the window's root view controller.
-    [self.window setRootViewController:bottomNavigationViewController];
+    // Set the Bottom Navigation View Controller instance as the window's root view controller.
+    [_window setRootViewController:bottomNavigationViewController];
     
     // Animate the transition.
-    [UIView transitionWithView:self.window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
+    [UIView transitionWithView:_window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
 }
 
-- (void)navigateToSignInViewControllerUsingRootNavigator:(id<RootNavigating>)rootNavigator
+- (void)navigateToSignInViewController
 {
-    SignInViewController * signInViewController = (SignInViewController *) [[UIStoryboard storyboardWithName:@"Authentication" bundle:NULL] instantiateInitialViewController];
-    [signInViewController setRootNavigator:rootNavigator];
+    UIViewController * signInViewController = (UIViewController *) [_viewControllerFactory makeSignInViewControllerWithRootNavigationHandler:[_appDependencyContainer makeRootNavigationHandler]
+                                                                                                                   userAuthenticationHandler:[_appDependencyContainer makeUserAuthenticationHandler]
+                                                                                                           siriShortcutsAuthorizationManager:[_appDependencyContainer makeSiriShorcutsAuthorizationManager]
+                                                                                                           notificationsAuthorizationManager:[_appDependencyContainer makeNotificationsAuthorizationManager]];
     
     // Set the Sign In View Controller instance as the window's root view controller.
-    [self.window setRootViewController:signInViewController];
+    [_window setRootViewController:signInViewController];
     
     // Animate the transition.
-    [UIView transitionWithView:self.window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
-}
-
-#pragma mark - Convenience methods
-
-+ (instancetype)getDefault
-{
-    static RootNavigationController * sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    
-    // Called only if an instance of the controller doesn't already
-    // exist.
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[RootNavigationController alloc] init];
-        // Do any other initialisation stuff here
-    });
-    
-    return sharedInstance;
+    [UIView transitionWithView:_window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
 }
 
 @end

@@ -9,13 +9,9 @@
 #import "ProjectRepository.h"
 #import "Project.h"
 
-@interface ProjectRepository ()
-
-@property (nonnull, nonatomic) FIRFirestore * database;
-
-@end
-
-@implementation ProjectRepository
+@implementation ProjectRepository {
+    FIRFirestore * _database;
+}
 
 static NSString * PROJECTS_COLLECTION_NAME = @"projects";
 
@@ -34,7 +30,7 @@ static NSString * PROJECTS_COLLECTION_NAME = @"projects";
 
 - (void)createProject:(Project *)project completionHandler:(void (^)(NSError * _Nullable))completionHandler
 {
-    FIRCollectionReference * projectsCollection = [self.database collectionWithPath:PROJECTS_COLLECTION_NAME];
+    FIRCollectionReference * projectsCollection = [_database collectionWithPath:PROJECTS_COLLECTION_NAME];
     FIRDocumentReference * projectDocumentRef = [projectsCollection documentWithAutoID];
     
     // Set the project's identifier.
@@ -49,7 +45,7 @@ static NSString * PROJECTS_COLLECTION_NAME = @"projects";
     [project setLastUpdateTimestamp:[NSDate new]];
     
     // Get a reference to the document.
-    FIRCollectionReference * projectsCollection = [self.database collectionWithPath:PROJECTS_COLLECTION_NAME];
+    FIRCollectionReference * projectsCollection = [_database collectionWithPath:PROJECTS_COLLECTION_NAME];
     FIRDocumentReference * projectDocument = [projectsCollection documentWithPath:project.identifier];
     
     // Update the document on the Cloud Firestore database.
@@ -58,7 +54,7 @@ static NSString * PROJECTS_COLLECTION_NAME = @"projects";
 
 - (void)deleteProjectWithIdentifier:(NSString *)identifier completionHandler:(void (^)(NSError * _Nullable))completionHandler
 {
-    FIRCollectionReference * projectsCollection = [self.database collectionWithPath:PROJECTS_COLLECTION_NAME];
+    FIRCollectionReference * projectsCollection = [_database collectionWithPath:PROJECTS_COLLECTION_NAME];
     FIRDocumentReference * projectDocument = [projectsCollection documentWithPath:identifier];
     
     // Remove the document from the Cloud Firestore database.
@@ -67,7 +63,7 @@ static NSString * PROJECTS_COLLECTION_NAME = @"projects";
 
 - (id<FIRListenerRegistration>)observeProjects:(void (^)(NSArray<Project *> * _Nullable, NSError * _Nullable))completionHandler
 {
-    FIRQuery * query = [[self.database collectionWithPath:PROJECTS_COLLECTION_NAME] queryOrderedByField:@"season" descending:YES];
+    FIRQuery * query = [[_database collectionWithPath:PROJECTS_COLLECTION_NAME] queryOrderedByField:@"season" descending:YES];
     return [query addSnapshotListener:^(FIRQuerySnapshot * _Nullable snapshot, NSError * _Nullable error) {
         if (snapshot == nil) { completionHandler(nil, error) ; return; }
         

@@ -7,6 +7,7 @@
 //
 
 #import "DesignViewerViewController.h"
+#import <SceneKit/SceneKit.h>
 
 @interface DesignViewerViewController ()
 

@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  @brief Fetches the User record matching the given user identifier on the application's Cloud Firestore Database.
  
- @param uid A string representing the identifier of the User instance to fetch.
+ @param uid A string representing the identifier of the User record to fetch.
  @param completionHandler The completion handler to call when request completes.
  */
 - (void)getUserWithIdentifier:(NSString *)uid completionHandler:(void (^_Nullable)(User * _Nullable user, NSError * _Nullable error))completionHandler;

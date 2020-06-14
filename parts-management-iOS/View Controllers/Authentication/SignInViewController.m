@@ -9,7 +9,6 @@
 #import "SignInViewController.h"
 #import "NSString+Empty.h"
 #import "TKRoundedButton.h"
-#import "UserAuthenticating.h"
 #import "AuthenticationController.h"
 #import "ForgotPasswordViewController.h"
 #import "UIViewController+PresentErrorAlertController.h"
@@ -22,12 +21,11 @@
 @property (weak, nonatomic) IBOutlet UITextField * passwordTextField;
 
 @property (weak, nonatomic) IBOutlet TKRoundedButton * signInButton;
+@property (weak, nonatomic) IBOutlet TKRoundedButton * signUpButton;
+
 @property (weak, nonatomic) IBOutlet UIButton * forgotPasswordButton;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView * activityIndicatorView;
-
-/** A UserAuthenticating conforming object responsible for authenticating users. */
-@property (strong, nonatomic, nonnull) id <UserAuthenticating> userAuthenticator;
 
 /** @brief Generates a haptic feedback to communicate to the user that the submit button was taped. */
 - (void)generateHapticFeedback;
@@ -50,17 +48,6 @@
 @end
 
 @implementation SignInViewController
-
-#pragma mark - Initialization
-
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        _userAuthenticator = [AuthenticationController new];
-    }
-    return self;
-}
 
 #pragma mark - View's lifecycle
 
@@ -120,6 +107,7 @@
     [self.passwordTextField setPlaceholder:NSLocalizedString(@"password", NULL)];
     [self.emailAddressTextField setPlaceholder:NSLocalizedString(@"emailAddress", NULL)];
     [self.signInButton setTitle:NSLocalizedString(@"signIn", NULL) forState:UIControlStateNormal];
+    [self.signUpButton setTitle:NSLocalizedString(@"signUp", NULL) forState:UIControlStateNormal];
     [self.forgotPasswordButton setTitle:NSLocalizedString(@"forgotPassword", NULL) forState:UIControlStateNormal];
 }
 
@@ -153,6 +141,28 @@
     } /* if the notification's name is not UIKeyboardWillHideNotification */
 }
 
+- (void)onSuccessfulSignIn
+{
+    void (^siriAuthorizationCompletionHandler)(void) = ^{
+        [self.rootNavigationHandler navigateToBottomNavigationViewController];
+    };
+    
+    // The block of code to execute once we receive a response from the user for notifications
+    // authorization.
+    void (^notificationsAuthorizationCompletionHandler)(void) = ^{
+        [self.siriShortcutsAuthorizationManager requestSiriAuthorization:siriAuthorizationCompletionHandler];
+    };
+    
+    // Request the user's permission to display notifications.
+    [self.notificationsAuthorizationManager requestNotificationsAuthorization:notificationsAuthorizationCompletionHandler];
+}
+
+- (void)onSignInFailureWithError:(NSError *)error;
+{
+    [self hideActivityIndicatorView];
+    [self presentErrorAlertControllerWithMessage:error.localizedDescription];
+}
+
 - (IBAction)signInButtonTaped:(TKRoundedButton *)sender
 {
     [sender setEnabled:NO];
@@ -166,16 +176,13 @@
     __weak SignInViewController * weakSelf = self;
     
     // Attempt to authenticate the user.
-    [self.userAuthenticator signInUserWithEmailAddress:self.emailAddressTextField.text password:self.passwordTextField.text completionHandler:^(NSError * _Nullable error) {
-        [weakSelf hideActivityIndicatorView];
-        [sender setEnabled:YES];
-        
+    [self.userAuthenticationHandler signInUserWithEmailAddress:self.emailAddressTextField.text password:self.passwordTextField.text completionHandler:^(NSError * _Nullable error) {
         if (error != NULL) {
-            [weakSelf presentErrorAlertControllerWithMessage:error.localizedDescription];
-            return;
+            [weakSelf onSignInFailureWithError:error];
         } /* if NSError instance is not NULL */
-        
-        [weakSelf.rootNavigator navigateToBottomNavigationViewController];
+        else {
+            [weakSelf onSuccessfulSignIn];
+        } /* if NSError instance is NULL */
     }];
 }
 
@@ -186,7 +193,7 @@
     if ([segue.identifier isEqualToString:@"ShowForgotPasswordViewControllerSegue"]) {
         UINavigationController * navigationController = (UINavigationController *) segue.destinationViewController;
         ForgotPasswordViewController * forgotPasswordViewController = (ForgotPasswordViewController *) navigationController.visibleViewController;
-        forgotPasswordViewController.userAuthenticator = self.userAuthenticator;
+        forgotPasswordViewController.userAuthenticator = self.userAuthenticationHandler;
     }
 }
 

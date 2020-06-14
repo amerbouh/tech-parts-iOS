@@ -55,7 +55,7 @@
             [weakSelf.rootNavigator navigateToBottomNavigationViewController];
         } /* if a user is currently logged-in */
         else {
-            [weakSelf.rootNavigator navigateToSignInViewControllerUsingRootNavigator:weakSelf.rootNavigator];
+            [weakSelf.rootNavigator navigateToSignInViewController];
         } /* if no user is currently logged-in */
     }];
 }
