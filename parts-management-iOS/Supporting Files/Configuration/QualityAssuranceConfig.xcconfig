@@ -12,3 +12,4 @@
 PRODUCT_NAME = Tech Parts QA
 PRODUCT_BUNDLE_IDENTIFIER = com.team3990.PartsManagementQualityAssurance
 INTENT_BUNDLE_IDENTIFIER = $(PRODUCT_BUNDLE_IDENTIFIER).parts-management-intents
+FIREBASE_CONFIGURATION_FILE_NAME = GoogleService-Info-QualityAssurance

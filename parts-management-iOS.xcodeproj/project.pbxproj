@@ -80,6 +80,7 @@
 		BCE0CE6E23B07B6900B79DDB /* Assembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE0CE6D23B07B6900B79DDB /* Assembly.m */; };
 		BCE2711C23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2711B23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m */; };
 		BCE2712323B30C030009BE53 /* ProgressPickerViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2712223B30C030009BE53 /* ProgressPickerViewDataSource.m */; };
+		BCE3807124A428B900390055 /* GoogleService-Info-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE3807024A428B900390055 /* GoogleService-Info-Debug.plist */; };
 		BCE7E8302434270F00696D18 /* ImageDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE7E82F2434270F00696D18 /* ImageDownloadOperation.m */; };
 		BCE7E83324344F7E00696D18 /* UIImageView+ReplaceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE7E83224344F7E00696D18 /* UIImageView+ReplaceImage.m */; };
 		BCECEFD523BA797C0005AB7E /* TKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCECEFD423BA797C0005AB7E /* TKButton.m */; };
@@ -265,6 +266,7 @@
 		BCE2712123B30C030009BE53 /* ProgressPickerViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressPickerViewDataSource.h; sourceTree = "<group>"; };
 		BCE2712223B30C030009BE53 /* ProgressPickerViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressPickerViewDataSource.m; sourceTree = "<group>"; };
 		BCE2712423B3122E0009BE53 /* FIRAssemblyCreating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRAssemblyCreating.h; sourceTree = "<group>"; };
+		BCE3807024A428B900390055 /* GoogleService-Info-Debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Debug.plist"; sourceTree = "<group>"; };
 		BCE7E82E2434270F00696D18 /* ImageDownloadOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDownloadOperation.h; sourceTree = "<group>"; };
 		BCE7E82F2434270F00696D18 /* ImageDownloadOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadOperation.m; sourceTree = "<group>"; };
 		BCE7E83124344F7E00696D18 /* UIImageView+ReplaceImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ReplaceImage.h"; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				BC164FEE2352781900C02514 /* LaunchScreen.storyboard */,
 				BC164FF12352781900C02514 /* Info.plist */,
 				BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */,
+				BCE3807024A428B900390055 /* GoogleService-Info-Debug.plist */,
 				BC164FF22352781900C02514 /* main.m */,
 			);
 			path = "parts-management-iOS";
@@ -788,6 +791,7 @@
 				BC6905B223AC82950010CFCC /* Colors.xcassets in Resources */,
 				BC78C18124732E98006440CA /* InfoPlist.strings in Resources */,
 				BC766E43235D025A002FEDA0 /* Project.storyboard in Resources */,
+				BCE3807124A428B900390055 /* GoogleService-Info-Debug.plist in Resources */,
 				BC1D4D2723B67B7500849E9F /* Authentication.storyboard in Resources */,
 				BC766E39235CB9DD002FEDA0 /* ProjectDetail.storyboard in Resources */,
 				BC164FF02352781900C02514 /* LaunchScreen.storyboard in Resources */,

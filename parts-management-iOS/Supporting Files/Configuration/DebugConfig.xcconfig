@@ -12,3 +12,4 @@
 PRODUCT_NAME = Tech Parts Debug
 PRODUCT_BUNDLE_IDENTIFIER = com.team3990.PartsManagementDebug
 INTENT_BUNDLE_IDENTIFIER = $(PRODUCT_BUNDLE_IDENTIFIER).parts-management-intents
+FIREBASE_CONFIGURATION_FILE_NAME = GoogleService-Info-Debug
