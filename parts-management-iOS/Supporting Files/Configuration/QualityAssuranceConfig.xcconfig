@@ -1,0 +1,14 @@
+//
+//  QualityAssuranceConfig.xcconfig
+//  parts-management-iOS
+//
+//  Created by Anas Merbouh on 2020-06-14.
+//  Copyright © 2020 Anas Merbouh. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+PRODUCT_NAME = Tech Parts QA
+PRODUCT_BUNDLE_IDENTIFIER = com.team3990.PartsManagementQualityAssurance
+INTENT_BUNDLE_IDENTIFIER = $(PRODUCT_BUNDLE_IDENTIFIER).parts-management-intents

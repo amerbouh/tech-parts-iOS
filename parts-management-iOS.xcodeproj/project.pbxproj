@@ -142,7 +142,7 @@
 		BC1365D62479C69E00A4934A /* NotificationsManaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsManaging.h; sourceTree = "<group>"; };
 		BC1365D72479C8B600A4934A /* SiriShortcutsAuthorizationManaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SiriShortcutsAuthorizationManaging.h; sourceTree = "<group>"; };
 		BC1365D82479C9F200A4934A /* NotificationsAuthorizationManaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsAuthorizationManaging.h; sourceTree = "<group>"; };
-		BC164FDD2352781800C02514 /* Tech Parts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tech Parts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC164FDD2352781800C02514 /* Tech Parts Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tech Parts Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC164FE02352781800C02514 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC164FE12352781800C02514 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BC164FE32352781800C02514 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -235,6 +235,9 @@
 		BC78C1C9247351A1006440CA /* ViewWorkInProgresIntentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewWorkInProgresIntentHandler.h; sourceTree = "<group>"; };
 		BC78C1CA247351A1006440CA /* ViewWorkInProgresIntentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewWorkInProgresIntentHandler.m; sourceTree = "<group>"; };
 		BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BC96345F2496922B00321A2C /* DebugConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugConfig.xcconfig; sourceTree = "<group>"; };
+		BC9634612496924100321A2C /* ReleaseConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ReleaseConfig.xcconfig; sourceTree = "<group>"; };
+		BC9634632496925B00321A2C /* QualityAssuranceConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QualityAssuranceConfig.xcconfig; sourceTree = "<group>"; };
 		BC9D4FFE23574D90000EF6DE /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
 		BCB936DC243904DC00C84EBB /* ImageCacheController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCacheController.h; sourceTree = "<group>"; };
 		BCB936DD243904DC00C84EBB /* ImageCacheController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCacheController.m; sourceTree = "<group>"; };
@@ -417,7 +420,7 @@
 		BC164FDE2352781800C02514 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC164FDD2352781800C02514 /* Tech Parts.app */,
+				BC164FDD2352781800C02514 /* Tech Parts Debug.app */,
 				BC78C1B024733BFF006440CA /* parts-management-intents.appex */,
 			);
 			name = Products;
@@ -584,6 +587,16 @@
 			path = "parts-management-intents";
 			sourceTree = "<group>";
 		};
+		BC96345E249691C500321A2C /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				BC96345F2496922B00321A2C /* DebugConfig.xcconfig */,
+				BC9634612496924100321A2C /* ReleaseConfig.xcconfig */,
+				BC9634632496925B00321A2C /* QualityAssuranceConfig.xcconfig */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		BC9D4FFD23574D76000EF6DE /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +626,7 @@
 				BC9D4FFD23574D76000EF6DE /* XIBs */,
 				BCC0EC082354C6B600F5C0B9 /* Storyboards */,
 				BCC0EC092354C6BF00F5C0B9 /* Localizations */,
+				BC96345E249691C500321A2C /* Configuration */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -710,7 +724,7 @@
 			);
 			name = "parts-management-iOS";
 			productName = "parts-management-iOS";
-			productReference = BC164FDD2352781800C02514 /* Tech Parts.app */;
+			productReference = BC164FDD2352781800C02514 /* Tech Parts Debug.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BC78C1AF24733BFF006440CA /* parts-management-intents */ = {
@@ -948,6 +962,7 @@
 /* Begin XCBuildConfiguration section */
 		BC164FF42352781900C02514 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC96345F2496922B00321A2C /* DebugConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1006,6 +1021,7 @@
 		};
 		BC164FF52352781900C02514 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC9634612496924100321A2C /* ReleaseConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1069,8 +1085,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.team3990.PartsManagement;
-				PRODUCT_NAME = "Tech Parts";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1088,8 +1104,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.team3990.PartsManagement;
-				PRODUCT_NAME = "Tech Parts";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1106,7 +1122,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.team3990.PartsManagement.parts-management-intents";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(INTENT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1125,12 +1141,109 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.team3990.PartsManagement.parts-management-intents";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(INTENT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		BC9634652496935600321A2C /* Quality Assurance */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC9634632496925B00321A2C /* QualityAssuranceConfig.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = "Quality Assurance";
+		};
+		BC9634662496935600321A2C /* Quality Assurance */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A9ABFFE362D3D800EC5B36C /* Pods-parts-management-iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "parts-management-iOS/parts-management-iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VWKUK9SSFL;
+				INFOPLIST_FILE = "parts-management-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "$(PRODUCT_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Quality Assurance";
+		};
+		BC9634672496935600321A2C /* Quality Assurance */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VWKUK9SSFL;
+				INFOPLIST_FILE = "parts-management-intents/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(INTENT_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Quality Assurance";
 		};
 /* End XCBuildConfiguration section */
 
@@ -1139,6 +1252,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC164FF42352781900C02514 /* Debug */,
+				BC9634652496935600321A2C /* Quality Assurance */,
 				BC164FF52352781900C02514 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1148,6 +1262,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC164FF72352781900C02514 /* Debug */,
+				BC9634662496935600321A2C /* Quality Assurance */,
 				BC164FF82352781900C02514 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1157,6 +1272,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC78C1BA24733BFF006440CA /* Debug */,
+				BC9634672496935600321A2C /* Quality Assurance */,
 				BC78C1BB24733BFF006440CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

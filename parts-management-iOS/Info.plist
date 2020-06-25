@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSSiriUsageDescription</key>
-	<string>Projects' data will be sent to Siri</string>
+	<string>Projects&apos; data will be sent to Siri</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ViewWorkInProgressIntent</string>
