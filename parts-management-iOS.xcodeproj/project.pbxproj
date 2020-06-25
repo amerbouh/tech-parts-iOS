@@ -81,6 +81,7 @@
 		BCE2711C23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2711B23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m */; };
 		BCE2712323B30C030009BE53 /* ProgressPickerViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2712223B30C030009BE53 /* ProgressPickerViewDataSource.m */; };
 		BCE3807124A428B900390055 /* GoogleService-Info-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE3807024A428B900390055 /* GoogleService-Info-Debug.plist */; };
+		BCE3807324A42D1D00390055 /* GoogleService-Info-QualityAssurance.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE3807224A42D1D00390055 /* GoogleService-Info-QualityAssurance.plist */; };
 		BCE7E8302434270F00696D18 /* ImageDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE7E82F2434270F00696D18 /* ImageDownloadOperation.m */; };
 		BCE7E83324344F7E00696D18 /* UIImageView+ReplaceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE7E83224344F7E00696D18 /* UIImageView+ReplaceImage.m */; };
 		BCECEFD523BA797C0005AB7E /* TKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCECEFD423BA797C0005AB7E /* TKButton.m */; };
@@ -267,6 +268,7 @@
 		BCE2712223B30C030009BE53 /* ProgressPickerViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressPickerViewDataSource.m; sourceTree = "<group>"; };
 		BCE2712423B3122E0009BE53 /* FIRAssemblyCreating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRAssemblyCreating.h; sourceTree = "<group>"; };
 		BCE3807024A428B900390055 /* GoogleService-Info-Debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Debug.plist"; sourceTree = "<group>"; };
+		BCE3807224A42D1D00390055 /* GoogleService-Info-QualityAssurance.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-QualityAssurance.plist"; sourceTree = "<group>"; };
 		BCE7E82E2434270F00696D18 /* ImageDownloadOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDownloadOperation.h; sourceTree = "<group>"; };
 		BCE7E82F2434270F00696D18 /* ImageDownloadOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadOperation.m; sourceTree = "<group>"; };
 		BCE7E83124344F7E00696D18 /* UIImageView+ReplaceImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ReplaceImage.h"; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				BC164FF12352781900C02514 /* Info.plist */,
 				BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */,
 				BCE3807024A428B900390055 /* GoogleService-Info-Debug.plist */,
+				BCE3807224A42D1D00390055 /* GoogleService-Info-QualityAssurance.plist */,
 				BC164FF22352781900C02514 /* main.m */,
 			);
 			path = "parts-management-iOS";
@@ -798,6 +801,7 @@
 				BCC0EC0B2354C6D500F5C0B9 /* Localizable.strings in Resources */,
 				BC164FED2352781900C02514 /* Assets.xcassets in Resources */,
 				BC164FEB2352781800C02514 /* Main.storyboard in Resources */,
+				BCE3807324A42D1D00390055 /* GoogleService-Info-QualityAssurance.plist in Resources */,
 				BC25F75F23AEFB9800770E16 /* art.scnassets in Resources */,
 				BC9D4FFF23574D90000EF6DE /* MessageView.xib in Resources */,
 				BC8EB5CF235CA10D00BCE201 /* GoogleService-Info.plist in Resources */,
