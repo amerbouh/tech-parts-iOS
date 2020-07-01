@@ -45,9 +45,9 @@
     
     // Configure the view controllers' tab bar items.
     [projectListViewController setTitle:NSLocalizedString(@"projects", NULL)];
-    [projectListNavigationController.tabBarItem setImage:[UIImage imageNamed:@"documents"]];
+    [projectListNavigationController.tabBarItem setImage:[UIImage systemImageNamed:@"tray.full.fill"]];
     [settingsViewController setTitle:NSLocalizedString(@"settings", NULL)];
-    [settingsNavigationController.tabBarItem setImage:[UIImage imageNamed:@"settings"]];
+    [settingsNavigationController.tabBarItem setImage:[UIImage systemImageNamed:@"gear"]];
 }
 
 - (void)restoreUserActivityState:(NSUserActivity *)activity
