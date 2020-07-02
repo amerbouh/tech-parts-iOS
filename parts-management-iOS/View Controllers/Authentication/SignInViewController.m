@@ -11,6 +11,7 @@
 #import "TKRoundedButton.h"
 #import "AuthenticationController.h"
 #import "ForgotPasswordViewController.h"
+#import "SignUpProcessCompletionViewController.h"
 #import "UIViewController+PresentErrorAlertController.h"
 
 @interface SignInViewController ()
@@ -160,7 +161,14 @@
 - (void)onSignInFailureWithError:(NSError *)error;
 {
     [self hideActivityIndicatorView];
-    [self presentErrorAlertControllerWithMessage:error.localizedDescription];
+    
+    // Proceed with the appropriate flow given the error code .
+    if (error.code == 404) {
+        [self performSegueWithIdentifier:@"ShowSignUpProcessCompletionViewControllerSegue" sender:self];
+    } /* The user's profile not found on database. */
+    else {
+        [self presentErrorAlertControllerWithMessage:error.localizedDescription];
+    } /* Any other error. */
 }
 
 - (IBAction)signInButtonTaped:(TKRoundedButton *)sender
@@ -190,10 +198,15 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    UINavigationController * navigationController = (UINavigationController *) segue.destinationViewController;
+    
+    // Pass the appropriate dependencies to the appropriate View Controllers.
     if ([segue.identifier isEqualToString:@"ShowForgotPasswordViewControllerSegue"]) {
-        UINavigationController * navigationController = (UINavigationController *) segue.destinationViewController;
-        ForgotPasswordViewController * forgotPasswordViewController = (ForgotPasswordViewController *) navigationController.visibleViewController;
-        forgotPasswordViewController.userAuthenticator = self.userAuthenticationHandler;
+        ForgotPasswordViewController const * const forgotPasswordViewController = (ForgotPasswordViewController *) navigationController.visibleViewController;
+        forgotPasswordViewController.userAuthenticationHandler = self.userAuthenticationHandler;
+    } else if ([segue.identifier isEqualToString:@"ShowSignUpProcessCompletionViewControllerSegue"]) {
+        SignUpProcessCompletionViewController const * const signUpProcessCompletionViewController = (SignUpProcessCompletionViewController *) navigationController.visibleViewController;
+        signUpProcessCompletionViewController.userAuthenticationHandler = self.userAuthenticationHandler;
     }
 }
 

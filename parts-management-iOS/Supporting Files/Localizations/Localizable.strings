@@ -11,6 +11,8 @@
 "cancel" = "Cancel";
 "delete" = "Delete";
 "createdAt" = "Created at";
+"firstName" = "First name";
+"lastName" = "Last name";
 "lastEditedAt" = "Last edited at";
 "downloadCadFile" = "Download CAD File";
 "fileExceedsDownloadLimit" = "It looks like the file you are trying to download exceeds the size limit for over-the-air download operations.";
@@ -32,6 +34,10 @@
 "forgotPassword" = "Forgot password";
 "sendInstructions" = "Send instructions";
 "passwordResetInstructions" = "Enter the email address you used to create your account. We will send you instructions to reset your password.";
+
+// MARK: - Sign Up Process Completion View Controller
+"completeProfile" = "Complete profile";
+"completeProfileDescription" = "In order to use the Tech Parts, you need to complete your profile.";
 
 // MARK: - Project List View Controller
 "projects" = "Projects";

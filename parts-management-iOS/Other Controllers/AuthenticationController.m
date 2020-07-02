@@ -54,4 +54,9 @@
     }];
 }
 
+- (void)completeSignUpProcessForUserWithId:(NSString *)userId emailAddress:(NSString *)emailAddress firstName:(NSString *)firstName lastName:(NSString *)lastName completionHandler:(void (^)(NSError * _Nullable))completionHandler
+{
+    completionHandler(NULL);
+}
+
 @end

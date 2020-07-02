@@ -54,6 +54,7 @@
 		BC676474235D056B00500BF6 /* CreateProjectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC676473235D056B00500BF6 /* CreateProjectTableViewController.m */; };
 		BC67647A235D349B00500BF6 /* UITableView+BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC676479235D349B00500BF6 /* UITableView+BackgroundView.m */; };
 		BC6905B223AC82950010CFCC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6905B123AC82950010CFCC /* Colors.xcassets */; };
+		BC6AA8B124AD3011005B966A /* SignUpProcessCompletionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6AA8B024AD3011005B966A /* SignUpProcessCompletionViewController.m */; };
 		BC72370723B85BBD0055A6CE /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72370623B85BBD0055A6CE /* ForgotPasswordViewController.m */; };
 		BC766E39235CB9DD002FEDA0 /* ProjectDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC766E38235CB9DD002FEDA0 /* ProjectDetail.storyboard */; };
 		BC766E3C235CBC86002FEDA0 /* ProjectInformationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC766E3B235CBC86002FEDA0 /* ProjectInformationTableViewController.m */; };
@@ -218,6 +219,8 @@
 		BC676478235D349B00500BF6 /* UITableView+BackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+BackgroundView.h"; sourceTree = "<group>"; };
 		BC676479235D349B00500BF6 /* UITableView+BackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BackgroundView.m"; sourceTree = "<group>"; };
 		BC6905B123AC82950010CFCC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		BC6AA8AF24AD3011005B966A /* SignUpProcessCompletionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpProcessCompletionViewController.h; sourceTree = "<group>"; };
+		BC6AA8B024AD3011005B966A /* SignUpProcessCompletionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpProcessCompletionViewController.m; sourceTree = "<group>"; };
 		BC72370523B85BBD0055A6CE /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		BC72370623B85BBD0055A6CE /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		BC766E36235CAF33002FEDA0 /* JSONObjectPayload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONObjectPayload.h; sourceTree = "<group>"; };
@@ -385,6 +388,8 @@
 				BC72370623B85BBD0055A6CE /* ForgotPasswordViewController.m */,
 				BC10F46D23B6ADF800E0AF09 /* SessionPreparationViewController.h */,
 				BC10F46E23B6ADF800E0AF09 /* SessionPreparationViewController.m */,
+				BC6AA8AF24AD3011005B966A /* SignUpProcessCompletionViewController.h */,
+				BC6AA8B024AD3011005B966A /* SignUpProcessCompletionViewController.m */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -922,6 +927,7 @@
 				BC28F6DE241D84F600636F97 /* TKImageView.m in Sources */,
 				BC287EE6235CA35C00B57477 /* ProjectRepository.m in Sources */,
 				BC28F6DB241D7D5700636F97 /* BottomNavigationViewController.m in Sources */,
+				BC6AA8B124AD3011005B966A /* SignUpProcessCompletionViewController.m in Sources */,
 				BC28F6D5241D7AD200636F97 /* SettingsTableViewController.m in Sources */,
 				BC1365D42479BB3400A4934A /* RegistrationTokenRepository.m in Sources */,
 				BC10F47323B6C79200E0AF09 /* UserRole.c in Sources */,
