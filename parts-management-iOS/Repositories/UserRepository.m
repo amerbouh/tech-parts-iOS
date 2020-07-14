@@ -79,7 +79,14 @@ static NSString * USERS_COLLECTION_NAME = @"users";
         if (error != NULL) {
             completionHandler(NULL, error);
         } else {
-            if (!snapshot.exists) return;
+            if (!snapshot.exists) {
+                NSError * userNotFoundError = [NSError errorWithDomain:NSCocoaErrorDomain code:404 userInfo:@{NSLocalizedDescriptionKey: @"User not found."}];
+                
+                // Call the completion handler and pass the created error.
+                completionHandler(NULL, userNotFoundError);
+                
+                return;
+            }
                    
             // Create a User instance from the document's data.
             User * fetchedUser = [User initWithJSON:snapshot.data];

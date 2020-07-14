@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42FF5744E916CE8FB245902A /* Pods_parts_management_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E060825D0A863773373B4503 /* Pods_parts_management_iOS.framework */; };
+		3DDB4E6B37AB0C84567FDA42 /* Pods_parts_management_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F38D3C26EA0418BE8A0004 /* Pods_parts_management_iOS.framework */; };
 		BC051E1B23B321A300BD05C5 /* Progress.h in Sources */ = {isa = PBXBuildFile; fileRef = BC051E1A23B321A300BD05C5 /* Progress.h */; };
 		BC051E2023B3297100BD05C5 /* Progress.c in Sources */ = {isa = PBXBuildFile; fileRef = BC051E1F23B3297100BD05C5 /* Progress.c */; };
 		BC0811FA23AB3A01008B3D47 /* NSString+Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0811F923AB3A01008B3D47 /* NSString+Empty.m */; };
@@ -54,6 +54,7 @@
 		BC676474235D056B00500BF6 /* CreateProjectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC676473235D056B00500BF6 /* CreateProjectTableViewController.m */; };
 		BC67647A235D349B00500BF6 /* UITableView+BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC676479235D349B00500BF6 /* UITableView+BackgroundView.m */; };
 		BC6905B223AC82950010CFCC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6905B123AC82950010CFCC /* Colors.xcassets */; };
+		BC6AA8B124AD3011005B966A /* SignUpProcessCompletionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6AA8B024AD3011005B966A /* SignUpProcessCompletionViewController.m */; };
 		BC72370723B85BBD0055A6CE /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72370623B85BBD0055A6CE /* ForgotPasswordViewController.m */; };
 		BC766E39235CB9DD002FEDA0 /* ProjectDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC766E38235CB9DD002FEDA0 /* ProjectDetail.storyboard */; };
 		BC766E3C235CBC86002FEDA0 /* ProjectInformationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC766E3B235CBC86002FEDA0 /* ProjectInformationTableViewController.m */; };
@@ -80,6 +81,8 @@
 		BCE0CE6E23B07B6900B79DDB /* Assembly.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE0CE6D23B07B6900B79DDB /* Assembly.m */; };
 		BCE2711C23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2711B23B2E3CA0009BE53 /* CreateAssemblyTableViewController.m */; };
 		BCE2712323B30C030009BE53 /* ProgressPickerViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2712223B30C030009BE53 /* ProgressPickerViewDataSource.m */; };
+		BCE3807124A428B900390055 /* GoogleService-Info-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE3807024A428B900390055 /* GoogleService-Info-Debug.plist */; };
+		BCE3807324A42D1D00390055 /* GoogleService-Info-QualityAssurance.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE3807224A42D1D00390055 /* GoogleService-Info-QualityAssurance.plist */; };
 		BCE7E8302434270F00696D18 /* ImageDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE7E82F2434270F00696D18 /* ImageDownloadOperation.m */; };
 		BCE7E83324344F7E00696D18 /* UIImageView+ReplaceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE7E83224344F7E00696D18 /* UIImageView+ReplaceImage.m */; };
 		BCECEFD523BA797C0005AB7E /* TKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCECEFD423BA797C0005AB7E /* TKButton.m */; };
@@ -113,7 +116,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9A9ABFFE362D3D800EC5B36C /* Pods-parts-management-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parts-management-iOS.debug.xcconfig"; path = "Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		032201A34ABE441305B11B5D /* Pods-parts-management-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parts-management-iOS.release.xcconfig"; path = "Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		84F38D3C26EA0418BE8A0004 /* Pods_parts_management_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parts_management_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA5CA6A1B98902F8E5D280B0 /* Pods-parts-management-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parts-management-iOS.debug.xcconfig"; path = "Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BC051E1A23B321A300BD05C5 /* Progress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Progress.h; sourceTree = "<group>"; };
 		BC051E1F23B3297100BD05C5 /* Progress.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Progress.c; sourceTree = "<group>"; };
 		BC0811F823AB3A01008B3D47 /* NSString+Empty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Empty.h"; sourceTree = "<group>"; };
@@ -142,7 +147,7 @@
 		BC1365D62479C69E00A4934A /* NotificationsManaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsManaging.h; sourceTree = "<group>"; };
 		BC1365D72479C8B600A4934A /* SiriShortcutsAuthorizationManaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SiriShortcutsAuthorizationManaging.h; sourceTree = "<group>"; };
 		BC1365D82479C9F200A4934A /* NotificationsAuthorizationManaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsAuthorizationManaging.h; sourceTree = "<group>"; };
-		BC164FDD2352781800C02514 /* Tech Parts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tech Parts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC164FDD2352781800C02514 /* Tech Parts Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tech Parts Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC164FE02352781800C02514 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC164FE12352781800C02514 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BC164FE32352781800C02514 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -214,6 +219,8 @@
 		BC676478235D349B00500BF6 /* UITableView+BackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+BackgroundView.h"; sourceTree = "<group>"; };
 		BC676479235D349B00500BF6 /* UITableView+BackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BackgroundView.m"; sourceTree = "<group>"; };
 		BC6905B123AC82950010CFCC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		BC6AA8AF24AD3011005B966A /* SignUpProcessCompletionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpProcessCompletionViewController.h; sourceTree = "<group>"; };
+		BC6AA8B024AD3011005B966A /* SignUpProcessCompletionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpProcessCompletionViewController.m; sourceTree = "<group>"; };
 		BC72370523B85BBD0055A6CE /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		BC72370623B85BBD0055A6CE /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		BC766E36235CAF33002FEDA0 /* JSONObjectPayload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONObjectPayload.h; sourceTree = "<group>"; };
@@ -235,6 +242,9 @@
 		BC78C1C9247351A1006440CA /* ViewWorkInProgresIntentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewWorkInProgresIntentHandler.h; sourceTree = "<group>"; };
 		BC78C1CA247351A1006440CA /* ViewWorkInProgresIntentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewWorkInProgresIntentHandler.m; sourceTree = "<group>"; };
 		BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BC96345F2496922B00321A2C /* DebugConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugConfig.xcconfig; sourceTree = "<group>"; };
+		BC9634612496924100321A2C /* ReleaseConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ReleaseConfig.xcconfig; sourceTree = "<group>"; };
+		BC9634632496925B00321A2C /* QualityAssuranceConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QualityAssuranceConfig.xcconfig; sourceTree = "<group>"; };
 		BC9D4FFE23574D90000EF6DE /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
 		BCB936DC243904DC00C84EBB /* ImageCacheController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCacheController.h; sourceTree = "<group>"; };
 		BCB936DD243904DC00C84EBB /* ImageCacheController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCacheController.m; sourceTree = "<group>"; };
@@ -262,6 +272,8 @@
 		BCE2712123B30C030009BE53 /* ProgressPickerViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressPickerViewDataSource.h; sourceTree = "<group>"; };
 		BCE2712223B30C030009BE53 /* ProgressPickerViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressPickerViewDataSource.m; sourceTree = "<group>"; };
 		BCE2712423B3122E0009BE53 /* FIRAssemblyCreating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRAssemblyCreating.h; sourceTree = "<group>"; };
+		BCE3807024A428B900390055 /* GoogleService-Info-Debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Debug.plist"; sourceTree = "<group>"; };
+		BCE3807224A42D1D00390055 /* GoogleService-Info-QualityAssurance.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-QualityAssurance.plist"; sourceTree = "<group>"; };
 		BCE7E82E2434270F00696D18 /* ImageDownloadOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDownloadOperation.h; sourceTree = "<group>"; };
 		BCE7E82F2434270F00696D18 /* ImageDownloadOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadOperation.m; sourceTree = "<group>"; };
 		BCE7E83124344F7E00696D18 /* UIImageView+ReplaceImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ReplaceImage.h"; sourceTree = "<group>"; };
@@ -277,8 +289,7 @@
 		BCF5F95B24947FBA0079CBBF /* LogController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogController.h; sourceTree = "<group>"; };
 		BCF5F95C24947FBA0079CBBF /* LogController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogController.m; sourceTree = "<group>"; };
 		BCF5F95E2494847C0079CBBF /* Logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
-		E060825D0A863773373B4503 /* Pods_parts_management_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parts_management_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBB856ADF1FBEF8019601DCA /* Pods-parts-management-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parts-management-iOS.release.xcconfig"; path = "Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		F24F698AAE530C152F9A54E0 /* Pods-parts-management-iOS.quality assurance.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parts-management-iOS.quality assurance.xcconfig"; path = "Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS.quality assurance.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,7 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC25F76123AEFBD100770E16 /* SceneKit.framework in Frameworks */,
-				42FF5744E916CE8FB245902A /* Pods_parts_management_iOS.framework in Frameworks */,
+				3DDB4E6B37AB0C84567FDA42 /* Pods_parts_management_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				BC25F76023AEFBD100770E16 /* SceneKit.framework */,
-				E060825D0A863773373B4503 /* Pods_parts_management_iOS.framework */,
+				84F38D3C26EA0418BE8A0004 /* Pods_parts_management_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -313,8 +324,9 @@
 		B9D223876E3CA53D897532AB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9A9ABFFE362D3D800EC5B36C /* Pods-parts-management-iOS.debug.xcconfig */,
-				EBB856ADF1FBEF8019601DCA /* Pods-parts-management-iOS.release.xcconfig */,
+				BA5CA6A1B98902F8E5D280B0 /* Pods-parts-management-iOS.debug.xcconfig */,
+				F24F698AAE530C152F9A54E0 /* Pods-parts-management-iOS.quality assurance.xcconfig */,
+				032201A34ABE441305B11B5D /* Pods-parts-management-iOS.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -376,6 +388,8 @@
 				BC72370623B85BBD0055A6CE /* ForgotPasswordViewController.m */,
 				BC10F46D23B6ADF800E0AF09 /* SessionPreparationViewController.h */,
 				BC10F46E23B6ADF800E0AF09 /* SessionPreparationViewController.m */,
+				BC6AA8AF24AD3011005B966A /* SignUpProcessCompletionViewController.h */,
+				BC6AA8B024AD3011005B966A /* SignUpProcessCompletionViewController.m */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -417,7 +431,7 @@
 		BC164FDE2352781800C02514 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC164FDD2352781800C02514 /* Tech Parts.app */,
+				BC164FDD2352781800C02514 /* Tech Parts Debug.app */,
 				BC78C1B024733BFF006440CA /* parts-management-intents.appex */,
 			);
 			name = Products;
@@ -450,6 +464,8 @@
 				BC164FEE2352781900C02514 /* LaunchScreen.storyboard */,
 				BC164FF12352781900C02514 /* Info.plist */,
 				BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */,
+				BCE3807024A428B900390055 /* GoogleService-Info-Debug.plist */,
+				BCE3807224A42D1D00390055 /* GoogleService-Info-QualityAssurance.plist */,
 				BC164FF22352781900C02514 /* main.m */,
 			);
 			path = "parts-management-iOS";
@@ -584,6 +600,16 @@
 			path = "parts-management-intents";
 			sourceTree = "<group>";
 		};
+		BC96345E249691C500321A2C /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				BC96345F2496922B00321A2C /* DebugConfig.xcconfig */,
+				BC9634612496924100321A2C /* ReleaseConfig.xcconfig */,
+				BC9634632496925B00321A2C /* QualityAssuranceConfig.xcconfig */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		BC9D4FFD23574D76000EF6DE /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +639,7 @@
 				BC9D4FFD23574D76000EF6DE /* XIBs */,
 				BCC0EC082354C6B600F5C0B9 /* Storyboards */,
 				BCC0EC092354C6BF00F5C0B9 /* Localizations */,
+				BC96345E249691C500321A2C /* Configuration */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -696,12 +723,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC164FF62352781900C02514 /* Build configuration list for PBXNativeTarget "parts-management-iOS" */;
 			buildPhases = (
-				C6AE46B40DC7462AD1A8793E /* [CP] Check Pods Manifest.lock */,
+				5C9BB9B75D2DB11FDE07BA65 /* [CP] Check Pods Manifest.lock */,
 				BC164FD92352781800C02514 /* Sources */,
 				BC164FDA2352781800C02514 /* Frameworks */,
 				BC164FDB2352781800C02514 /* Resources */,
 				BC78C1BC24733BFF006440CA /* Embed App Extensions */,
-				5B4EB24FEF744342358EBE2D /* [CP] Embed Pods Frameworks */,
+				C5381DACA11E01DD27270C62 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -710,7 +737,7 @@
 			);
 			name = "parts-management-iOS";
 			productName = "parts-management-iOS";
-			productReference = BC164FDD2352781800C02514 /* Tech Parts.app */;
+			productReference = BC164FDD2352781800C02514 /* Tech Parts Debug.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BC78C1AF24733BFF006440CA /* parts-management-intents */ = {
@@ -774,12 +801,14 @@
 				BC6905B223AC82950010CFCC /* Colors.xcassets in Resources */,
 				BC78C18124732E98006440CA /* InfoPlist.strings in Resources */,
 				BC766E43235D025A002FEDA0 /* Project.storyboard in Resources */,
+				BCE3807124A428B900390055 /* GoogleService-Info-Debug.plist in Resources */,
 				BC1D4D2723B67B7500849E9F /* Authentication.storyboard in Resources */,
 				BC766E39235CB9DD002FEDA0 /* ProjectDetail.storyboard in Resources */,
 				BC164FF02352781900C02514 /* LaunchScreen.storyboard in Resources */,
 				BCC0EC0B2354C6D500F5C0B9 /* Localizable.strings in Resources */,
 				BC164FED2352781900C02514 /* Assets.xcassets in Resources */,
 				BC164FEB2352781800C02514 /* Main.storyboard in Resources */,
+				BCE3807324A42D1D00390055 /* GoogleService-Info-QualityAssurance.plist in Resources */,
 				BC25F75F23AEFB9800770E16 /* art.scnassets in Resources */,
 				BC9D4FFF23574D90000EF6DE /* MessageView.xib in Resources */,
 				BC8EB5CF235CA10D00BCE201 /* GoogleService-Info.plist in Resources */,
@@ -799,24 +828,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5B4EB24FEF744342358EBE2D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C6AE46B40DC7462AD1A8793E /* [CP] Check Pods Manifest.lock */ = {
+		5C9BB9B75D2DB11FDE07BA65 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -836,6 +848,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5381DACA11E01DD27270C62 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -898,6 +927,7 @@
 				BC28F6DE241D84F600636F97 /* TKImageView.m in Sources */,
 				BC287EE6235CA35C00B57477 /* ProjectRepository.m in Sources */,
 				BC28F6DB241D7D5700636F97 /* BottomNavigationViewController.m in Sources */,
+				BC6AA8B124AD3011005B966A /* SignUpProcessCompletionViewController.m in Sources */,
 				BC28F6D5241D7AD200636F97 /* SettingsTableViewController.m in Sources */,
 				BC1365D42479BB3400A4934A /* RegistrationTokenRepository.m in Sources */,
 				BC10F47323B6C79200E0AF09 /* UserRole.c in Sources */,
@@ -948,6 +978,195 @@
 /* Begin XCBuildConfiguration section */
 		BC164FF42352781900C02514 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC96345F2496922B00321A2C /* DebugConfig.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BC164FF52352781900C02514 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC9634612496924100321A2C /* ReleaseConfig.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC164FF72352781900C02514 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA5CA6A1B98902F8E5D280B0 /* Pods-parts-management-iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "parts-management-iOS/parts-management-iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VWKUK9SSFL;
+				INFOPLIST_FILE = "parts-management-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "$(PRODUCT_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC164FF82352781900C02514 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 032201A34ABE441305B11B5D /* Pods-parts-management-iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "parts-management-iOS/parts-management-iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VWKUK9SSFL;
+				INFOPLIST_FILE = "parts-management-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "$(PRODUCT_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC78C1BA24733BFF006440CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VWKUK9SSFL;
+				INFOPLIST_FILE = "parts-management-intents/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(INTENT_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC78C1BB24733BFF006440CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VWKUK9SSFL;
+				INFOPLIST_FILE = "parts-management-intents/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(INTENT_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC9634652496935600321A2C /* Quality Assurance */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC9634632496925B00321A2C /* QualityAssuranceConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1002,63 +1221,11 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
-			name = Debug;
+			name = "Quality Assurance";
 		};
-		BC164FF52352781900C02514 /* Release */ = {
+		BC9634662496935600321A2C /* Quality Assurance */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		BC164FF72352781900C02514 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A9ABFFE362D3D800EC5B36C /* Pods-parts-management-iOS.debug.xcconfig */;
+			baseConfigurationReference = F24F698AAE530C152F9A54E0 /* Pods-parts-management-iOS.quality assurance.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "parts-management-iOS/parts-management-iOS.entitlements";
@@ -1069,32 +1236,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.team3990.PartsManagement;
-				PRODUCT_NAME = "Tech Parts";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = "Quality Assurance";
 		};
-		BC164FF82352781900C02514 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBB856ADF1FBEF8019601DCA /* Pods-parts-management-iOS.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "parts-management-iOS/parts-management-iOS.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VWKUK9SSFL;
-				INFOPLIST_FILE = "parts-management-iOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.team3990.PartsManagement;
-				PRODUCT_NAME = "Tech Parts";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		BC78C1BA24733BFF006440CA /* Debug */ = {
+		BC9634672496935600321A2C /* Quality Assurance */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -1106,31 +1254,12 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.team3990.PartsManagement.parts-management-intents";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(INTENT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
-		};
-		BC78C1BB24733BFF006440CA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VWKUK9SSFL;
-				INFOPLIST_FILE = "parts-management-intents/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.team3990.PartsManagement.parts-management-intents";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
+			name = "Quality Assurance";
 		};
 /* End XCBuildConfiguration section */
 
@@ -1139,6 +1268,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC164FF42352781900C02514 /* Debug */,
+				BC9634652496935600321A2C /* Quality Assurance */,
 				BC164FF52352781900C02514 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1148,6 +1278,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC164FF72352781900C02514 /* Debug */,
+				BC9634662496935600321A2C /* Quality Assurance */,
 				BC164FF82352781900C02514 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1157,6 +1288,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC78C1BA24733BFF006440CA /* Debug */,
+				BC9634672496935600321A2C /* Quality Assurance */,
 				BC78C1BB24733BFF006440CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

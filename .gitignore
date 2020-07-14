@@ -22,3 +22,8 @@ xcuserdata
 
 # CocoaPods
 /Pods
+
+# Google Services
+/parts-management-iOS/GoogleService-Info.plist
+/parts-management-iOS/GoogleService-Info-Debug.plist
+/parts-management-iOS/GoogleService-Info-QualityAssurance.plist

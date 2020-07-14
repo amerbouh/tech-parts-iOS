@@ -102,7 +102,7 @@
     __weak ForgotPasswordViewController * weakSelf = self;
     
     // Attempt to send the instructions to the user to reset his password.
-    [self.userAuthenticator resetPasswordForUserWithEmailAddress:self.emailAddressTextField.text completionHandler:^(NSError * _Nullable error) {
+    [self.userAuthenticationHandler resetPasswordForUserWithEmailAddress:self.emailAddressTextField.text completionHandler:^(NSError * _Nullable error) {
         [weakSelf hideActivityIndicatorView];
         [sender setEnabled:YES];
         

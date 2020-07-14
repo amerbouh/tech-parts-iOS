@@ -9,6 +9,13 @@
 #import "StartupController.h"
 #import <Firebase/Firebase.h>
 
+@interface StartupController ()
+
+/** @brief Resolves the path of the Firebase Configuration File. */
++ (NSString * _Nonnull)resolveFirebaseConfigurationFilePath;
+
+@end
+
 @implementation StartupController {
     UIApplication * _application;
     id <UIApplicationDelegate> _appDelegate;
@@ -30,7 +37,11 @@
 
 - (void)runStartupSequence
 {
-    [FIRApp configure];
+    NSString * firebaseConfigurationFile = [StartupController resolveFirebaseConfigurationFilePath];
+    FIROptions * firebaseOptions = [[FIROptions alloc] initWithContentsOfFile:firebaseConfigurationFile];
+    
+    // Configure Firebase with the appropriate optiosn.
+    [FIRApp configureWithOptions:firebaseOptions];
     
     // Assign the FIRMessaging's delegate, if applicable.
     if ([_appDelegate conformsToProtocol:@protocol(FIRMessagingDelegate)]) {
@@ -39,6 +50,15 @@
     
     // Attempt to register for remote notifications.
     [_application registerForRemoteNotifications];
+}
+
++ (NSString *)resolveFirebaseConfigurationFilePath
+{
+    NSBundle const * const mainBundle = [NSBundle mainBundle];
+    NSString * firebaseConfigurationFileName = (NSString *) [mainBundle objectForInfoDictionaryKey:@"Firebase Configuration File Name"];
+    
+    // Return the path for the Firebase Configuration File.
+    return [mainBundle pathForResource:firebaseConfigurationFileName ofType:@"plist"];
 }
 
 @end

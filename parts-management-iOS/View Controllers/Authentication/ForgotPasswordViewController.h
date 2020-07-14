@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ForgotPasswordViewController : UIViewController
 
 /** A UserAuthenticating conforming object responsible for authenticating users. */
-@property (strong, nonatomic, nonnull) id <UserAuthenticating> userAuthenticator;
+@property (strong, nonatomic, nonnull) id <UserAuthenticating> userAuthenticationHandler;
 
 @end
 
