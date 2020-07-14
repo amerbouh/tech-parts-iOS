@@ -34,12 +34,12 @@ static NSString * USERS_COLLECTION_NAME = @"users";
 
 - (void)saveUser:(User *)user completionHandler:(void (^)(void))completionHandler
 {
-    [_realm transactionWithBlock:^{
-        [_realm addObject:user];
-        
-        // Call the completion handler.
-        completionHandler();
-    }];
+    [_realm beginWriteTransaction];
+    [_realm addObject:user];
+    [_realm commitWriteTransaction];
+    
+    // Call the completion handler.
+    completionHandler();
 }
 
 - (void)deleteUserWithIdentifier:(NSString *)identifier
@@ -80,7 +80,7 @@ static NSString * USERS_COLLECTION_NAME = @"users";
             completionHandler(NULL, error);
         } else {
             if (!snapshot.exists) {
-                NSError * userNotFoundError = [NSError errorWithDomain:NSCocoaErrorDomain code:404 userInfo:@{NSLocalizedDescriptionKey: @"User not found."}];
+                NSError * userNotFoundError = [NSError errorWithDomain:NSCocoaErrorDomain code:404 userInfo:@{NSLocalizedDescriptionKey: @"User not found"}];
                 
                 // Call the completion handler and pass the created error.
                 completionHandler(NULL, userNotFoundError);

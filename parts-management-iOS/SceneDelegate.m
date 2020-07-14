@@ -1,3 +1,11 @@
+//
+//  SceneDelegate.m
+//  parts-management-iOS
+//
+//  Created by Anas Merbouh on 2019-10-12.
+//  Copyright © 2019 Anas Merbouh. All rights reserved.
+//
+
 #import "SceneDelegate.h"
 #import <Realm/Realm.h>
 #import <FirebaseFirestore/FirebaseFirestore.h>

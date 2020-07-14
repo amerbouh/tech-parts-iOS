@@ -49,6 +49,9 @@
 
 - (void)setEnabled:(BOOL)enabled
 {
+    [super setEnabled:enabled];
+    
+    // Configure the alpha value given the state.
     if (enabled) {
         [self setAlpha:1.0];
     } /* if the button enters the enabled state */
