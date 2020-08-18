@@ -261,7 +261,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="Tkq-Wn-bZz"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="given-name"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="given-name"/>
                                                         <connections>
                                                             <action selector="emailAddressDidChange:" destination="bGY-Co-v2k" eventType="editingChanged" id="FaZ-0G-VQW"/>
                                                         </connections>
@@ -280,7 +280,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="ng6-Qg-iMu"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="family-name"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="family-name"/>
                                                         <connections>
                                                             <action selector="emailAddressDidChange:" destination="bGY-Co-v2k" eventType="editingChanged" id="k5O-51-YVw"/>
                                                         </connections>
@@ -315,7 +315,7 @@
                                                         <rect key="frame" x="12" y="102" width="340" height="50"/>
                                                         <color key="tintColor" name="tertiary"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
