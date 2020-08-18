@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qay-09-va5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qay-09-va5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -81,7 +79,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EV4-fV-uMU" userLabel="Sign In Button Container View">
                                                         <rect key="frame" x="0.0" y="116" width="352" height="50"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8y-aC-Mcn" userLabel="Sign In Button" customClass="TKRoundedButton">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8y-aC-Mcn" userLabel="Sign In Button" customClass="TKRoundedButton">
                                                                 <rect key="frame" x="0.0" y="0.0" width="352" height="50"/>
                                                                 <color key="backgroundColor" name="tertiary"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -112,7 +110,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="d8y-aC-Mcn" secondAttribute="bottom" id="vVi-eR-isB"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT7-ck-86C" userLabel="Forgot Password Button">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT7-ck-86C" userLabel="Forgot Password Button">
                                                         <rect key="frame" x="0.0" y="182" width="352" height="30"/>
                                                         <state key="normal" title="Forgot password ?">
                                                             <color key="titleColor" red="0.9027072787" green="0.68874853849999995" blue="0.37245279549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -154,7 +152,7 @@
                                                             <constraint firstItem="HKK-xH-6br" firstAttribute="width" secondItem="IbW-TP-VRQ" secondAttribute="width" id="Ay2-Sm-R3Y"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNx-mP-1V3" userLabel="Sign Up Button" customClass="TKRoundedButton">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNx-mP-1V3" userLabel="Sign Up Button" customClass="TKRoundedButton">
                                                         <rect key="frame" x="0.0" y="33" width="352" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="X7n-nL-rSm"/>
@@ -198,7 +196,6 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="m13-uV-cVh"/>
                             </scrollView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="dcg-9v-7B3"/>
                         <color key="backgroundColor" name="primary"/>
                         <constraints>
                             <constraint firstItem="3rB-s5-cgX" firstAttribute="trailing" secondItem="dcg-9v-7B3" secondAttribute="trailing" id="Fc3-Dx-wa3"/>
@@ -206,6 +203,7 @@
                             <constraint firstItem="3rB-s5-cgX" firstAttribute="bottom" secondItem="dcg-9v-7B3" secondAttribute="bottom" id="aVL-WA-EoM"/>
                             <constraint firstItem="3rB-s5-cgX" firstAttribute="leading" secondItem="dcg-9v-7B3" secondAttribute="leading" id="ckA-eU-iiZ"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="dcg-9v-7B3"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicatorView" destination="la2-No-9bn" id="Kcv-4I-CJL"/>
@@ -270,7 +268,7 @@
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Q9-MT-bNf" userLabel="Separator View">
                                                         <rect key="frame" x="170.5" y="0.0" width="1" height="50"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="1" id="i8Z-6s-HCX"/>
                                                         </constraints>
@@ -355,7 +353,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNd-ts-ryn" userLabel="Sign Up Button Container View">
                                                 <rect key="frame" x="31" y="271.5" width="352" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ9-O6-JPp" userLabel="Sign Up Button" customClass="TKRoundedButton">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ9-O6-JPp" userLabel="Sign Up Button" customClass="TKRoundedButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="352" height="50"/>
                                                         <color key="backgroundColor" name="tertiary"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -402,7 +400,6 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="PtG-aw-NtW"/>
                             </scrollView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="9ee-8L-aJY"/>
                         <color key="backgroundColor" name="primary"/>
                         <constraints>
                             <constraint firstItem="epf-rB-MUG" firstAttribute="trailing" secondItem="9ee-8L-aJY" secondAttribute="trailing" id="8gg-ns-xPk"/>
@@ -410,6 +407,7 @@
                             <constraint firstAttribute="bottom" secondItem="epf-rB-MUG" secondAttribute="bottom" constant="20" symbolic="YES" id="mCk-tl-3yB"/>
                             <constraint firstItem="epf-rB-MUG" firstAttribute="leading" secondItem="9ee-8L-aJY" secondAttribute="leading" id="tIA-le-oJd"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="9ee-8L-aJY"/>
                     </view>
                     <navigationItem key="navigationItem" id="jPg-YH-NbX">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1uI-RT-Yn7">
@@ -488,7 +486,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSB-fJ-N5Y" userLabel="Send Instructions Button Container View">
                                                 <rect key="frame" x="30.5" y="169.5" width="353" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbN-16-NZv" userLabel="Send instructions Button" customClass="TKRoundedButton">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbN-16-NZv" userLabel="Send instructions Button" customClass="TKRoundedButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                                         <color key="backgroundColor" name="tertiary"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -538,7 +536,6 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="vmp-Ur-kcT"/>
                             </scrollView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="nbs-qT-aiU"/>
                         <color key="backgroundColor" name="primary"/>
                         <constraints>
                             <constraint firstItem="nbs-qT-aiU" firstAttribute="bottom" secondItem="OL1-YM-7CB" secondAttribute="bottom" id="BjG-Rz-vXU"/>
@@ -546,6 +543,7 @@
                             <constraint firstItem="nbs-qT-aiU" firstAttribute="trailing" secondItem="OL1-YM-7CB" secondAttribute="trailing" id="Kik-0a-py8"/>
                             <constraint firstItem="OL1-YM-7CB" firstAttribute="leading" secondItem="nbs-qT-aiU" secondAttribute="leading" id="lvW-88-P7p"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="nbs-qT-aiU"/>
                     </view>
                     <navigationItem key="navigationItem" id="2HN-Kz-qJa">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jSc-KZ-kkw">
@@ -682,7 +680,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FE5-rg-w30" userLabel="Complete Profile Button Container View">
                                                 <rect key="frame" x="31" y="202.5" width="352" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EhW-ec-Cgz" userLabel="Complete Profile Button" customClass="TKRoundedButton">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EhW-ec-Cgz" userLabel="Complete Profile Button" customClass="TKRoundedButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="352" height="50"/>
                                                         <color key="backgroundColor" name="tertiary"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -732,7 +730,6 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="HMe-4D-Ekz"/>
                             </scrollView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="2ed-lp-4WO"/>
                         <color key="backgroundColor" name="primary"/>
                         <constraints>
                             <constraint firstItem="Xum-aN-giN" firstAttribute="leading" secondItem="2ed-lp-4WO" secondAttribute="leading" id="E0r-2P-1Mo"/>
@@ -740,6 +737,7 @@
                             <constraint firstItem="2ed-lp-4WO" firstAttribute="bottom" secondItem="Xum-aN-giN" secondAttribute="bottom" id="OWH-gF-wKp"/>
                             <constraint firstItem="Xum-aN-giN" firstAttribute="top" secondItem="2ed-lp-4WO" secondAttribute="top" id="sFI-YT-jYc"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="2ed-lp-4WO"/>
                     </view>
                     <navigationItem key="navigationItem" id="vbX-tN-dVY">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9PO-Z7-2ke">
@@ -755,9 +753,11 @@
                         <outlet property="lastNameTextField" destination="jBx-Uy-aAd" id="Es7-x8-5mw"/>
                         <outlet property="subtitleLabel" destination="PF3-VE-fjv" id="mxB-Bo-7OH"/>
                         <outlet property="titleLabel" destination="EKg-Vs-UGE" id="P2V-F8-wvS"/>
+                        <segue destination="YwU-X6-HoW" kind="unwind" identifier="UnwindToSignInViewControllerSegue" unwindAction="unwind:" id="jyz-bp-lJf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwU-b3-p0e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="YwU-X6-HoW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1138" y="1610"/>
         </scene>
@@ -781,23 +781,6 @@
             <point key="canvasLocation" x="1137.68115942029" y="908.70535714285711"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="EhW-ec-Cgz">
-            <size key="intrinsicContentSize" width="119" height="30"/>
-        </designable>
-        <designable name="QbN-16-NZv">
-            <size key="intrinsicContentSize" width="126" height="30"/>
-        </designable>
-        <designable name="RQ9-O6-JPp">
-            <size key="intrinsicContentSize" width="56" height="30"/>
-        </designable>
-        <designable name="d8y-aC-Mcn">
-            <size key="intrinsicContentSize" width="49" height="30"/>
-        </designable>
-        <designable name="xNx-mP-1V3">
-            <size key="intrinsicContentSize" width="56" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="team-logo" width="1000" height="1000"/>
         <namedColor name="primary">
@@ -809,8 +792,5 @@
         <namedColor name="tertiary">
             <color red="0.9649999737739563" green="0.92199999094009399" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

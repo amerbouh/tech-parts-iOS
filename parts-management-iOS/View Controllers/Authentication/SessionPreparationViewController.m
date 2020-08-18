@@ -16,6 +16,9 @@
 /** @brief Attaches the View Controller's FIRAuthStateDidChangeListenerHandle instance. */
 - (void)attachAuthStateListener;
 
+/** @brief Handles the case where a user is currently authenticated. */
+- (void)onAuthStateActive:(NSString *)uid;
+
 @end
 
 @implementation SessionPreparationViewController
@@ -45,6 +48,23 @@
     return YES;
 }
 
+- (void)onAuthStateActive:(NSString *)uid
+{
+    __weak SessionPreparationViewController * weakSelf = self;
+    
+    // Fetch the user.
+    [self.userFetchingHandler getUserWithIdentifier:uid completionHandler:^(User * _Nullable user, NSError * _Nullable error) {
+        if (user == NULL || error != NULL) {
+            [weakSelf.sessionEndingHandler signOutUser:^(NSError * _Nullable error) {
+                [self.rootNavigator navigateToSignInViewController];
+            }];
+        } /* if no user record is found or an error occurs while trying to find one */
+        else {
+            [self.rootNavigator navigateToBottomNavigationViewController];
+        } /* if a user record is found */
+    }];
+}
+
 - (void)attachAuthStateListener
 {
     __weak SessionPreparationViewController * weakSelf = self;
@@ -52,7 +72,7 @@
     // Attach the auth state listener.
     self.authStateListener = [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth * _Nonnull auth, FIRUser * _Nullable user) {
         if (user != NULL) {
-            [weakSelf.rootNavigator navigateToBottomNavigationViewController];
+            [weakSelf onAuthStateActive:user.uid];
         } /* if a user is currently logged-in */
         else {
             [weakSelf.rootNavigator navigateToSignInViewController];

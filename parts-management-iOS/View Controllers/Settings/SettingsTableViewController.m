@@ -59,19 +59,19 @@
     __weak SettingsTableViewController * weakSelf = self;
     
     // Attempt to sign out the user.
-    [self.sessionManager signOutUser:^(NSError * _Nullable error) {
+    [self.sessionEndingHandler signOutUser:^(NSError * _Nullable error) {
         if (error) {
             [weakSelf presentErrorAlertControllerWithMessage:error.localizedDescription];
             return;
         } /* An error occurred while trying to sign out the user. */
         
-        [weakSelf.rootNavigationHandler navigateToSignInViewController];
+        [weakSelf.rootNavigator navigateToSignInViewController];
     }];
 }
 
 - (void)populateProfileTableViewCell
 {
-    NSString * const currentUserId = [self.sessionManager getCurrentUserId];
+    NSString * const currentUserId = [self.sessionUserFetchingHandler getCurrentUserId];
     
     // Make sure that the identifier of the current user is not NULL.
     if (currentUserId == NULL) return;
@@ -80,7 +80,7 @@
     __weak SettingsTableViewController * const weakSelf = self;
     
     // Fetch the current user's profile.
-    [self.userFetchingHandler getUserWithIdentifier:self.sessionManager.getCurrentUserId completionHandler:^(User * _Nullable user, NSError * _Nullable error) {
+    [self.userFetchingHandler getUserWithIdentifier:self.sessionUserFetchingHandler.getCurrentUserId completionHandler:^(User * _Nullable user, NSError * _Nullable error) {
         [weakSelf.fullNameLabel setText:user.fullName];
         [weakSelf.emailAddressLabel setText:user.emailAddress];
         
@@ -107,13 +107,6 @@
     // button.
     void (^confirmActionHandler)(UIAlertAction *) = ^(UIAlertAction * action) {
         [weakSelf onSignOutActionClicked];
-        
-        // Sign out the current user.
-        [weakSelf.sessionManager signOutUser:^(NSError * _Nullable error) {
-            if (error == NULL) {
-                [weakSelf.rootNavigationHandler navigateToSignInViewController];
-            } /* No error occurred while trying to sign out the user. */
-        }];
     };
     
     // Configure the alert controller's actions...

@@ -1,9 +1,0 @@
-/* 
-  InfoPropertyList.strings
-  parts-management-iOS
-
-  Created by Anas Merbouh on 2020-05-18.
-  Copyright © 2020 Anas Merbouh. All rights reserved.
-*/
-
-NSSiriUsageDescription = "Projects' data will be sent to Siri";

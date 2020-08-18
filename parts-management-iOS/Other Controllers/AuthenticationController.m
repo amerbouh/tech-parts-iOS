@@ -7,7 +7,11 @@
 //
 
 #import "AuthenticationController.h"
+#import "User.h"
+#import "UserRole.h"
 #import "FirebaseAuth.h"
+
+NSString * const DefaultProfileImageDownloadUrl = @"extern";
 
 @implementation AuthenticationController {
     id <FIRUserSaving> _userSaver;
@@ -54,9 +58,12 @@
     }];
 }
 
-- (void)completeSignUpProcessForUserWithId:(NSString *)userId emailAddress:(NSString *)emailAddress firstName:(NSString *)firstName lastName:(NSString *)lastName completionHandler:(void (^)(NSError * _Nullable))completionHandler
+- (void)completeSignUpProcessForUserWithId:(NSString *)uid emailAddress:(NSString *)emailAddress firstName:(NSString *)firstName lastName:(NSString *)lastName completionHandler:(void (^)(NSError * _Nullable))completionHandler
 {
-    completionHandler(NULL);
+    User * const user = [[User alloc] initWithIdentifier:uid role:STUDENT firstName:firstName lastName:lastName emailAddress:emailAddress profileImageDownloadURL:@"https://firebasestorage.googleapis.com/v0/b/parts-management-app-debug.appspot.com/o/profile-images%2Fdefault%2Fprofile-image-default.jpg?alt=media&token=894388c2-b82b-401e-bd8d-2bcc6aa2d74d" timestamp:[NSDate now]];
+    
+    // Create a profile using the given Usser object.
+    [_userSaver createProfileForUser:user completionHandler:completionHandler];
 }
 
 @end

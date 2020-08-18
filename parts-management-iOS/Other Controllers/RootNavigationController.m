@@ -33,9 +33,10 @@
 - (void)navigateToBottomNavigationViewController
 {
     UINavigationController * const projectListViewController = [_viewControllerFactory makeProjectListViewController];
-    UINavigationController * const settingsViewController = [_viewControllerFactory makeSettingsViewControllerWithSessionManager:[_appDependencyContainer makeSessionManager]
-                                                                                                                 userFetchingHandler: [_appDependencyContainer makeUserFetchingHandler]
-                                                                                                               rootNavigationHandler:[_appDependencyContainer makeRootNavigationHandler]];
+    UINavigationController * const settingsViewController = [_viewControllerFactory makeSettingsViewControllerWithSessionEndingHandler:[_appDependencyContainer makeSessionEndingHandler]
+                                                                                                            sessionUserFetchingHandler:[_appDependencyContainer makeSessionUserFetchingHandler]
+                                                                                                                   userFetchingHandler:[_appDependencyContainer makeUserFetchingHandler]
+                                                                                                                 rootNavigationHandler:[_appDependencyContainer makeRootNavigationHandler]];
     
     // Create a new instance of the bottom navigation view controller.
     UIViewController * bottomNavigationViewController = (UIViewController *) [_viewControllerFactory makeBottomNavigationViewControllerWithProjectListViewController:projectListViewController settingsViewController:settingsViewController];

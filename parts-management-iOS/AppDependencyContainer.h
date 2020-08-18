@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SessionEnding.h"
 #import "RootNavigating.h"
-#import "SessionManaging.h"
 #import "FIRUserFetching.h"
+#import "SessionUserFetching.h"
 #import "UserAuthenticating.h"
 #import "NotificationsManaging.h"
 #import "SiriShortcutsAuthorizationManaging.h"
@@ -23,10 +24,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AppDependencyContainer : NSObject
 
-- (id <SessionManaging>)makeSessionManager;
+- (id <SessionEnding>)makeSessionEndingHandler;
 - (id <FIRUserFetching>)makeUserFetchingHandler;
 - (id <RootNavigating>)makeRootNavigationHandler;
 - (id <UserAuthenticating>)makeUserAuthenticationHandler;
+- (id <SessionUserFetching>)makeSessionUserFetchingHandler;
 - (id <NotificationsManaging>)makeRemoteNotificationsManager;
 - (id <SiriShortcutsAuthorizationManaging>)makeSiriShorcutsAuthorizationManager;
 - (id <NotificationsAuthorizationManaging>)makeNotificationsAuthorizationManager;

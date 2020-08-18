@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SessionManaging.h"
+#import "SessionEnding.h"
 #import "FIRUserDeleting.h"
+#import "SessionUserFetching.h"
 #import "FIRRegistrationTokenDeleting.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SessionController : NSObject <SessionManaging>
+@interface SessionController : NSObject <SessionEnding, SessionUserFetching>
 
 /**
  @brief Initializes and returns an instance  of the Session Controller with the provided parameters.

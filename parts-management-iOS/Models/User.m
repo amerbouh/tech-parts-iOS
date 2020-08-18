@@ -54,4 +54,17 @@
     return @"identifier";
 }
 
+- (NSDictionary<NSString *,id> *)toDocumentData
+{
+    return @{
+        @"id": self.identifier,
+        @"lastName": self.lastName,
+        @"firstName": self.firstName,
+        @"emailAddress": self.emailAddress,
+        @"profileImageDownloadUrl": self.profileImageDownloadURL,
+        @"createdAt": [FIRTimestamp timestampWithDate:self.timestamp],
+        @"role": [NSString stringWithCString:string_from_user_role(self.role) encoding:NSASCIIStringEncoding]
+    };
+}
+
 @end

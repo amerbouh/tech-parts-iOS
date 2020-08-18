@@ -32,16 +32,6 @@ static NSString * USERS_COLLECTION_NAME = @"users";
 
 #pragma mark - Methods
 
-- (void)saveUser:(User *)user completionHandler:(void (^)(void))completionHandler
-{
-    [_realm beginWriteTransaction];
-    [_realm addObject:user];
-    [_realm commitWriteTransaction];
-    
-    // Call the completion handler.
-    completionHandler();
-}
-
 - (void)deleteUserWithIdentifier:(NSString *)identifier
 {
     User * user = [User objectForPrimaryKey:identifier];
@@ -59,6 +49,24 @@ static NSString * USERS_COLLECTION_NAME = @"users";
     [_realm commitWriteTransaction];
 }
 
+- (void)saveUser:(User *)user completionHandler:(void (^)(void))completionHandler
+{
+    [_realm beginWriteTransaction];
+    [_realm addObject:user];
+    [_realm commitWriteTransaction];
+    
+    // Call the completion handler.
+    completionHandler();
+}
+
+- (void)createProfileForUser:(User *)user completionHandler:(void (^)(NSError * _Nullable))completionHandler
+{
+    FIRDocumentReference const * const userDocRef = [[_database collectionWithPath:USERS_COLLECTION_NAME] documentWithPath:user.identifier];
+    
+    // Save the user's data.
+    [userDocRef setData:[user toDocumentData] completion:completionHandler];
+}
+
 - (void)getUserWithIdentifier:(NSString *)uid completionHandler:(void (^)(User * _Nullable, NSError * _Nullable))completionHandler
 {
     User * const user = [User objectForPrimaryKey:uid];
@@ -72,7 +80,7 @@ static NSString * USERS_COLLECTION_NAME = @"users";
     }
     
     // Get a reference to the user's record on the remote database.
-    FIRDocumentReference * userDocRef = [[_database collectionWithPath:USERS_COLLECTION_NAME] documentWithPath:uid];
+    FIRDocumentReference const * const userDocRef = [[_database collectionWithPath:USERS_COLLECTION_NAME] documentWithPath:uid];
            
     // Get the document's data.
     [userDocRef getDocumentWithCompletion:^(FIRDocumentSnapshot * _Nullable snapshot, NSError * _Nullable error) {

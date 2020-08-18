@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol FIRProjectCreating <NSObject>
 
 /**
- @brief Uploads the given project to the Cloud Firestore database.
+ @brief Uploads the given project to the application's Cloud Firestore database.
  
  @param project A Project representing the data uploaded to Cloud Firestore.
  @param completionHandler The completion handler to call when request completes.

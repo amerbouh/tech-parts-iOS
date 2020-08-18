@@ -8,16 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "RootNavigating.h"
-#import "SessionManaging.h"
+#import "SessionEnding.h"
 #import "FIRUserFetching.h"
+#import "SessionUserFetching.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SettingsTableViewController : UITableViewController
 
-@property (strong, nonatomic, nonnull) id <SessionManaging> sessionManager;
+@property (strong, nonatomic, nonnull) id <RootNavigating> rootNavigator;
+@property (strong, nonatomic, nonnull) id <SessionEnding> sessionEndingHandler;
 @property (strong, nonatomic, nonnull) id <FIRUserFetching> userFetchingHandler;
-@property (strong, nonatomic, nonnull) id <RootNavigating> rootNavigationHandler;
+@property (strong, nonatomic, nonnull) id <SessionUserFetching> sessionUserFetchingHandler;
 
 @end
 

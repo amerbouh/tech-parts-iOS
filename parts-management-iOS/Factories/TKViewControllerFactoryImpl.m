@@ -20,7 +20,7 @@
     return (UINavigationController *) [[UIStoryboard storyboardWithName:@"Project" bundle:NULL] instantiateInitialViewController];
 }
 
-- (UINavigationController *)makeSettingsViewControllerWithSessionManager:(id <SessionManaging>)sessionManager userFetchingHandler:(id <FIRUserFetching>)userFetchingHandler rootNavigationHandler:(id <RootNavigating>)rootNavigationHandler
+- (UINavigationController *)makeSettingsViewControllerWithSessionEndingHandler:(id<SessionEnding>)sessionEndingHandler sessionUserFetchingHandler:(id<SessionUserFetching>)sessionUserFetchingHandler userFetchingHandler:(id<FIRUserFetching>)userFetchingHandler rootNavigationHandler:(id<RootNavigating>)rootNavigationHandler
 {
     UINavigationController * const settingsNavigationController = [[UIStoryboard storyboardWithName:@"Setting" bundle:NULL] instantiateInitialViewController];
     
@@ -28,9 +28,10 @@
     SettingsTableViewController * const settingsViewController = (SettingsTableViewController *) settingsNavigationController.viewControllers[0];
     
     // Initialize the Setting View Controller's properties.
-    [settingsViewController setSessionManager:sessionManager];
+    [settingsViewController setRootNavigator:rootNavigationHandler];
     [settingsViewController setUserFetchingHandler:userFetchingHandler];
-    [settingsViewController setRootNavigationHandler:rootNavigationHandler];
+    [settingsViewController setUserFetchingHandler:userFetchingHandler];
+    [settingsViewController setSessionEndingHandler:sessionEndingHandler];
     
     return settingsNavigationController;
 }

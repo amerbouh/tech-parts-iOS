@@ -1,8 +1,8 @@
 //
-//  SessionManaging.h
+//  SessionEnding.h
 //  parts-management-iOS
 //
-//  Created by Anas Merbouh on 2020-03-14.
+//  Created by Anas Merbouh on 2020-08-04.
 //  Copyright © 2020 Anas Merbouh. All rights reserved.
 //
 
@@ -10,10 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SessionManaging <NSObject>
-
-/** @brief Returns the identifier of the currenlty signed-in user. */
-- (NSString * _Nullable)getCurrentUserId;
+@protocol SessionEnding <NSObject>
 
 /**
  @brief Signs out the currenlty authenticated user and removes his data from the device's local storage.

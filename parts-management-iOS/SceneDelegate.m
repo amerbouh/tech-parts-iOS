@@ -31,8 +31,10 @@
                                                                                                        window:self.window];
         SessionPreparationViewController * const sessionPreparationViewController = (SessionPreparationViewController *) self.window.rootViewController;
         
-        // Initialize the SessionPreparationViewController root navigator instance.
+        // Initialize the SessionPreparationViewController's instance variables.
         [sessionPreparationViewController setRootNavigator:[appDependencyContainer makeRootNavigationHandler]];
+        [sessionPreparationViewController setUserFetchingHandler:[appDependencyContainer makeUserFetchingHandler]];
+        [sessionPreparationViewController setSessionEndingHandler:[appDependencyContainer makeSessionEndingHandler]];
     } /* The Realm instance could be created. */
 }
 

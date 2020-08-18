@@ -82,9 +82,9 @@
 
 #pragma mark - Methods
 
-- (BOOL)prefersStatusBarHidden
+- (UIStatusBarStyle)preferredStatusBarStyle
 {
-    return YES;
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)generateHapticFeedback
@@ -194,6 +194,11 @@
     }];
 }
 
+- (IBAction)unwind:(UIStoryboardSegue *)segue
+{
+    [self onSuccessfulSignIn];
+}
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -206,6 +211,7 @@
         forgotPasswordViewController.userAuthenticationHandler = self.userAuthenticationHandler;
     } else if ([segue.identifier isEqualToString:@"ShowSignUpProcessCompletionViewControllerSegue"]) {
         SignUpProcessCompletionViewController const * const signUpProcessCompletionViewController = (SignUpProcessCompletionViewController *) navigationController.visibleViewController;
+        signUpProcessCompletionViewController.emailAddress = self.emailAddressTextField.text;
         signUpProcessCompletionViewController.userAuthenticationHandler = self.userAuthenticationHandler;
     }
 }

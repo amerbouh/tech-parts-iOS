@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DDB4E6B37AB0C84567FDA42 /* Pods_parts_management_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F38D3C26EA0418BE8A0004 /* Pods_parts_management_iOS.framework */; };
+		2A088084B164C6AC5231F53A /* Pods_parts_management_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792D3D078A16D9651F97297F /* Pods_parts_management_iOS.framework */; };
 		BC051E1B23B321A300BD05C5 /* Progress.h in Sources */ = {isa = PBXBuildFile; fileRef = BC051E1A23B321A300BD05C5 /* Progress.h */; };
 		BC051E2023B3297100BD05C5 /* Progress.c in Sources */ = {isa = PBXBuildFile; fileRef = BC051E1F23B3297100BD05C5 /* Progress.c */; };
 		BC0811FA23AB3A01008B3D47 /* NSString+Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0811F923AB3A01008B3D47 /* NSString+Empty.m */; };
@@ -45,6 +45,7 @@
 		BC28F6EE241DF3A900636F97 /* AppDependencyContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6ED241DF3A900636F97 /* AppDependencyContainer.m */; };
 		BC2DD177247F5427006A7B47 /* StartupController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD176247F5427006A7B47 /* StartupController.m */; };
 		BC410CC62478FBC8003F7EC0 /* NotificationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC410CC52478FBC8003F7EC0 /* NotificationsController.m */; };
+		BC4D371E24D719D200D57662 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC4D371D24D719D200D57662 /* GoogleService-Info.plist */; };
 		BC4E674723AF155B007E284A /* FileSize.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E674623AF155B007E284A /* FileSize.m */; };
 		BC4E674B23AF1A33007E284A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E674A23AF1A33007E284A /* Reachability.m */; };
 		BC4E675423AF4408007E284A /* Pluralization.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = BC4E675323AF4408007E284A /* Pluralization.stringsdict */; };
@@ -67,7 +68,6 @@
 		BC78C1BD24733D6A006440CA /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = BC78C1A924733859006440CA /* Intents.intentdefinition */; };
 		BC78C1C52473461E006440CA /* NSUserActivity+ViewWorkInProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78C1C42473461E006440CA /* NSUserActivity+ViewWorkInProgress.m */; };
 		BC78C1CB247351A1006440CA /* ViewWorkInProgresIntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78C1CA247351A1006440CA /* ViewWorkInProgresIntentHandler.m */; };
-		BC8EB5CF235CA10D00BCE201 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */; };
 		BC9D4FFF23574D90000EF6DE /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9D4FFE23574D90000EF6DE /* MessageView.xib */; };
 		BCB936DE243904DC00C84EBB /* ImageCacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB936DD243904DC00C84EBB /* ImageCacheController.m */; };
 		BCC0EC0B2354C6D500F5C0B9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCC0EC0A2354C6D500F5C0B9 /* Localizable.strings */; };
@@ -116,13 +116,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		032201A34ABE441305B11B5D /* Pods-parts-management-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parts-management-iOS.release.xcconfig"; path = "Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		84F38D3C26EA0418BE8A0004 /* Pods_parts_management_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parts_management_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA5CA6A1B98902F8E5D280B0 /* Pods-parts-management-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parts-management-iOS.debug.xcconfig"; path = "Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		591AB8CAC7EE809E00B3CA5C /* Pods-parts-management-iOS.quality assurance.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parts-management-iOS.quality assurance.xcconfig"; path = "Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS.quality assurance.xcconfig"; sourceTree = "<group>"; };
+		613018F6F4CC1DE85E2527DF /* Pods-parts-management-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parts-management-iOS.release.xcconfig"; path = "Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		792D3D078A16D9651F97297F /* Pods_parts_management_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parts_management_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC051E1A23B321A300BD05C5 /* Progress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Progress.h; sourceTree = "<group>"; };
 		BC051E1F23B3297100BD05C5 /* Progress.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Progress.c; sourceTree = "<group>"; };
 		BC0811F823AB3A01008B3D47 /* NSString+Empty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Empty.h"; sourceTree = "<group>"; };
 		BC0811F923AB3A01008B3D47 /* NSString+Empty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Empty.m"; sourceTree = "<group>"; };
+		BC0B578D24DA45B700C2E961 /* SessionEnding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionEnding.h; sourceTree = "<group>"; };
+		BC0B578E24DA47A500C2E961 /* SessionUserFetching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionUserFetching.h; sourceTree = "<group>"; };
 		BC10F45A23B68B0F00E0AF09 /* SignInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		BC10F45B23B68B0F00E0AF09 /* SignInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		BC10F45E23B6973700E0AF09 /* AuthenticationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenticationController.h; sourceTree = "<group>"; };
@@ -188,7 +190,6 @@
 		BC28F6DA241D7D5700636F97 /* BottomNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BottomNavigationViewController.m; sourceTree = "<group>"; };
 		BC28F6DC241D84F600636F97 /* TKImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImageView.h; sourceTree = "<group>"; };
 		BC28F6DD241D84F600636F97 /* TKImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImageView.m; sourceTree = "<group>"; };
-		BC28F6DF241DC84F00636F97 /* SessionManaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionManaging.h; sourceTree = "<group>"; };
 		BC28F6E0241DC96D00636F97 /* SessionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionController.h; sourceTree = "<group>"; };
 		BC28F6E1241DC96D00636F97 /* SessionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionController.m; sourceTree = "<group>"; };
 		BC28F6E6241DCE8700636F97 /* FIRUserDeleting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRUserDeleting.h; sourceTree = "<group>"; };
@@ -201,6 +202,7 @@
 		BC2DD176247F5427006A7B47 /* StartupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartupController.m; sourceTree = "<group>"; };
 		BC410CC42478FBC8003F7EC0 /* NotificationsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsController.h; sourceTree = "<group>"; };
 		BC410CC52478FBC8003F7EC0 /* NotificationsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationsController.m; sourceTree = "<group>"; };
+		BC4D371D24D719D200D57662 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC4E674523AF155B007E284A /* FileSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSize.h; sourceTree = "<group>"; };
 		BC4E674623AF155B007E284A /* FileSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSize.m; sourceTree = "<group>"; };
 		BC4E674923AF1A33007E284A /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -243,7 +245,6 @@
 		BC78C1C42473461E006440CA /* NSUserActivity+ViewWorkInProgress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserActivity+ViewWorkInProgress.m"; sourceTree = "<group>"; };
 		BC78C1C9247351A1006440CA /* ViewWorkInProgresIntentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewWorkInProgresIntentHandler.h; sourceTree = "<group>"; };
 		BC78C1CA247351A1006440CA /* ViewWorkInProgresIntentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewWorkInProgresIntentHandler.m; sourceTree = "<group>"; };
-		BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC96345F2496922B00321A2C /* DebugConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugConfig.xcconfig; sourceTree = "<group>"; };
 		BC9634612496924100321A2C /* ReleaseConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ReleaseConfig.xcconfig; sourceTree = "<group>"; };
 		BC9634632496925B00321A2C /* QualityAssuranceConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QualityAssuranceConfig.xcconfig; sourceTree = "<group>"; };
@@ -291,7 +292,7 @@
 		BCF5F95B24947FBA0079CBBF /* LogController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogController.h; sourceTree = "<group>"; };
 		BCF5F95C24947FBA0079CBBF /* LogController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogController.m; sourceTree = "<group>"; };
 		BCF5F95E2494847C0079CBBF /* Logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
-		F24F698AAE530C152F9A54E0 /* Pods-parts-management-iOS.quality assurance.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parts-management-iOS.quality assurance.xcconfig"; path = "Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS.quality assurance.xcconfig"; sourceTree = "<group>"; };
+		DB1BCC819206B93B8396001A /* Pods-parts-management-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parts-management-iOS.debug.xcconfig"; path = "Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,7 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC25F76123AEFBD100770E16 /* SceneKit.framework in Frameworks */,
-				3DDB4E6B37AB0C84567FDA42 /* Pods_parts_management_iOS.framework in Frameworks */,
+				2A088084B164C6AC5231F53A /* Pods_parts_management_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				BC25F76023AEFBD100770E16 /* SceneKit.framework */,
-				84F38D3C26EA0418BE8A0004 /* Pods_parts_management_iOS.framework */,
+				792D3D078A16D9651F97297F /* Pods_parts_management_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -326,9 +327,9 @@
 		B9D223876E3CA53D897532AB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BA5CA6A1B98902F8E5D280B0 /* Pods-parts-management-iOS.debug.xcconfig */,
-				F24F698AAE530C152F9A54E0 /* Pods-parts-management-iOS.quality assurance.xcconfig */,
-				032201A34ABE441305B11B5D /* Pods-parts-management-iOS.release.xcconfig */,
+				DB1BCC819206B93B8396001A /* Pods-parts-management-iOS.debug.xcconfig */,
+				591AB8CAC7EE809E00B3CA5C /* Pods-parts-management-iOS.quality assurance.xcconfig */,
+				613018F6F4CC1DE85E2527DF /* Pods-parts-management-iOS.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -465,7 +466,7 @@
 				BC6905B123AC82950010CFCC /* Colors.xcassets */,
 				BC164FEE2352781900C02514 /* LaunchScreen.storyboard */,
 				BC164FF12352781900C02514 /* Info.plist */,
-				BC8EB5CE235CA10D00BCE201 /* GoogleService-Info.plist */,
+				BC4D371D24D719D200D57662 /* GoogleService-Info.plist */,
 				BCE3807024A428B900390055 /* GoogleService-Info-Debug.plist */,
 				BCE3807224A42D1D00390055 /* GoogleService-Info-QualityAssurance.plist */,
 				BC164FF22352781900C02514 /* main.m */,
@@ -570,9 +571,10 @@
 				BC25F75323AE95F600770E16 /* FIRFileDownloading.h */,
 				BC676475235D2F1700500BF6 /* FIRDocumentSerializable.h */,
 				BC28F6EA241DF04A00636F97 /* TKViewControllerFactory.h */,
+				BC0B578D24DA45B700C2E961 /* SessionEnding.h */,
 				BC10F47723B6DB7500E0AF09 /* RootNavigating.h */,
-				BC28F6DF241DC84F00636F97 /* SessionManaging.h */,
 				BC10F46123B69C5D00E0AF09 /* UserAuthenticating.h */,
+				BC0B578E24DA47A500C2E961 /* SessionUserFetching.h */,
 				BC1365D62479C69E00A4934A /* NotificationsManaging.h */,
 				BC1365D72479C8B600A4934A /* SiriShortcutsAuthorizationManaging.h */,
 				BC1365D82479C9F200A4934A /* NotificationsAuthorizationManaging.h */,
@@ -727,12 +729,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC164FF62352781900C02514 /* Build configuration list for PBXNativeTarget "parts-management-iOS" */;
 			buildPhases = (
-				5C9BB9B75D2DB11FDE07BA65 /* [CP] Check Pods Manifest.lock */,
+				A8B0D09143CFE2AE877CB60B /* [CP] Check Pods Manifest.lock */,
 				BC164FD92352781800C02514 /* Sources */,
 				BC164FDA2352781800C02514 /* Frameworks */,
 				BC164FDB2352781800C02514 /* Resources */,
 				BC78C1BC24733BFF006440CA /* Embed App Extensions */,
-				C5381DACA11E01DD27270C62 /* [CP] Embed Pods Frameworks */,
+				758148F8218B1177BB917226 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -814,8 +816,8 @@
 				BC164FEB2352781800C02514 /* Main.storyboard in Resources */,
 				BCE3807324A42D1D00390055 /* GoogleService-Info-QualityAssurance.plist in Resources */,
 				BC25F75F23AEFB9800770E16 /* art.scnassets in Resources */,
+				BC4D371E24D719D200D57662 /* GoogleService-Info.plist in Resources */,
 				BC9D4FFF23574D90000EF6DE /* MessageView.xib in Resources */,
-				BC8EB5CF235CA10D00BCE201 /* GoogleService-Info.plist in Resources */,
 				BC4E675423AF4408007E284A /* Pluralization.stringsdict in Resources */,
 				BC5E8EAA23B407810043A0E7 /* AssemblyDetail.storyboard in Resources */,
 				BC28F6D7241D7AE300636F97 /* Setting.storyboard in Resources */,
@@ -832,7 +834,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5C9BB9B75D2DB11FDE07BA65 /* [CP] Check Pods Manifest.lock */ = {
+		758148F8218B1177BB917226 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8B0D09143CFE2AE877CB60B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -852,23 +871,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C5381DACA11E01DD27270C62 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-parts-management-iOS/Pods-parts-management-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1031,7 +1033,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1084,7 +1086,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1094,7 +1096,7 @@
 		};
 		BC164FF72352781900C02514 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA5CA6A1B98902F8E5D280B0 /* Pods-parts-management-iOS.debug.xcconfig */;
+			baseConfigurationReference = DB1BCC819206B93B8396001A /* Pods-parts-management-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "parts-management-iOS/parts-management-iOS.entitlements";
@@ -1113,7 +1115,7 @@
 		};
 		BC164FF82352781900C02514 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 032201A34ABE441305B11B5D /* Pods-parts-management-iOS.release.xcconfig */;
+			baseConfigurationReference = 613018F6F4CC1DE85E2527DF /* Pods-parts-management-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "parts-management-iOS/parts-management-iOS.entitlements";
@@ -1219,7 +1221,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1229,7 +1231,7 @@
 		};
 		BC9634662496935600321A2C /* Quality Assurance */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F24F698AAE530C152F9A54E0 /* Pods-parts-management-iOS.quality assurance.xcconfig */;
+			baseConfigurationReference = 591AB8CAC7EE809E00B3CA5C /* Pods-parts-management-iOS.quality assurance.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "parts-management-iOS/parts-management-iOS.entitlements";

@@ -10,10 +10,11 @@
 #import "Realm.h"
 #import "UserRole.h"
 #import "JSONObjectPayload.h"
+#import "FIRDocumentSerializable.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface User : RLMObject <JSONObjectPayload>
+@interface User : RLMObject <JSONObjectPayload, FIRDocumentSerializable>
 
 /** A User role enum case representing the role of the user. */
 @property (assign, nonatomic) UserRole role;
@@ -39,6 +40,18 @@ NS_ASSUME_NONNULL_BEGIN
 /** A date object representing creation date of the user.  */
 @property (strong, nonatomic, nonnull, readonly) NSString * fullName;
 
+/**
+ @brief Initializes a new User instance with the provided parameters.
+ 
+ @param identifier A String representing the unique identifier of the user.
+ @param role A UserRole enum case representing the role of the user.
+ @param firstName A String representing the first name of the user.
+ @param lastName A String representing the last name of the user.
+ @param emailAddress A String representing the email address of the user.
+ @param profileImageDownloadURL A String representing the download URL of the profile image
+                               of the user.
+ @param timestamp A Date representing the creation date of the user.
+ */
 - (instancetype)initWithIdentifier:(NSString * _Nonnull)identifier role:(UserRole)role firstName:(NSString * _Nonnull)firstName lastName:(NSString * _Nonnull)lastName emailAddress:(NSString * _Nonnull)emailAddress profileImageDownloadURL:(NSString * _Nonnull)profileImageDownloadURL timestamp:(NSDate * _Nonnull)timestamp;
 
 @end

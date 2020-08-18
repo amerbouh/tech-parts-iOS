@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SessionEnding.h"
 #import "RootNavigating.h"
-#import "SessionManaging.h"
 #import "FIRUserFetching.h"
 #import "UserAuthenticating.h"
+#import "SessionUserFetching.h"
 #import "SiriShortcutsAuthorizationManaging.h"
 #import "NotificationsAuthorizationManaging.h"
 
@@ -29,11 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  @brief Initializes and returns an instance of the Settings  View Controller with the provided parameters.
  
- @param sessionManager                                           A SessionManaging conforming object used to handle session-related operations.
- @param userFetchingHandler                                A FIRUserFetching conforming object used to handle the fetching of user profiles.
- @param rootNavigationHandler                           A RootNavigating conforming object used to handle navigation.
+ @param sessionEndingHandler A SessionEnding conforming object used to end user sessions.
+ @param sessionUserFetchingHandler A SessionUserFetching conforming object used fetch session users.
+ @param userFetchingHandler A FIRUserFetching conforming object used to handle the fetching of user profiles.
+ @param rootNavigationHandler A RootNavigating conforming object used to handle navigation.
  */
-- (UINavigationController * _Nonnull)makeSettingsViewControllerWithSessionManager:(id <SessionManaging>)sessionManager userFetchingHandler:(id <FIRUserFetching>)userFetchingHandler rootNavigationHandler:(id <RootNavigating>)rootNavigationHandler;
+- (UINavigationController * _Nonnull)makeSettingsViewControllerWithSessionEndingHandler:(id <SessionEnding>)sessionEndingHandler sessionUserFetchingHandler:(id <SessionUserFetching>)sessionUserFetchingHandler userFetchingHandler:(id <FIRUserFetching>)userFetchingHandler rootNavigationHandler:(id <RootNavigating>)rootNavigationHandler;
 
 /**
  @brief Initializes and returns an instance of the Bottom Navigation View Controller with the provided parameters.
