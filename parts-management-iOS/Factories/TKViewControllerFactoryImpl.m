@@ -30,8 +30,8 @@
     // Initialize the Setting View Controller's properties.
     [settingsViewController setRootNavigator:rootNavigationHandler];
     [settingsViewController setUserFetchingHandler:userFetchingHandler];
-    [settingsViewController setUserFetchingHandler:userFetchingHandler];
     [settingsViewController setSessionEndingHandler:sessionEndingHandler];
+    [settingsViewController setSessionUserFetchingHandler:sessionUserFetchingHandler];
     
     return settingsNavigationController;
 }
@@ -41,13 +41,14 @@
     return [[BottomNavigationViewController alloc] initWithProjectListViewController:projectListViewController settingsViewController:settingsViewController];
 }
 
-- (SignInViewController *)makeSignInViewControllerWithRootNavigationHandler:(id<RootNavigating>)rootNavigationHandler userAuthenticationHandler:(id<UserAuthenticating>)userAuthenticationHandler siriShortcutsAuthorizationManager:(id<SiriShortcutsAuthorizationManaging>)siriShortcutsAuthorizationManager notificationsAuthorizationManager:(id<NotificationsAuthorizationManaging>)notificationsAuthorizationManager
+- (SignInViewController *)makeSignInViewControllerWithRootNavigationHandler:(id<RootNavigating>)rootNavigationHandler userAuthenticationHandler:(id<UserAuthenticating>)userAuthenticationHandler sessionUserFetchingHandler:(id<SessionUserFetching>)sessionUserFetchingHandler siriShortcutsAuthorizationManager:(id<SiriShortcutsAuthorizationManaging>)siriShortcutsAuthorizationManager notificationsAuthorizationManager:(id<NotificationsAuthorizationManaging>)notificationsAuthorizationManager
 {
     SignInViewController * signInViewController = (SignInViewController *) [[UIStoryboard storyboardWithName:@"Authentication" bundle:NULL] instantiateInitialViewController];
     
     // Initialize the view controller's instance variables.
     [signInViewController setRootNavigationHandler:rootNavigationHandler];
     [signInViewController setUserAuthenticationHandler:userAuthenticationHandler];
+    [signInViewController setSessionUserFetchingHandler:sessionUserFetchingHandler];
     [signInViewController setSiriShortcutsAuthorizationManager:siriShortcutsAuthorizationManager];
     [signInViewController setNotificationsAuthorizationManager:notificationsAuthorizationManager];
     

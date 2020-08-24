@@ -45,6 +45,7 @@
 		BC28F6EE241DF3A900636F97 /* AppDependencyContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC28F6ED241DF3A900636F97 /* AppDependencyContainer.m */; };
 		BC2DD177247F5427006A7B47 /* StartupController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2DD176247F5427006A7B47 /* StartupController.m */; };
 		BC410CC62478FBC8003F7EC0 /* NotificationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC410CC52478FBC8003F7EC0 /* NotificationsController.m */; };
+		BC44B33024F0A71700751B04 /* PartsManagementUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC44B32F24F0A71700751B04 /* PartsManagementUnitTests.m */; };
 		BC4D371E24D719D200D57662 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC4D371D24D719D200D57662 /* GoogleService-Info.plist */; };
 		BC4E674723AF155B007E284A /* FileSize.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E674623AF155B007E284A /* FileSize.m */; };
 		BC4E674B23AF1A33007E284A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E674A23AF1A33007E284A /* Reachability.m */; };
@@ -92,6 +93,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		BC44B33224F0A71700751B04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC164FD52352781800C02514 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC164FDC2352781800C02514;
+			remoteInfo = "parts-management-iOS";
+		};
 		BC78C1B624733BFF006440CA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BC164FD52352781800C02514 /* Project object */;
@@ -202,6 +210,9 @@
 		BC2DD176247F5427006A7B47 /* StartupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartupController.m; sourceTree = "<group>"; };
 		BC410CC42478FBC8003F7EC0 /* NotificationsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsController.h; sourceTree = "<group>"; };
 		BC410CC52478FBC8003F7EC0 /* NotificationsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationsController.m; sourceTree = "<group>"; };
+		BC44B32D24F0A71700751B04 /* parts-management-unit-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "parts-management-unit-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC44B32F24F0A71700751B04 /* PartsManagementUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PartsManagementUnitTests.m; sourceTree = "<group>"; };
+		BC44B33124F0A71700751B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC4D371D24D719D200D57662 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC4E674523AF155B007E284A /* FileSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSize.h; sourceTree = "<group>"; };
 		BC4E674623AF155B007E284A /* FileSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSize.m; sourceTree = "<group>"; };
@@ -302,6 +313,13 @@
 			files = (
 				BC25F76123AEFBD100770E16 /* SceneKit.framework in Frameworks */,
 				2A088084B164C6AC5231F53A /* Pods_parts_management_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC44B32A24F0A71700751B04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +443,7 @@
 			children = (
 				BC164FDF2352781800C02514 /* parts-management-iOS */,
 				BC78C1B124733BFF006440CA /* parts-management-intents */,
+				BC44B32E24F0A71700751B04 /* parts-management-unit-tests */,
 				BC164FDE2352781800C02514 /* Products */,
 				B9D223876E3CA53D897532AB /* Pods */,
 				075657E5FA447BFD56D06CEB /* Frameworks */,
@@ -436,6 +455,7 @@
 			children = (
 				BC164FDD2352781800C02514 /* Tech Parts Debug.app */,
 				BC78C1B024733BFF006440CA /* parts-management-intents.appex */,
+				BC44B32D24F0A71700751B04 /* parts-management-unit-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -516,6 +536,15 @@
 				BC28F6E8241DEF4100636F97 /* TKViewControllerFactoryImpl.m */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		BC44B32E24F0A71700751B04 /* parts-management-unit-tests */ = {
+			isa = PBXGroup;
+			children = (
+				BC44B32F24F0A71700751B04 /* PartsManagementUnitTests.m */,
+				BC44B33124F0A71700751B04 /* Info.plist */,
+			);
+			path = "parts-management-unit-tests";
 			sourceTree = "<group>";
 		};
 		BC4E674823AF1A14007E284A /* Utilities */ = {
@@ -746,6 +775,24 @@
 			productReference = BC164FDD2352781800C02514 /* Tech Parts Debug.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BC44B32C24F0A71700751B04 /* parts-management-unit-tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC44B33724F0A71700751B04 /* Build configuration list for PBXNativeTarget "parts-management-unit-tests" */;
+			buildPhases = (
+				BC44B32924F0A71700751B04 /* Sources */,
+				BC44B32A24F0A71700751B04 /* Frameworks */,
+				BC44B32B24F0A71700751B04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC44B33324F0A71700751B04 /* PBXTargetDependency */,
+			);
+			name = "parts-management-unit-tests";
+			productName = "parts-management-unit-tests";
+			productReference = BC44B32D24F0A71700751B04 /* parts-management-unit-tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BC78C1AF24733BFF006440CA /* parts-management-intents */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC78C1B924733BFF006440CA /* Build configuration list for PBXNativeTarget "parts-management-intents" */;
@@ -775,6 +822,10 @@
 					BC164FDC2352781800C02514 = {
 						CreatedOnToolsVersion = 11.1;
 					};
+					BC44B32C24F0A71700751B04 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = BC164FDC2352781800C02514;
+					};
 					BC78C1AF24733BFF006440CA = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -795,6 +846,7 @@
 			targets = (
 				BC164FDC2352781800C02514 /* parts-management-iOS */,
 				BC78C1AF24733BFF006440CA /* parts-management-intents */,
+				BC44B32C24F0A71700751B04 /* parts-management-unit-tests */,
 			);
 		};
 /* End PBXProject section */
@@ -821,6 +873,13 @@
 				BC4E675423AF4408007E284A /* Pluralization.stringsdict in Resources */,
 				BC5E8EAA23B407810043A0E7 /* AssemblyDetail.storyboard in Resources */,
 				BC28F6D7241D7AE300636F97 /* Setting.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC44B32B24F0A71700751B04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -942,6 +1001,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BC44B32924F0A71700751B04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC44B33024F0A71700751B04 /* PartsManagementUnitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BC78C1AC24733BFF006440CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -955,6 +1022,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		BC44B33324F0A71700751B04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC164FDC2352781800C02514 /* parts-management-iOS */;
+			targetProxy = BC44B33224F0A71700751B04 /* PBXContainerItemProxy */;
+		};
 		BC78C1B724733BFF006440CA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BC78C1AF24733BFF006440CA /* parts-management-intents */;
@@ -1132,6 +1204,63 @@
 			};
 			name = Release;
 		};
+		BC44B33424F0A71700751B04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "parts-management-unit-tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anasmerbouh.parts-management-unit-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tech Parts Debug.app/Tech Parts Debug";
+			};
+			name = Debug;
+		};
+		BC44B33524F0A71700751B04 /* Quality Assurance */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "parts-management-unit-tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anasmerbouh.parts-management-unit-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tech Parts Debug.app/Tech Parts Debug";
+			};
+			name = "Quality Assurance";
+		};
+		BC44B33624F0A71700751B04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "parts-management-unit-tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anasmerbouh.parts-management-unit-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tech Parts Debug.app/Tech Parts Debug";
+			};
+			name = Release;
+		};
 		BC78C1BA24733BFF006440CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1286,6 +1415,16 @@
 				BC164FF72352781900C02514 /* Debug */,
 				BC9634662496935600321A2C /* Quality Assurance */,
 				BC164FF82352781900C02514 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC44B33724F0A71700751B04 /* Build configuration list for PBXNativeTarget "parts-management-unit-tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC44B33424F0A71700751B04 /* Debug */,
+				BC44B33524F0A71700751B04 /* Quality Assurance */,
+				BC44B33624F0A71700751B04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -60,7 +60,7 @@ NSString * const DefaultProfileImageDownloadUrl = @"extern";
 
 - (void)completeSignUpProcessForUserWithId:(NSString *)uid emailAddress:(NSString *)emailAddress firstName:(NSString *)firstName lastName:(NSString *)lastName completionHandler:(void (^)(NSError * _Nullable))completionHandler
 {
-    User * const user = [[User alloc] initWithIdentifier:uid role:STUDENT firstName:firstName lastName:lastName emailAddress:emailAddress profileImageDownloadURL:@"https://firebasestorage.googleapis.com/v0/b/parts-management-app-debug.appspot.com/o/profile-images%2Fdefault%2Fprofile-image-default.jpg?alt=media&token=894388c2-b82b-401e-bd8d-2bcc6aa2d74d" timestamp:[NSDate now]];
+    User * const user = [[User alloc] initWithIdentifier:uid role:STUDENT firstName:firstName lastName:lastName emailAddress:emailAddress profileImageDownloadURL:@"https://firebasestorage.googleapis.com/v0/b/parts-management-app-debug.appspot.com/o/profile-images%2Fdefault%2Fprofile-image-default.png?alt=media&token=c2f8ab5f-8033-465a-8ade-92e9f2849dcf" timestamp:[NSDate now]];
     
     // Create a profile using the given Usser object.
     [_userSaver createProfileForUser:user completionHandler:completionHandler];

@@ -12,6 +12,7 @@
 #import "FIRUserFetching.h"
 #import "UserAuthenticating.h"
 #import "SessionUserFetching.h"
+#import "SessionUserFetching.h"
 #import "SiriShortcutsAuthorizationManaging.h"
 #import "NotificationsAuthorizationManaging.h"
 
@@ -50,10 +51,11 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param rootNavigationHandler A RootNavigating conforming object used to handle navigation.
  @param userAuthenticationHandler A UserAuthenticating conforming object used to handle authentication.
+ @Param sessionUserFetchingHandler A SessionUserFetching conforming object responsible for fetching the profile of the currently signed-in user.
  @param siriShortcutsAuthorizationManager A SiriShortcutsAuthorizationManaging conforming object used to handle Siri authorization related operations.
  @param notificationsAuthorizationManager A makeSettingsViewControllerWithSessionManager conforming object used to handle notifications authorization related operations.
  */
-- (SignInViewController * _Nonnull)makeSignInViewControllerWithRootNavigationHandler:(id <RootNavigating> _Nonnull)rootNavigationHandler userAuthenticationHandler:(id <UserAuthenticating> _Nonnull)userAuthenticationHandler siriShortcutsAuthorizationManager:(id <SiriShortcutsAuthorizationManaging>)siriShortcutsAuthorizationManager notificationsAuthorizationManager:(id <NotificationsAuthorizationManaging>)notificationsAuthorizationManager;
+- (SignInViewController * _Nonnull)makeSignInViewControllerWithRootNavigationHandler:(id <RootNavigating> _Nonnull)rootNavigationHandler userAuthenticationHandler:(id <UserAuthenticating> _Nonnull)userAuthenticationHandler sessionUserFetchingHandler:(id <SessionUserFetching> _Nonnull)sessionUserFetchingHandler siriShortcutsAuthorizationManager:(id <SiriShortcutsAuthorizationManaging>)siriShortcutsAuthorizationManager notificationsAuthorizationManager:(id <NotificationsAuthorizationManaging>)notificationsAuthorizationManager;
 
 @end
 

@@ -9,7 +9,6 @@
 #import "SignInViewController.h"
 #import "NSString+Empty.h"
 #import "TKRoundedButton.h"
-#import "AuthenticationController.h"
 #import "ForgotPasswordViewController.h"
 #import "SignUpProcessCompletionViewController.h"
 #import "UIViewController+PresentErrorAlertController.h"
@@ -213,6 +212,7 @@
         SignUpProcessCompletionViewController const * const signUpProcessCompletionViewController = (SignUpProcessCompletionViewController *) navigationController.visibleViewController;
         signUpProcessCompletionViewController.emailAddress = self.emailAddressTextField.text;
         signUpProcessCompletionViewController.userAuthenticationHandler = self.userAuthenticationHandler;
+        signUpProcessCompletionViewController.sessionUserFetchingHandler = self.sessionUserFetchingHandler;
     }
 }
 

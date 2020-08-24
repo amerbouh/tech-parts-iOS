@@ -61,9 +61,19 @@ static NSString * USERS_COLLECTION_NAME = @"users";
 
 - (void)createProfileForUser:(User *)user completionHandler:(void (^)(NSError * _Nullable))completionHandler
 {
+    __weak UserRepository * weakSelf = self;
     FIRDocumentReference const * const userDocRef = [[_database collectionWithPath:USERS_COLLECTION_NAME] documentWithPath:user.identifier];
     
     // Save the user's data.
+    [userDocRef setData:[user toDocumentData] completion:^(NSError * _Nullable error) {
+        if (error) {
+            completionHandler(error);
+        } else {
+            [weakSelf saveUser:user completionHandler:^{
+                completionHandler(NULL);
+            }];
+        }
+    }];
     [userDocRef setData:[user toDocumentData] completion:completionHandler];
 }
 
