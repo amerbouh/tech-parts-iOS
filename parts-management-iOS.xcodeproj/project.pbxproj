@@ -234,8 +234,6 @@
 		BC6905B123AC82950010CFCC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BC6AA8AF24AD3011005B966A /* SignUpProcessCompletionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpProcessCompletionViewController.h; sourceTree = "<group>"; };
 		BC6AA8B024AD3011005B966A /* SignUpProcessCompletionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpProcessCompletionViewController.m; sourceTree = "<group>"; };
-		BC6EB4E624B16E1B00609636 /* LocalStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalStrategy.h; sourceTree = "<group>"; };
-		BC6EB4E724B16E2C00609636 /* RemoteStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteStrategy.h; sourceTree = "<group>"; };
 		BC72370523B85BBD0055A6CE /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		BC72370623B85BBD0055A6CE /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		BC766E36235CAF33002FEDA0 /* JSONObjectPayload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONObjectPayload.h; sourceTree = "<group>"; };
@@ -583,8 +581,6 @@
 			isa = PBXGroup;
 			children = (
 				BCF5F95E2494847C0079CBBF /* Logging.h */,
-				BC6EB4E624B16E1B00609636 /* LocalStrategy.h */,
-				BC6EB4E724B16E2C00609636 /* RemoteStrategy.h */,
 				BCB936DF2439056900C84EBB /* ImageCaching.h */,
 				BC10F46623B6A0AD00E0AF09 /* FIRUserSaving.h */,
 				BC28F6E6241DCE8700636F97 /* FIRUserDeleting.h */,

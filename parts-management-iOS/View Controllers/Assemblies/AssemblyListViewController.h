@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AssemblyListViewController : UIViewController <UITableViewDelegate, UISearchBarDelegate, AssemblyDataSourceDelegate, ProjectDetailViewControllerDelegate>
 
+/** A String representing the identifier of the project the currently viewed assemblies belong to. */
 @property (strong, nonatomic, nonnull) NSString * projectIdentifier;
 
 @end

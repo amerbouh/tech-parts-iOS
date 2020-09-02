@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    StartupController const * const startupController = [[StartupController alloc] initWithApp:application appDelegate:self];
+    StartupController const * const startupController = [[StartupController alloc] initWithApp:application];
     
     // Run the startup sequence.
     [startupController runStartupSequence];

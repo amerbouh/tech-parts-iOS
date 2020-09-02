@@ -18,9 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  @brief Initializes and returns an instance  of the Startup Controller with the provided parameters.
 
- @param appDelegate A UIApplicationDelegate conforming object used access to the application's delegate.
+ @param application A UIApplication instance representing the process corresponding to the application.
 */
-- (instancetype)initWithApp:(UIApplication * _Nonnull)application appDelegate:(id <UIApplicationDelegate>)appDelegate;
+- (instancetype)initWithApp:(UIApplication * _Nonnull)application;
 
 @end
 
