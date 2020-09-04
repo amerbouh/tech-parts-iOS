@@ -42,24 +42,6 @@
 /** A data source object used to provider the rows displayed by the progress picker view. */
 @property (strong, nonatomic, nonnull) ProgressPickerViewDataSource * progressPickerDataSource;
 
-/** @brief Triggers an update on the table view. */
-- (void)updateTableView;
-
-/** @brief Configures the initial date displayed by the due date label. */
-- (void)configureDueDateLabel;
-
-/** @brief Configures the initial progress displayed by the progress label. */
-- (void)configureProgressLabel;
-
-/** @brief Configures the picker view used to selected the assembly's progress. */
-- (void)configureProgressPickerView;
-
-/** @brief Configures the static labels displayed by the table view. */
-- (void)configureTableViewTitleLabels;
-
-/** @brief Resolves whether or not the save button should be enabled. */
-- (void)resolveSaveButtonEnabled;
-
 @end
 
 @implementation CreateAssemblyTableViewController

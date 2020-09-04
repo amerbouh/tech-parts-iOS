@@ -13,12 +13,6 @@
 
 @property (nonnull) FIRAuthStateDidChangeListenerHandle authStateListener;
 
-/** @brief Attaches the View Controller's FIRAuthStateDidChangeListenerHandle instance. */
-- (void)attachAuthStateListener;
-
-/** @brief Handles the case where a user is currently authenticated. */
-- (void)onAuthStateActive:(NSString *)uid;
-
 @end
 
 @implementation SessionPreparationViewController

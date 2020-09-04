@@ -1,5 +1,5 @@
 //
-//  TKViewControllerFactory.h
+//  ViewControllerFactory.h
 //  parts-management-iOS
 //
 //  Created by Anas Merbouh on 2020-03-15.
@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SignInFactory.h"
 #import "SessionEnding.h"
 #import "RootNavigating.h"
 #import "FIRUserFetching.h"
@@ -23,10 +24,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol TKViewControllerFactory <NSObject>
+@protocol ViewControllerFactory <NSObject>
 
 /** @brief Initializes and returns an instance of the Project List View Controller with the provided parameters. */
 - (UINavigationController * _Nonnull)makeProjectListViewController;
+
+/**
+ @brief Initializes and returns an instance of the Sign In View Controller with the provided parameters.
+
+ @param signInFactory A SignInFactory conforming object used to handle create the dependencies used by the View Controller..
+*/
+- (SignInViewController *)makeSignInViewControllerWithSignInFactory:(id<SignInFactory>)signInFactory;
 
 /**
  @brief Initializes and returns an instance of the Settings  View Controller with the provided parameters.
@@ -45,17 +53,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param settingsViewController A UINavigationController presenting an instance of the settings view controller.
  */
 - (BottomNavigationViewController * _Nonnull)makeBottomNavigationViewControllerWithProjectListViewController:(UINavigationController * _Nonnull)projectListViewController settingsViewController:(UINavigationController *)settingsViewController;
-
-/**
- @brief Initializes and returns an instance of the Sign In View Controller with the provided parameters.
- 
- @param rootNavigationHandler A RootNavigating conforming object used to handle navigation.
- @param userAuthenticationHandler A UserAuthenticating conforming object used to handle authentication.
- @Param sessionUserFetchingHandler A SessionUserFetching conforming object responsible for fetching the profile of the currently signed-in user.
- @param siriShortcutsAuthorizationManager A SiriShortcutsAuthorizationManaging conforming object used to handle Siri authorization related operations.
- @param notificationsAuthorizationManager A makeSettingsViewControllerWithSessionManager conforming object used to handle notifications authorization related operations.
- */
-- (SignInViewController * _Nonnull)makeSignInViewControllerWithRootNavigationHandler:(id <RootNavigating> _Nonnull)rootNavigationHandler userAuthenticationHandler:(id <UserAuthenticating> _Nonnull)userAuthenticationHandler sessionUserFetchingHandler:(id <SessionUserFetching> _Nonnull)sessionUserFetchingHandler siriShortcutsAuthorizationManager:(id <SiriShortcutsAuthorizationManaging>)siriShortcutsAuthorizationManager notificationsAuthorizationManager:(id <NotificationsAuthorizationManaging>)notificationsAuthorizationManager;
 
 @end
 

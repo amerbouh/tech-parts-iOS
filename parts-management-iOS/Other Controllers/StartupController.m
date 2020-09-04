@@ -9,13 +9,6 @@
 #import "StartupController.h"
 #import <Firebase/Firebase.h>
 
-@interface StartupController ()
-
-/** @brief Resolves the path of the Firebase Configuration File. */
-+ (NSString * _Nonnull)resolveFirebaseConfigurationFilePath;
-
-@end
-
 @implementation StartupController {
     UIApplication * _application;
     id <UIApplicationDelegate> _appDelegate;

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RootNavigating.h"
-#import "TKViewControllerFactory.h"
+#import "ViewControllerFactory.h"
 
 @class AppDependencyContainer;
 
@@ -21,10 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param appDependencyContainer An AppDependencyContainer instance used to produces various dependencies used accross the
                               application.
- @param viewControllerFactory A TKViewControllerFactory conforming object used to created View Controller instances.
+ @param viewControllerFactory A ViewControllerFactory conforming object used to created View Controller instances.
  @param window A UIWindow instance used to set the appropriate root view controller of the application.
 */
-- (instancetype)initWithAppDependencyContainer:(AppDependencyContainer * _Nonnull)appDependencyContainer viewControllerFactory:(id <TKViewControllerFactory> _Nonnull)viewControllerFactory window:(UIWindow * _Nonnull)window;
+- (instancetype)initWithAppDependencyContainer:(AppDependencyContainer * _Nonnull)appDependencyContainer viewControllerFactory:(id <ViewControllerFactory> _Nonnull)viewControllerFactory window:(UIWindow * _Nonnull)window;
 
 @end
 

@@ -18,11 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel * emailAddressLabel;
 @property (weak, nonatomic) IBOutlet UIImageView * profileImageView;
 
-- (void)onSignOutActionClicked;
-- (void)populateProfileTableViewCell;
-- (void)presentSignOutAlertController;
-- (void)startProfileImageDownloadOperationWithDownloadURL:(NSURL * _Nonnull)imageDownloadURL;
-
 @end
 
 @implementation SettingsTableViewController {

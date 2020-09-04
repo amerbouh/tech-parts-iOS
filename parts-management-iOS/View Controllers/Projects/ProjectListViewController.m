@@ -27,12 +27,6 @@
 /** A UISearchController instance representing the search bar displayed under the controller's navigation bar. */
 @property (strong, nonatomic, nonnull) UISearchController * searchController;
 
-/** @brief Prepares the UITableView instance used to display a list of projects. */
-- (void)configureTableView;
-
-/** @brief Prepares the UISearchController instance used  to display search results. */
-- (void)configureSearchController;
-
 @end
 
 @implementation ProjectListViewController

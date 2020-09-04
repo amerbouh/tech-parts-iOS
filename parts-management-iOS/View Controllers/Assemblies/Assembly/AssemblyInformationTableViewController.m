@@ -46,16 +46,6 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell * viewAssemblyTableViewCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell * downloadCADFileTableViewCell;
 
-
-/** @brief Populates the cells displayed by the table view with the View Controller's Assembly instance. */
-- (void)populateTableViewCells;
-
-/** @brief Configures the static labels displayed by the table view. */
-- (void)configureTableViewLabels;
-
-/** @brief Configures the state of the cell used to download the CAD File associated with the View Controller's Assembly instance. */
-- (void)configureDownloadCADFileTableViewCellState;
-
 @end
 
 @implementation AssemblyInformationTableViewController

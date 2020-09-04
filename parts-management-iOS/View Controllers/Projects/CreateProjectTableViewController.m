@@ -25,14 +25,6 @@
 @property BOOL isDatePickerRowExpanded;
 @property (strong, nonatomic, nullable) Project * project;
 
-- (void)createProject;
-- (void)updateProject;
-- (void)configureSeasonLabel;
-- (void)resolveSaveButtonEnabled;
-- (void)populateViewsIfApplicable;
-- (void)configureNavigationItemTitle;
-- (void)configureDescriptionTextView;
-
 @end
 
 @implementation CreateProjectTableViewController

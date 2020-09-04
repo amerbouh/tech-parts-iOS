@@ -20,6 +20,16 @@
     return (UINavigationController *) [[UIStoryboard storyboardWithName:@"Project" bundle:NULL] instantiateInitialViewController];
 }
 
+- (SignInViewController *)makeSignInViewControllerWithSignInFactory:(id<SignInFactory>)signInFactory
+{
+    SignInViewController * signInViewController = (SignInViewController *) [[UIStoryboard storyboardWithName:@"Authentication" bundle:NULL] instantiateInitialViewController];
+    
+    // Initialize the view controller's instance variables.
+    [signInViewController setSignInFactory:signInFactory];
+    
+    return signInViewController;
+}
+
 - (UINavigationController *)makeSettingsViewControllerWithSessionEndingHandler:(id<SessionEnding>)sessionEndingHandler sessionUserFetchingHandler:(id<SessionUserFetching>)sessionUserFetchingHandler userFetchingHandler:(id<FIRUserFetching>)userFetchingHandler rootNavigationHandler:(id<RootNavigating>)rootNavigationHandler
 {
     UINavigationController * const settingsNavigationController = [[UIStoryboard storyboardWithName:@"Setting" bundle:NULL] instantiateInitialViewController];
@@ -39,20 +49,6 @@
 - (BottomNavigationViewController *)makeBottomNavigationViewControllerWithProjectListViewController:(UINavigationController *)projectListViewController settingsViewController:(UINavigationController *)settingsViewController
 {
     return [[BottomNavigationViewController alloc] initWithProjectListViewController:projectListViewController settingsViewController:settingsViewController];
-}
-
-- (SignInViewController *)makeSignInViewControllerWithRootNavigationHandler:(id<RootNavigating>)rootNavigationHandler userAuthenticationHandler:(id<UserAuthenticating>)userAuthenticationHandler sessionUserFetchingHandler:(id<SessionUserFetching>)sessionUserFetchingHandler siriShortcutsAuthorizationManager:(id<SiriShortcutsAuthorizationManaging>)siriShortcutsAuthorizationManager notificationsAuthorizationManager:(id<NotificationsAuthorizationManaging>)notificationsAuthorizationManager
-{
-    SignInViewController * signInViewController = (SignInViewController *) [[UIStoryboard storyboardWithName:@"Authentication" bundle:NULL] instantiateInitialViewController];
-    
-    // Initialize the view controller's instance variables.
-    [signInViewController setRootNavigationHandler:rootNavigationHandler];
-    [signInViewController setUserAuthenticationHandler:userAuthenticationHandler];
-    [signInViewController setSessionUserFetchingHandler:sessionUserFetchingHandler];
-    [signInViewController setSiriShortcutsAuthorizationManager:siriShortcutsAuthorizationManager];
-    [signInViewController setNotificationsAuthorizationManager:notificationsAuthorizationManager];
-    
-    return signInViewController;
 }
 
 @end

@@ -21,15 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIButton * completeProfileButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView * activityIndicatorView;
 
-/** @brief Configures the translations of the text displayed by the View Controller. */
-- (void)configureLocalizations;
-
-/** @brief Hides the activity indicator view informing the user of an on-going operation.  */
-- (void)hideActivityIndicatorView;
-
-/** @brief Display the activity indicator view informing the user of an on-going operation.  */
-- (void)displayActivityIndicatorView;
-
 @end
 
 @implementation SignUpProcessCompletionViewController

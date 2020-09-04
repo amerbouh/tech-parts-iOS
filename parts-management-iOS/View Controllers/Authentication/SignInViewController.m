@@ -7,8 +7,12 @@
 //
 
 #import "SignInViewController.h"
+#import "RootNavigating.h"
 #import "NSString+Empty.h"
 #import "TKRoundedButton.h"
+#import "UserAuthenticating.h"
+#import "SiriShortcutsAuthorizationManaging.h"
+#import "NotificationsAuthorizationManaging.h"
 #import "ForgotPasswordViewController.h"
 #import "SignUpProcessCompletionViewController.h"
 #import "UIViewController+PresentErrorAlertController.h"
@@ -27,23 +31,17 @@
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView * activityIndicatorView;
 
-/** @brief Generates a haptic feedback to communicate to the user that the submit button was taped. */
-- (void)generateHapticFeedback;
+/** A RootNavigating conforming object responsible for navigation accross the application. */
+@property (strong, nonatomic, nonnull) id <RootNavigating> rootNavigationHandler;
 
-/** @brief Updates the state of the sign in button according to the inputs of the form. */
-- (void)formInputsDidChangeValue;
+/** A UserAuthenticating conforming object responsible for authenticating users. */
+@property (strong, nonatomic, nonnull) id <UserAuthenticating> userAuthenticationHandler;
 
-/** @brief Configures the translations of the text displayed by the View Controller. */
-- (void)configureLocalizations;
+/** A SiriShortcutsAuthorizationManaging conforming object responsible for handling Siri Shortcuts authorizations. */
+@property (strong, nonatomic, nonnull) id <SiriShortcutsAuthorizationManaging> siriShortcutsAuthorizationManager;
 
-/** @brief Hides the activity indicator view informing the user of an on-going operation.  */
-- (void)hideActivityIndicatorView;
-
-/** @brief Display the activity indicator view informing the user of an on-going operation.  */
-- (void)displayActivityIndicatorView;
-
-/** @brief Updates the layout of the view managed by the View Controller according to the keyboard's visibility.  */
-- (void)didReceiveKeyboardNotification:(NSNotification *)notification;
+/** A SiriShortcutsAuthorizationManaging conforming object responsible for handling notifications authorizations. */
+@property (strong, nonatomic, nonnull) id <NotificationsAuthorizationManaging> notificationsAuthorizationManager;
 
 @end
 
@@ -56,7 +54,7 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
-    [self.signInButton setEnabled:NO];
+    [self configure];
     [self configureLocalizations];
     [self hideActivityIndicatorView];
 }
@@ -84,6 +82,17 @@
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
+}
+
+- (void)configure
+{
+    [self.signInButton setEnabled:NO];
+    
+    // Initialize the view controller's properties.
+    self.rootNavigationHandler = [self.signInFactory makeRootNavigationHandler];
+    self.userAuthenticationHandler = [self.signInFactory makeUserAuthenticationHandler];
+    self.siriShortcutsAuthorizationManager = [self.signInFactory makeSiriShortcutsAuthorizationManager];
+    self.notificationsAuthorizationManager = [self.signInFactory makeNotificationsAuthorizationManager];
 }
 
 - (void)generateHapticFeedback
@@ -212,7 +221,7 @@
         SignUpProcessCompletionViewController const * const signUpProcessCompletionViewController = (SignUpProcessCompletionViewController *) navigationController.visibleViewController;
         signUpProcessCompletionViewController.emailAddress = self.emailAddressTextField.text;
         signUpProcessCompletionViewController.userAuthenticationHandler = self.userAuthenticationHandler;
-        signUpProcessCompletionViewController.sessionUserFetchingHandler = self.sessionUserFetchingHandler;
+        signUpProcessCompletionViewController.sessionUserFetchingHandler = [self.signInFactory makeSessionUserFetchingHandler];
     }
 }
 

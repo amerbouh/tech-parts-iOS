@@ -15,18 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
-/** @brief Confgures the bar button items displayed by the View Controller's navigation bar. */
-- (void)configureBarButtonItems;
-
-/** @brief Configures the  segmented control's segments. */
-- (void)configureSegmentedControl;
-
-/** @brief Encapsulates the code to execute once the add bar button item is taped. */
-- (void)addBarButtonItemTaped:(UIBarButtonItem *)sender;
-
-/** @brief Encapsulates the code to execute once the edit bar button item is taped. */
-- (void)editBarButtonItemTaped:(UIBarButtonItem *)sender;
-
 @end
 
 @implementation AssemblyDetailViewController

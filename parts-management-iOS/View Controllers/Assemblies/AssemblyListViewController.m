@@ -30,14 +30,6 @@
 /** The data source object used by the Table View instance to display a list of assemblies. */
 @property (strong, nonatomic, nonnull) AssemblyDataSource * dataSource;
 
-/** @brief Prepares the UITableView instance used to display a list of assemblies. */
-- (void)configureTableView;
-
-/** @brief Prepares the UISearchBar instance used to allow the user to filter the assemblies
-           displayed by the table view
- */
-- (void)configureSearchBar;
-
 @end
 
 @implementation AssemblyListViewController

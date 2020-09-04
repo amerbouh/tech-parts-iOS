@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SignInFactory.h"
 #import "SessionEnding.h"
 #import "RootNavigating.h"
 #import "FIRUserFetching.h"
@@ -24,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AppDependencyContainer : NSObject
 
+- (id <SignInFactory>)makeSignInFactory;
 - (id <SessionEnding>)makeSessionEndingHandler;
 - (id <FIRUserFetching>)makeUserFetchingHandler;
 - (id <RootNavigating>)makeRootNavigationHandler;

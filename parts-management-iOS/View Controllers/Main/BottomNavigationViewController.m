@@ -11,13 +11,6 @@
 #import "NSUserActivity+ViewWorkInProgress.h"
 #import "AssemblyListViewController.h"
 
-@interface BottomNavigationViewController ()
-
-- (void)configureTabBarItems;
-- (void)driveProjectAssemblyListPresentationWithActivity:(NSUserActivity * _Nonnull)activity;
-
-@end
-
 @implementation BottomNavigationViewController
 
 #pragma mark - Initialization

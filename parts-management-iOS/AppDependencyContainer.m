@@ -9,13 +9,15 @@
 #import "AppDependencyContainer.h"
 #import "LogController.h"
 #import "UserRepository.h"
+#import "SignInFactoryImpl.h"
 #import "SessionController.h"
 #import "SiriShorcutsController.h"
+#import "NotificationsController.h"
 #import "RootNavigationController.h"
 #import "AuthenticationController.h"
 #import "RegistrationTokenRepository.h"
 #import "TKViewControllerFactoryImpl.h"
-#import "NotificationsController.h"
+
 
 @implementation AppDependencyContainer {
     RLMRealm * _realm;
@@ -37,6 +39,11 @@
 }
 
 #pragma mark - Methods
+
+- (id <SignInFactory>)makeSignInFactory;
+{
+    return [[SignInFactoryImpl alloc] initWithAppDependencyContainer:self];
+}
 
 - (id<FIRUserFetching>)makeUserFetchingHandler
 {

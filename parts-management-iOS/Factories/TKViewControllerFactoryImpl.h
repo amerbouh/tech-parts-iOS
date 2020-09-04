@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TKViewControllerFactory.h"
+#import "ViewControllerFactory.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKViewControllerFactoryImpl : NSObject <TKViewControllerFactory>
+@interface TKViewControllerFactoryImpl : NSObject <ViewControllerFactory>
 
 @end
 

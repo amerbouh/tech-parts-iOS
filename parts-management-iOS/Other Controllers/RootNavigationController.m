@@ -12,12 +12,12 @@
 @implementation RootNavigationController {
     UIWindow * _window;
     AppDependencyContainer * _appDependencyContainer;
-    id <TKViewControllerFactory> _viewControllerFactory;
+    id <ViewControllerFactory> _viewControllerFactory;
 }
 
 #pragma mark - Initialization
 
-- (instancetype)initWithAppDependencyContainer:(AppDependencyContainer *)appDependencyContainer viewControllerFactory:(id<TKViewControllerFactory>)viewControllerFactory window:(UIWindow *)window
+- (instancetype)initWithAppDependencyContainer:(AppDependencyContainer *)appDependencyContainer viewControllerFactory:(id<ViewControllerFactory>)viewControllerFactory window:(UIWindow *)window
 {
     self = [super init];
     if (self) {
@@ -50,10 +50,7 @@
 
 - (void)navigateToSignInViewController
 {
-    UIViewController * signInViewController = (UIViewController *) [_viewControllerFactory makeSignInViewControllerWithRootNavigationHandler:[_appDependencyContainer makeRootNavigationHandler]userAuthenticationHandler:[_appDependencyContainer makeUserAuthenticationHandler]
-           sessionUserFetchingHandler:[_appDependencyContainer makeSessionUserFetchingHandler]
-    siriShortcutsAuthorizationManager:[_appDependencyContainer makeSiriShorcutsAuthorizationManager]
-    notificationsAuthorizationManager:[_appDependencyContainer makeNotificationsAuthorizationManager]];
+    UIViewController * signInViewController = (UIViewController *) [_viewControllerFactory makeSignInViewControllerWithSignInFactory:[_appDependencyContainer makeSignInFactory]];
     
     // Set the Sign In View Controller instance as the window's root view controller.
     [_window setRootViewController:signInViewController];

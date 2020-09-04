@@ -23,21 +23,6 @@
 /** The ProjectDetailViewControllerDelegate instance the View Controller uses to communicate events. */
 @property (weak, nonatomic, nullable) id <ProjectDetailViewControllerDelegate> delegate;
 
-/** @brief Confgures the container view displayed by the View Controller. */
-- (void)configureContainerView;
-
-/** @brief Confgures the bar button items displayed by the View Controller's navigation bar. */
-- (void)configureBarButtonItems;
-
-/** @brief Confgures the segmented control displayed by the View Controller. */
-- (void)configureSegmentedControl;
-
-/** @brief Encapsulates the code to execute once the add bar button item is taped. */
-- (void)addBarButtonItemTaped:(UIBarButtonItem *)sender;
-
-/** @brief Encapsulates the code to execute once the edit bar button item is taped. */
-- (void)editBarButtonItemTaped:(UIBarButtonItem *)sender;
-
 @end
 
 @implementation ProjectDetailViewController

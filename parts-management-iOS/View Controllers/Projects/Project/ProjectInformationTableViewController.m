@@ -51,27 +51,6 @@
 /** A FIRStorageDownloadTask  instance representing the current download task. */
 @property (strong, nonatomic, nullable) FIRStorageDownloadTask * currentDownloadTask;
 
-/** @brief Configures the initial state of the view managed by the View Controller. */
-- (void)configure;
-
-/** @brief Adjusts the user interface to communicate a loading state to the user. */
-- (void)enterLoadingState;
-
-/** @brief Adjusts the user interface to communicate a normal state to the user. */
-- (void)exitLoadingState;
-
-/** @brief Attempts to download the CAD File associated with the View Controller's Project instance. */
-- (void)downloadProjectCADFile;
-
-/** @brief Populates the cells displayed by the table view with the View Controller's Project instance. */
-- (void)populateTableViewCells;
-
-/** @brief Configures the static labels displayed by the table view. */
-- (void)configureTableViewLabels;
-
-/** @brief Configures the state of the cell used to download the CAD File associated with the View Controller's Project instance. */
-- (void)configureDownloadCADFileTableViewCellState;
-
 @end
 
 @implementation ProjectInformationTableViewController

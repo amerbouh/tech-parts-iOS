@@ -21,18 +21,6 @@
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView * activityIndicatorView;
 
-/** @brief Configures the translations of the text displayed by the View Controller. */
-- (void)configureLocalizations;
-
-/** @brief Generates a haptic feedback to communicate to the user that the submit button was taped. */
-- (void)generateHapticFeedback;
-
-/** @brief Hides the activity indicator view informing the user of an on-going operation.  */
-- (void)hideActivityIndicatorView;
-
-/** @brief Display the activity indicator view informing the user of an on-going operation.  */
-- (void)displayActivityIndicatorView;
-
 @end
 
 @implementation ForgotPasswordViewController
